@@ -73,11 +73,6 @@ export class LoginPage {
     return this.loading.present();
   }
 
-  stopLoader() {
-    this.loading.dismissAll();
-    this.loading = null;
-  }
-
   loader() {
     if (this.loading && this.loading.instance){
       this.stopLoader();
@@ -87,12 +82,14 @@ export class LoginPage {
     })
   }
 
+  stopLoader() {
+    this.loading.dismissAll();
+    this.loading = null;
+  }
+
   async doGoogleLogin(){
-  	const loading = await this.loadingController.create({
-  		content: 'Please wait...'
-  	});
-  	this.presentLoading(loading);
-  
+    this.loader();
+  	this.presentLoader();
   	this.googlePlus.login({
   		'scopes': 'profile', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
   		'webClientId': '573084995226-vtptdl6v4q4l2g6drha3qekgd7h5hj96.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
@@ -101,23 +98,18 @@ export class LoginPage {
   	.then(user =>{
       this.userGoogle = user;
       this.showUserGoogle = true; 
-      loading.dismiss();
+      this.loader();
   	}, err =>{
   		console.log(err)
-      loading.dismiss();
-      alert(err);
+      this.loader();
   	});
   
   }
 
-  async presentLoading(loading) {
-    return await loading.present();
-  }
-
-  doGoogleLogout(){
+  doGoogleLogout() {
     this.googlePlus.logout()
-    .then(res =>{
-    }, err =>{
+    .then(res => {
+    }, err => {
       console.log(err);
     })
   }

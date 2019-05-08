@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import "../theme/icons";
+h1,
+h2,
+h3,
+body,
+p,
+button,
+ion-title,
+ion-label {
+    font-family: 'San Fransico';
+}
+
+.activeHighLight {
+    background-color: map-get($colors, light)
+}
+
+.hide-card {
+    -webkit-box-shadow: none !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
