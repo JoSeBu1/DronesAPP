@@ -1,0 +1,33 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <ion-title>Editar Dron</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-item>
+        <ion-label floating>Marca</ion-label>
+        <ion-input [(ngModel)]="marca" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Modelo</ion-label>
+        <ion-input [(ngModel)]="modelo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Año Adquisición</ion-label>
+        <ion-input [(ngModel)]="anyoAdquisicion" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Apodo</ion-label>
+        <ion-input [(ngModel)]="apodo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Comentarios</ion-label>
+        <ion-textarea [(ngModel)]="comentarios" type="text"></ion-textarea>
+    </ion-item>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="editDron()">
+            <ion-icon name="custom-save"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

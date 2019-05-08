@@ -1,0 +1,34 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        <ion-title>Drones</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-list no-lines>
+        <ion-item-sliding *ngFor="let item of commondata.dron">
+            <ion-item (click)="goToDron(item)">
+                <h2>{{item.marca || 'No se ha introducido marca'}}</h2>
+                <p>{{item.modelo || 'No se ha introducido modelo'}}</p>
+            </ion-item>
+            <ion-item-options side="right">
+                <button color="primary" ion-button (click)="goToEditDron(item)">
+                    <ion-icon name="create"></ion-icon>
+                    Editar
+                </button>
+                <button color="danger" ion-button (click)="goToDeleteDron(item)">
+                    <ion-icon name="trash"></ion-icon>
+                    Eliminar
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="goToAddDron()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

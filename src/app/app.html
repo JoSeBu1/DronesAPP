@@ -1,1 +1,31 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!--type="overlay || push || reveal"-->
+<ion-menu [content]="content" type="overlay">
+    <ion-content>
+        <ion-card text-center class="hide-card" *ngIf="commondata.sesionIniciada">
+            <h1>{{commondata.usuario}}</h1>
+            <h3>{{commondata.email}}</h3>
+            <ion-item class="item-leave-height">
+                <ion-label floating>Dron que desea consultar</ion-label>
+                <!-- interface="action-sheet || popover || alert" -->
+                <ion-select interface="action-sheet" okText="Seleccionar" cancelText="Cancelar" (ionChange)="cambioSelect()" [(ngModel)]="commondata.dronActivo" [compareWith]="commondata.compareFn">
+                    <ion-option *ngFor="let item of commondata.dron" [value]="item">{{item.apodo}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-card>
+        <ion-list no-lines>
+            <button menuClose ion-item *ngIf="!commondata.sesionIniciada" (click)="goToLogIn()">
+                    <ion-icon name="log-in" item-left></ion-icon> Iniciar Sesión
+            </button>
+            <button menuClose ion-item *ngFor="let p of pages" [class.activeHighLight]="checkActive(p)" (click)="openPage(p)">
+                <ion-icon [name]="p.icon" item-left></ion-icon>
+                {{p.title}}
+            </button>
+            <button menuClose ion-item *ngIf="commondata.sesionIniciada" (click)="logout()">
+                <ion-icon name="log-out" item-left></ion-icon> Cerrar Sesión
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

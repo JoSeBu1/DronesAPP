@@ -1,0 +1,33 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <ion-title>Editar vuelo</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-item>
+        <ion-label floating>Lugar</ion-label>
+        <ion-input [(ngModel)]="lugar" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Numero de baterias</ion-label>
+        <ion-input [(ngModel)]="baterias" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Fecha</ion-label>
+        <ion-input [(ngModel)]="fecha"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Distancia recorrida</ion-label>
+        <ion-input [(ngModel)]="distancia" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Acerca de las condiciones atmosféricas</ion-label>
+        <ion-textarea [(ngModel)]="condicionesAtmosfericas"></ion-textarea>
+    </ion-item>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="editVuelo()">
+            <ion-icon name="custom-save"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

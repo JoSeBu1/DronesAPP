@@ -1,0 +1,19 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Preguntas Frecuentes</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let item of preguntafrecuente">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title text-wrap>{{item.pregunta}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>{{item.respuesta}}</ion-card-content>
+        </ion-card>
+    </ion-list>
+</ion-content>

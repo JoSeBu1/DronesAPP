@@ -1,0 +1,52 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+          </button>
+        <ion-title>Registrarse</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <img src="assets/imgs/dron.png" class="logo" />
+    <form [formGroup]="myForm" novalidate>
+        <ion-item class="bajarItem">
+            <ion-label floating>Nombre de usuario</ion-label>
+            <ion-input #usuario type="text" formControlName="user"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('user').hasError('required') && myForm.get('user').touched" no-lines>
+            <p color="danger" ion-text>El campo es requerido</p>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('user').hasError('minlength') && myForm.get('user').touched" no-lines>
+            <p color="danger" ion-text>El usuario debe contener 5 caracteres al menos</p>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Correo electrónico</ion-label>
+            <ion-input #email type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched" no-lines>
+            <p color="danger" ion-text>El campo es requerido</p>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('email').hasError('email') && myForm.get('email').touched" no-lines>
+            <p color="danger" ion-text>Debe ser un email válido</p>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input #password1 type="password" formControlName="password1"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('password1').hasError('required') && myForm.get('password1').touched" no-lines>
+            <p color="danger" ion-text>El campo es requerido</p>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('password1').hasError('minlength') && myForm.get('password1').touched" no-lines>
+            <p color="danger" ion-text>La contraseña debe contener 6 caracteres al menos</p>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Confirmar contraseña</ion-label>
+            <ion-input #password2 type="password" formControlName="password2"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="myForm.get('password2').touched && myForm.hasError('mismatchedPasswords') && myForm.get('password1').valid" no-lines>
+            <p color="danger" ion-text>Las contraseñas no coinciden</p>
+        </ion-item>
+        <button class="entrar" (click)="goTo(email.value, password1.value, usuario.value)" [disabled]="myForm.invalid" ion-button block>Registrarse</button>
+    </form>
+</ion-content>

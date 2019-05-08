@@ -1,0 +1,33 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <ion-title>Añadir Dron</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-item>
+        <ion-label floating>Marca</ion-label>
+        <ion-input #marca type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Modelo</ion-label>
+        <ion-input #modelo type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Año Adquisición</ion-label>
+        <ion-input #adquisicion type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Apodo</ion-label>
+        <ion-input #apodo type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Comentarios</ion-label>
+        <ion-textarea #comentarios></ion-textarea>
+    </ion-item>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="addDron(apodo.value, marca.value, modelo.value, adquisicion.value, comentarios.value)">
+            <ion-icon name="custom-save"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

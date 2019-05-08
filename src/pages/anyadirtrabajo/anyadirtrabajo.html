@@ -1,0 +1,25 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <ion-title>Añadir Trabajo</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+    <ion-item>
+        <ion-label floating>Precio</ion-label>
+        <ion-input #precio type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Fecha</ion-label>
+        <ion-input #fecha></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Descripción</ion-label>
+        <ion-textarea #descripcion></ion-textarea>
+    </ion-item>
+    <ion-fab right bottom>
+        <button ion-fab color="primary" (click)="addTrabajo(precio.value, fecha.value, descripcion.value)">
+            <ion-icon name="custom-save"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
