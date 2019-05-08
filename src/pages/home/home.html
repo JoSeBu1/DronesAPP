@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <button ion-button expand="block" color="danger" (click)="doGoogleLogin()">Google Login</button>
+    <ion-item *ngIf="showUser">
+        <ion-avatar item-left>
+            <img [src]="user.imageUrl" alt="">
+        </ion-avatar>
+        <h2>{{user.displayName}}</h2>
+        <p>{{user.email}}</p>
+        <p>{{user.userId}}</p>
+    </ion-item>
 </ion-content>
