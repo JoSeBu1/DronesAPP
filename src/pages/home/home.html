@@ -7,13 +7,24 @@
 </ion-header>
 
 <ion-content padding>
+    Prueba de registro con Google
     <button ion-button expand="block" color="danger" (click)="doGoogleLogin()">Google Login</button>
-    <ion-item *ngIf="showUser">
+    <ion-item *ngIf="showUserGoogle">
         <ion-avatar item-left>
-            <img [src]="user.imageUrl" alt="">
+            <img [src]="userGoogle.imageUrl" alt="">
         </ion-avatar>
-        <h2>{{user.displayName}}</h2>
-        <p>{{user.email}}</p>
-        <p>{{user.userId}}</p>
+        <h2>{{userGoogle.displayName}}</h2>
+        <p>{{userGoogle.email}}</p>
+        <p>{{userGoogle.userId}}</p>
+    </ion-item>
+    Prueba registro con facebook.
+    <button ion-button block (click)="loginFacebook()">Login con facebook</button>
+    <ion-item *ngIf="showUserFacebook">
+        <ion-avatar item-left>
+            <img [src]="userFacebook.picture.data.url" alt="">
+        </ion-avatar>
+        <h2>{{userFacebook.name}}</h2>
+        <p>{{userFacebook.email}}</p>
+        <p>{{userFacebook.id}}</p>
     </ion-item>
 </ion-content>
