@@ -19,6 +19,7 @@ export class CommondataProvider {
   public sesionIniciada: any;
   public usuario: any;
   public email: any;
+  public photoUrl: any;
 
   constructor() {}
 
