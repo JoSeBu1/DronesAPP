@@ -19,12 +19,4 @@
     <p style="text-align:center">Si aún no estás registrado <a (click)="goToSignUp()">Regístrate</a></p>
     <button ion-button block class="entrar google-color" (click)="doGoogleLogin()"><ion-icon item-left nmae="logo-google"></ion-icon>Iniciar sesión con Google</button>
     <button ion-button block class="entrar facebook-color" (click)="loginFacebook()"><ion-icon item-left name="logo-facebook"></ion-icon>Iniciar sesión con Facebook</button>
-    <ion-item *ngIf="showUserFacebook">
-        <ion-avatar item-left>
-            <img [src]="userFacebook.picture.data.url" alt="">
-        </ion-avatar>
-        <h2>{{userFacebook.name}}</h2>
-        <p>{{userFacebook.email}}</p>
-        <p>{{userFacebook.id}}</p>
-    </ion-item>
 </ion-content>

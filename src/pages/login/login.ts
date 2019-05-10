@@ -13,6 +13,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 
 
 export interface GoogleUserId { id: string; }
+export interface FacebookUserId { id: string; }
 
 @Component({
   selector: 'page-login',
@@ -25,11 +26,8 @@ export class LoginPage {
 
   googleUsersIds: GoogleUserId[];
   googleUsersIdsCollection: AngularFirestoreCollection<GoogleUserId>;
-
-  userGoogle: any = {};
-  showUserGoogle: boolean = false;
-  userFacebook: any = {};
-  showUserFacebook: boolean = false;
+  facebookUsersIds: FacebookUserId[];
+  facebookUsersIdsCollection: AngularFirestoreCollection<FacebookUserId>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseProvider: FirebaseProvider, public alertCtrl: AlertController, public commondata: CommondataProvider,
@@ -64,34 +62,6 @@ export class LoginPage {
       });
       alert.present();
     })
-  }
-
-  goToSignUp() {
-    let pagina = this.navParams.get("pagina")
-    this.navCtrl.push(SignupPage, {pagina});
-  }
-
-  goToForgotPassword(){
-    this.navCtrl.push(ContrasenyaolvidadaPage);
-  }
-
-  presentLoader() {
-    this.loader();
-    return this.loading.present();
-  }
-
-  loader() {
-    if (this.loading && this.loading.instance){
-      this.stopLoader();
-    }
-    this.loading = this.loadingController.create({
-      content: 'Cargando, espere por favor'
-    })
-  }
-
-  stopLoader() {
-    this.loading.dismissAll();
-    this.loading = null;
   }
 
   async doGoogleLogin() {
@@ -163,6 +133,85 @@ export class LoginPage {
   	});
   }
 
+  loginFacebook() {
+    this.facebook.login(['public_profile', 'email'])
+    .then(rta => {
+      if(rta.status == 'connected'){
+        this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender',['public_profile','email'])
+          .then(user => {
+            this.facebookUsersIdsCollection = this.angularFirestore.collection('usuarios');
+            this.facebookUsersIdsCollection.snapshotChanges().subscribe(facebookUsersIdsList => {
+              this.facebookUsersIds = facebookUsersIdsList.map(item => {
+                return {
+                  id: item.payload.doc.id
+                }
+              });
+              let existe: boolean;
+              for(let i = 0; i < this.googleUsersIds.length; i++) {
+                if(this.facebookUsersIds[i].id == user.id) {
+                  existe = true;
+                }
+              }
+              if(existe == true) {
+                this.storage.set('UID', user.id);
+                this.commondata.usuario = user.name;
+                this.commondata.email = user.email;
+                this.commondata.photoUrl = user.picture.data.url;
+                this.commondata.dronesCollection = this.angularFirestore.collection('usuarios/' + user.user.uid + '/drones');
+                this.commondata.dronesCollection.snapshotChanges().subscribe(dronList => {
+                  this.commondata.dron = dronList.map(item => {
+                    return {
+                      apodo: item.payload.doc.data().apodo,
+                      marca: item.payload.doc.data().marca,
+                      modelo: item.payload.doc.data().modelo,
+                      anyoAdquisicion: item.payload.doc.data().anyoAdquisicion,
+                      comentarios: item.payload.doc.data().comentarios,
+                      id: item.payload.doc.id
+                    }
+                  });
+                });
+              } else {
+                let email = user.email;
+                let usuario = user.name;
+                let photoUrl = user.picture.data.url;
+                this.angularFirestore.doc('usuarios/' + user.id).set({email, usuario, photoUrl});
+                this.storage.set('UID', user.id);
+                this.commondata.usuario = user.name;
+                this.commondata.email = user.email;
+                this.commondata.photoUrl = user.picture.data.url;
+              }
+            });
+            this.commondata.sesionIniciada = true;
+              this.storage.get('tutorialViewed').then(x => {
+                if(x == false || x == undefined) {
+                  let destinationPage = this.navParams.get("pagina");
+                  this.navCtrl.push(TutorialPage, {destinationPage});
+                } else if (this.navParams.get("pagina") == NoticiasPage) {
+                  this.navCtrl.setRoot(NoticiasPage);
+                } else {
+                this.navCtrl.setRoot(this.navParams.get("pagina"));
+              }
+            })
+          })
+          .catch(error => {
+            console.error( error );
+          });
+      };
+    })
+    .catch(error => {
+      console.error( error );
+    });
+  }
+
+  goToSignUp() {
+    let pagina = this.navParams.get("pagina")
+    this.navCtrl.push(SignupPage, {pagina});
+  }
+
+  goToForgotPassword(){
+    this.navCtrl.push(ContrasenyaolvidadaPage);
+  }
+
   doGoogleLogout() {
     this.googlePlus.logout()
     .then(res => {
@@ -171,27 +220,23 @@ export class LoginPage {
     })
   }
 
-  loginFacebook() {
-    this.facebook.login(['public_profile', 'email'])
-    .then(rta => {
-      if(rta.status == 'connected'){
-        this.getInfo();
-      };
-    })
-    .catch(error =>{
-      console.error( error );
-    });
+  presentLoader() {
+    this.loader();
+    return this.loading.present();
   }
 
-  getInfo() {
-    this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender',['public_profile','email'])
-    .then(data=>{
-      this.showUserFacebook = true; 
-      this.userFacebook = data;
+  loader() {
+    if (this.loading && this.loading.instance){
+      this.stopLoader();
+    }
+    this.loading = this.loadingController.create({
+      content: 'Cargando, espere por favor'
     })
-    .catch(error =>{
-      console.error( error );
-    });
+  }
+
+  stopLoader() {
+    this.loading.dismissAll();
+    this.loading = null;
   }
 
 }
