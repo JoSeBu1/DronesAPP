@@ -67,7 +67,7 @@ export class LoginPage {
     })
   }
 
-  async doGoogleLogin() {
+  async loginGoogle() {
     this.loader();
   	this.presentLoader();
   	this.googlePlus.login({
@@ -140,7 +140,7 @@ export class LoginPage {
   loginFacebook() {
     this.facebook.login(['public_profile', 'email'])
     .then(rta => {
-      if(rta.status == 'connected'){
+      if(rta.status == 'connected') {
         this.facebook.api('/me?fields=id,name,email,first_name,picture,last_name,gender',['public_profile','email'])
           .then(user => {
             this.facebookUsersIdsCollection = this.angularFirestore.collection('usuarios');
@@ -151,12 +151,13 @@ export class LoginPage {
                 }
               });
               let existe: boolean;
-              for(let i = 0; i < this.googleUsersIds.length; i++) {
+              for(let i = 0; i < this.facebookUsersIds.length; i++) {
                 if(this.facebookUsersIds[i].id == user.id) {
                   existe = true;
                 }
               }
               if(existe == true) {
+                alert("Existe");
                 this.storage.set('UID', user.id);
                 this.commondata.usuario = user.name;
                 this.commondata.email = user.email;
@@ -175,6 +176,7 @@ export class LoginPage {
                   });
                 });
               } else {
+                alert("No existe");
                 let email = user.email;
                 let usuario = user.name;
                 let photoUrl = user.picture.data.url;
