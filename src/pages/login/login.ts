@@ -39,7 +39,10 @@ export class LoginPage {
     this.loader();
     this.presentLoader();
     this.firebaseProvider.loginUser(email, password).then(user => {
-      this.firebaseProvider.Session.subscribe(session => this.commondata.sesionIniciada = session);
+      this.firebaseProvider.Session.subscribe(session => {
+        this.commondata.sesionIniciada = session
+        this.commondata.sesionIniciadaConCorreo = true;
+      });
       this.storage.get('tutorialViewed').then(x => {
         if(x == false || x == undefined) {
           let destinationPage = this.navParams.get("pagina");
@@ -116,6 +119,7 @@ export class LoginPage {
         }
       });
       this.commondata.sesionIniciada = true;
+      this.commondata.sesionIniciadaConGoogle = true;
         this.storage.get('tutorialViewed').then(x => {
           if(x == false || x == undefined) {
             let destinationPage = this.navParams.get("pagina");
@@ -182,6 +186,7 @@ export class LoginPage {
               }
             });
             this.commondata.sesionIniciada = true;
+            this.commondata.sesionIniciadaConFacebook = true;
               this.storage.get('tutorialViewed').then(x => {
                 if(x == false || x == undefined) {
                   let destinationPage = this.navParams.get("pagina");
@@ -210,14 +215,6 @@ export class LoginPage {
 
   goToForgotPassword(){
     this.navCtrl.push(ContrasenyaolvidadaPage);
-  }
-
-  doGoogleLogout() {
-    this.googlePlus.logout()
-    .then(res => {
-    }, err => {
-      console.log(err);
-    })
   }
 
   presentLoader() {

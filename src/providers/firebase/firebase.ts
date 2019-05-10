@@ -3,12 +3,16 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 
 @Injectable()
 export class FirebaseProvider {
 
   constructor(private afAuth: AngularFireAuth, private angularFirestore: AngularFirestore,
-    private storage: Storage, public commondata: CommondataProvider) {
+    private storage: Storage, public commondata: CommondataProvider, private googlePlus: GooglePlus,
+    private facebook: Facebook) {
   }
 
   registerUser(email: string, password: string, usuario: string) {
@@ -68,7 +72,21 @@ export class FirebaseProvider {
   }
 
   logout() {
-    this.afAuth.auth.signOut().then(()=>{
+    this.afAuth.auth.signOut().then(() => {
+      this.storage.set('UID', '');
+    });
+  }
+
+  googleLogout() {
+    this.googlePlus.logout()
+    .then(() => {
+      this.storage.set('UID', '');
+    });
+  }
+
+  facebookLogout() {
+    this.facebook.logout()
+    .then(() => {
       this.storage.set('UID', '');
     });
   }

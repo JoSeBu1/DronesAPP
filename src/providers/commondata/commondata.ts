@@ -20,6 +20,9 @@ export class CommondataProvider {
   public usuario: any;
   public email: any;
   public photoUrl: any;
+  public sesionIniciadaConGoogle: boolean;
+  public sesionIniciadaConFacebook: boolean;
+  public sesionIniciadaConCorreo: boolean;
 
   constructor() {}
 

@@ -121,16 +121,22 @@ export class MyApp {
   }
 
   logout() {
-    this.firebaseProvider.logout();
-    this.firebaseProvider.Session.subscribe((session) => {
-      if(!session) {
-        this.nav.setRoot(NoticiasPage);
-        this.activePage = NoticiasPage;
-        this.storage.set('dronActivo', '');
-        this.commondata.dronActivo = undefined;
-        this.commondata.sesionIniciada = session
-      }
-    });
+    if (this.commondata.sesionIniciadaConCorreo == true) {
+      this.firebaseProvider.logout();
+      this.commondata.sesionIniciadaConCorreo = false;
+    } else if (this.commondata.sesionIniciadaConGoogle == true) {
+      this.firebaseProvider.googleLogout();
+      this.commondata.sesionIniciadaConGoogle = false;
+    } else if (this.commondata.sesionIniciadaConFacebook == true) {
+      this.firebaseProvider.facebookLogout();
+      this.commondata.sesionIniciadaConFacebook = false;
+    }
+    this.nav.setRoot(NoticiasPage);
+    this.activePage = NoticiasPage;
+    this.storage.set('dronActivo', '');
+    this.commondata.dronActivo = undefined;
+    this.commondata.sesionIniciada = false;
+    
   }
 
   goToLogIn() {
