@@ -15,7 +15,7 @@
         </ion-card>
         <ion-list no-lines>
             <button menuClose ion-item *ngIf="!commondata.sesionIniciada" (click)="goToLogIn()">
-                    <ion-icon name="log-in" item-left></ion-icon> Iniciar Sesión
+                    <ion-icon name="log-in" item-left></ion-icon> {{'SIDEMENU.LOGIN' | translate}}
             </button>
             <button menuClose ion-item *ngFor="let p of pages" [class.activeHighLight]="checkActive(p)" (click)="openPage(p)">
                 <ion-icon [name]="p.icon" item-left></ion-icon>

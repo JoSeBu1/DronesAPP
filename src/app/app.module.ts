@@ -11,6 +11,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { IonicStorageModule } from '@ionic/storage';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCqkOgOFcf1Vx_EKoIAZLmsmhn83WLhnKY",
@@ -84,9 +87,17 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,//.enablePersistence(),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+         provide: TranslateLoader,
+         useFactory: customTranslateLoader,
+         deps: [HttpClient]
+      }
+     }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -124,7 +135,12 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     GooglePlus,
     Facebook,
     AppVersion,
+    TranslateModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
+
+export function customTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

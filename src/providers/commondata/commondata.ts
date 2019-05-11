@@ -24,6 +24,7 @@ export class CommondataProvider {
   public sesionIniciadaConFacebook: boolean;
   public sesionIniciadaConCorreo: boolean;
   public app: any;
+  public locale: any;
 
   constructor() {}
 

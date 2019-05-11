@@ -1,0 +1,18 @@
+{
+    "SIDEMENU": {
+        "LOGIN": "Iniciar sesión"
+    },
+    "PAGES": {
+        "LOGIN": {
+            "GOOGLELOGIN": "Iniciar sesión con Google",
+            "FACEBOOKLOGIN": "Iniciar sesión con Facebook",
+            "EMAILLOGIN": "O usa tu email para registro o login"
+        },
+        "LOGINWITHEMAIL": {
+            "EMAIL": "Email",
+            "PASS": "Contraseña",
+            "PASSWORDFORGET": "No recuerdo mi contraseña",
+            "LOGINBUTTON": "Iniciar sesión"
+        }
+    }
+}

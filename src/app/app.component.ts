@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { TranslateService } from '@ngx-translate/core';
 
 import { NoticiasPage } from '../pages/noticias/noticias';
 import { MapavueloPage } from '../pages/mapavuelo/mapavuelo';
@@ -31,7 +32,8 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, 
     private firebaseProvider: FirebaseProvider, private toastController: ToastController, public commondata: CommondataProvider,
-    private angularFirestore: AngularFirestore, private storage: Storage, private appVersion: AppVersion) {
+    private angularFirestore: AngularFirestore, private storage: Storage, private appVersion: AppVersion,
+    private _translate: TranslateService) {
     this.initializeApp();
     this.appVersion.getVersionNumber().then((version) => {
       this.commondata.app = version;
@@ -53,6 +55,9 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      let userLang = navigator.language.split('-')[0];
+      this.commondata.locale = navigator.language;
+      this._translate.use(userLang);
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.overlaysWebView(false);
