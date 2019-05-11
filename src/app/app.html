@@ -2,7 +2,7 @@
 <ion-menu [content]="content" type="overlay">
     <ion-content>
         <ion-card text-center class="hide-card" *ngIf="commondata.sesionIniciada">
-            <img [src]="commondata.photoUrl" class="custom-avatar" />
+            <img *ngIf="commondata.sesionIniciadaConFacebook || commondata.sesionIniciadaConGoogle" [src]="commondata.photoUrl" class="custom-avatar" />
             <h1>{{commondata.usuario}}</h1>
             <h3>{{commondata.email}}</h3>
             <ion-item class="item-leave-height">
