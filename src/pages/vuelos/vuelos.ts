@@ -13,6 +13,7 @@ interface Vuelo {
   lugar: string;
   fecha: any;
   condicionesAtmosfericas: string;
+  video: string;
   id?: string;
 }
 
@@ -41,6 +42,7 @@ export class VuelosPage {
             lugar: item.payload.doc.data().lugar,
             fecha: item.payload.doc.data().fecha,
             condicionesAtmosfericas: item.payload.doc.data().condicionesAtmosfericas,
+            video: item.payload.doc.data().video,
             id: item.payload.doc.id
           }
         });

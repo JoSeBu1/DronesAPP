@@ -25,6 +25,10 @@
         <ion-label floating>Acerca de las condiciones atmosféricas</ion-label>
         <ion-textarea [(ngModel)]="condicionesAtmosfericas"></ion-textarea>
     </ion-item>
+    <ion-item>
+        <ion-label floating>Enlace de YT al video del vuelo</ion-label>
+        <ion-input #video></ion-input>
+    </ion-item>
     <ion-fab right bottom>
         <button ion-fab color="primary" (click)="editVuelo(fecha.value)">
             <ion-icon name="custom-save"></ion-icon>

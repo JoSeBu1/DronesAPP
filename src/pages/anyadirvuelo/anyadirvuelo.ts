@@ -14,9 +14,9 @@ export class AnyadirvueloPage {
     private storage: Storage, public commondata: CommondataProvider) {
   }
 
-  addVuelo(baterias: string, lugar: string, fecha: string, distancia: string, condicionesAtmosfericas: string) {
+  addVuelo(baterias: string, lugar: string, fecha: string, distancia: string, condicionesAtmosfericas: string, video: string) {
     this.storage.get('UID').then( x =>  {
-      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/vuelos' ).add({baterias, lugar, fecha, distancia, condicionesAtmosfericas});
+      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/vuelos' ).add({baterias, lugar, fecha, distancia, condicionesAtmosfericas, video});
     });
     this.navCtrl.popToRoot();
   }

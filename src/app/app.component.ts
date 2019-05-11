@@ -35,7 +35,7 @@ export class MyApp {
     this.initializeApp();
     this.appVersion.getVersionNumber().then((version) => {
       this.commondata.app = version;
-    }).catch(e => alert(e));
+    }).catch(e => console.log(e));
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -48,9 +48,7 @@ export class MyApp {
       { title: 'Mapa Vuelo', component: MapavueloPage, icon: "custom-map" },
       { title: 'Acerca de', component: AcercadePage, icon: "custom-info" }
     ];
-    
     this.activePage = this.pages[0];
-
   }
 
   initializeApp() {

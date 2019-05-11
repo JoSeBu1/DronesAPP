@@ -11,6 +11,8 @@ interface Trabajo {
   descripcion: string;
   precio: string;
   fecha: any;
+  pagado: boolean;
+  video: string;
   id?: string;
 }
 
@@ -37,7 +39,8 @@ export class TrabajosPage {
             descripcion: item.payload.doc.data().descripcion,
             precio: item.payload.doc.data().precio,
             fecha: item.payload.doc.data().fecha,
-            pagado: item.payload.doc.data().fecha,
+            pagado: item.payload.doc.data().pagado,
+            video: item.payload.doc.data().video,
             id: item.payload.doc.id
           }
         });

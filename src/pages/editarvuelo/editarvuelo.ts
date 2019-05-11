@@ -16,6 +16,7 @@ export class EditarvueloPage {
   lugar: string;
   fecha: any;
   condicionesAtmosfericas: string;
+  video: string;
   vuelo: any;
 
   public date; 
@@ -33,6 +34,7 @@ export class EditarvueloPage {
     this.lugar = this.vuelo.lugar;
     this.fecha = this.vuelo.fecha;
     this.condicionesAtmosfericas = this.vuelo.condicionesAtmosfericas;
+    this.video = this.vuelo.video;
     this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
     this.myFecha = new Date(this.date).toISOString();
   }
@@ -42,8 +44,9 @@ export class EditarvueloPage {
     let distancia = this.distancia;
     let lugar = this.lugar;
     let condicionesAtmosfericas = this.condicionesAtmosfericas;
+    let video = this.video;
     this.storage.get('UID').then( x =>  {  
-      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/vuelos/${this.vuelo.id}`).update({baterias, distancia, lugar, fecha, condicionesAtmosfericas});
+      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/vuelos/${this.vuelo.id}`).update({baterias, distancia, lugar, fecha, condicionesAtmosfericas, video});
     });
     this.navCtrl.popToRoot();
   }

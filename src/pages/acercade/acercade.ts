@@ -9,10 +9,7 @@ import { CommondataProvider } from '../../providers/commondata/commondata';
 })
 export class AcercadePage {
 
-  app: any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public commondata: CommondataProvider) {
-    
   }
 
 }
