@@ -12,7 +12,7 @@
     <form [formGroup]="myForm" novalidate>
         <ion-item class="bajarItem">
             <ion-label floating>Nombre de usuario</ion-label>
-            <ion-input #usuario type="text" formControlName="user"></ion-input>
+            <ion-input #usuario type="text" autocapitalize="off" formControlName="user"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('user').hasError('required') && myForm.get('user').touched" no-lines>
             <p color="danger" ion-text>El campo es requerido</p>
@@ -22,7 +22,7 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Correo electrónico</ion-label>
-            <ion-input #email type="text" formControlName="email"></ion-input>
+            <ion-input #email type="text" autocapitalize="off" formControlName="email"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched" no-lines>
             <p color="danger" ion-text>El campo es requerido</p>
@@ -32,7 +32,7 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Contraseña</ion-label>
-            <ion-input #password1 type="password" formControlName="password1"></ion-input>
+            <ion-input #password1 type="password" autocapitalize="off" formControlName="password1"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('password1').hasError('required') && myForm.get('password1').touched" no-lines>
             <p color="danger" ion-text>El campo es requerido</p>
@@ -42,7 +42,7 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Confirmar contraseña</ion-label>
-            <ion-input #password2 type="password" formControlName="password2"></ion-input>
+            <ion-input #password2 type="password" autocapitalize="off" formControlName="password2"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('password2').touched && myForm.hasError('mismatchedPasswords') && myForm.get('password1').valid" no-lines>
             <p color="danger" ion-text>Las contraseñas no coinciden</p>
