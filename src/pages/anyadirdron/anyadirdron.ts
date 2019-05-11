@@ -13,9 +13,9 @@ export class AnyadirdronPage {
     private storage: Storage) {
   }
 
-  addDron(apodo: string, marca: string, modelo: string, anyoAdquisicion: number, comentarios: string) {
+  addDron(apodo: string, marca: string, modelo: string, fechaAdquisicion: number, comentarios: string) {
     this.storage.get('UID').then( x =>  {
-      this.angularFirestore.collection('usuarios/' + x + '/drones').add({apodo, marca, modelo, anyoAdquisicion, comentarios});
+      this.angularFirestore.collection('usuarios/' + x + '/drones').add({apodo, marca, modelo, fechaAdquisicion, comentarios});
     });
     this.navCtrl.popToRoot();
   }

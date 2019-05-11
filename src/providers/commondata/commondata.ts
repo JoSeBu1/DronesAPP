@@ -5,7 +5,7 @@ interface Dron {
   apodo: string;
   marca: string;
   modelo: string;
-  anyoAdquisicion: number;
+  fechaAdquisicion: any;
   comentarios: string;
   id?: string;
 }

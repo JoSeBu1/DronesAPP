@@ -14,8 +14,8 @@
         <ion-input #modelo type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Año Adquisición</ion-label>
-        <ion-input #adquisicion type="number"></ion-input>
+        <ion-label floating>Fecha de adquisición</ion-label>
+        <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
         <ion-label floating>Apodo</ion-label>
@@ -26,7 +26,7 @@
         <ion-textarea #comentarios></ion-textarea>
     </ion-item>
     <ion-fab right bottom>
-        <button ion-fab color="primary" (click)="addDron(apodo.value, marca.value, modelo.value, adquisicion.value, comentarios.value)">
+        <button ion-fab color="primary" (click)="addDron(apodo.value, marca.value, modelo.value, fecha.value, comentarios.value)">
             <ion-icon name="custom-save"></ion-icon>
         </button>
     </ion-fab>

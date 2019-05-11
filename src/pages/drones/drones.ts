@@ -26,7 +26,7 @@ export class DronesPage {
             apodo: item.payload.doc.data().apodo,
             marca: item.payload.doc.data().marca,
             modelo: item.payload.doc.data().modelo,
-            anyoAdquisicion: item.payload.doc.data().anyoAdquisicion,
+            fechaAdquisicion: item.payload.doc.data().fechaAdquisicion,
             comentarios: item.payload.doc.data().comentarios,
             id: item.payload.doc.id
           }

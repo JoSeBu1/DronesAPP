@@ -15,7 +15,7 @@
     </ion-item>
     <ion-item no-lines>
         <h2>Año Adquisición</h2>
-        <p>{{anyoAdquisicion || 'No se han introducido datos'}}</p>
+        <p>{{fechaAdquisicion.day + '/' + fechaAdquisicion.month + '/' + fechaAdquisicion.year || 'No se han introducido datos'}}</p>
     </ion-item>
     <ion-item no-lines>
         <h2>Apodo</h2>

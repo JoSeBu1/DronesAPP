@@ -10,7 +10,7 @@ export class VerdronPage implements OnInit {
   marca: string;
   modelo: string;
   apodo: string;
-  anyoAdquisicion: number;
+  fechaAdquisicion: any;
   comentarios: string;
   dron: any;
 
@@ -22,7 +22,7 @@ export class VerdronPage implements OnInit {
     this.marca = this.dron.marca;
     this.modelo = this.dron.modelo;
     this.apodo = this.dron.apodo;
-    this.anyoAdquisicion = this.dron.anyoAdquisicion;
+    this.fechaAdquisicion = this.dron.fechaAdquisicion;
     this.comentarios = this.dron.comentarios;
   }
 
