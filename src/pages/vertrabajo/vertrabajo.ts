@@ -10,6 +10,7 @@ export class VertrabajoPage implements OnInit{
   precio: number;
   fecha: any;
   descripcion: string;
+  pagado: boolean;
   trabajo: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -20,6 +21,8 @@ export class VertrabajoPage implements OnInit{
     this.precio = this.trabajo.precio;
     this.fecha = this.trabajo.fecha;
     this.descripcion = this.trabajo.descripcion;
+    this.pagado = this.trabajo.pagado;
+    console.log(this.pagado);
   }
 
 }

@@ -13,6 +13,7 @@ export class EditartrabajoPage {
   precio: number;
   fecha: any;
   descripcion: string;
+  pagado: boolean;
   trabajo: any;
 
   public date; 
@@ -28,6 +29,7 @@ export class EditartrabajoPage {
     this.precio = this.trabajo.precio;
     this.fecha = this.trabajo.fecha;
     this.descripcion = this.trabajo.descripcion;
+    this.pagado = this.trabajo.pagado;
     this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
     this.myFecha = new Date(this.date).toISOString();
   }
@@ -35,8 +37,9 @@ export class EditartrabajoPage {
   editTrabajo(fecha) {
     let precio = this.precio;
     let descripcion = this.descripcion;
+    let pagado = this.pagado;
     this.storage.get('UID').then( x =>  {  
-      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/trabajos/${this.trabajo.id}`).update({precio, fecha, descripcion});
+      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/trabajos/${this.trabajo.id}`).update({precio, fecha, descripcion, pagado});
     });
     this.navCtrl.popToRoot();
   }

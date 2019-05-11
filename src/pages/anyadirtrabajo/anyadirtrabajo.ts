@@ -14,9 +14,9 @@ export class AnyadirtrabajoPage {
     private storage: Storage, public commondata: CommondataProvider) {
   }
 
-  addTrabajo(precio: string, fecha: string, descripcion: string) {
+  addTrabajo(precio: string, fecha: string, descripcion: string, pagado: boolean) {
     this.storage.get('UID').then( x =>  {
-      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/trabajos' ).add({precio, fecha, descripcion});
+      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/trabajos' ).add({precio, fecha, descripcion, pagado});
     });
     this.navCtrl.popToRoot();
   }

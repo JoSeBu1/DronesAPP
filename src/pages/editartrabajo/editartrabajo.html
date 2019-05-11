@@ -17,6 +17,10 @@
         <ion-label floating>Descripción</ion-label>
         <ion-textarea [(ngModel)]="descripcion"></ion-textarea>
     </ion-item>
+    <ion-item no-lines>
+        <ion-label>Pagado</ion-label>
+        <ion-checkbox item-end [(ngModel)]="pagado"></ion-checkbox>
+    </ion-item>
     <ion-fab right bottom>
         <button ion-fab color="primary" (click)="editTrabajo(fecha.value)">
             <ion-icon name="custom-save"></ion-icon>

@@ -17,8 +17,12 @@
         <ion-label floating>Descripción</ion-label>
         <ion-textarea #descripcion></ion-textarea>
     </ion-item>
+    <ion-item no-lines>
+        <ion-label>Pagado</ion-label>
+        <ion-checkbox item-end #pago></ion-checkbox>
+    </ion-item>
     <ion-fab right bottom>
-        <button ion-fab color="primary" (click)="addTrabajo(precio.value, fecha.value, descripcion.value)">
+        <button ion-fab color="primary" (click)="addTrabajo(precio.value, fecha.value, descripcion.value, pago.value)">
             <ion-icon name="custom-save"></ion-icon>
         </button>
     </ion-fab>

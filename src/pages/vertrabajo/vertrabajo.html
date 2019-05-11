@@ -14,6 +14,10 @@
         <h2>{{fecha.day + '/' + fecha.month + '/' + fecha.year || 'No se ha introducido fecha'}}</h2>
     </ion-item>
     <ion-item no-lines>
+        <ion-label>Pagado</ion-label>
+        <ion-checkbox class="checkbox" [checked]="pagado" disabled item-end></ion-checkbox>
+    </ion-item>
+    <ion-item no-lines>
         <h2>Descripción</h2>
         <p>{{descripcion || 'No se han introducido datos'}}</p>
     </ion-item>
