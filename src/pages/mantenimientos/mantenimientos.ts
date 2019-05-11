@@ -28,7 +28,7 @@ export class MantenimientosPage {
     public commondata: CommondataProvider,private angularFirestore: AngularFirestore, 
     public alertController: AlertController, public toastCtrl: ToastController, private platform: Platform, 
     private events: Events) {
-      this.events.subscribe('dronChanged', () => {
+      this.events.subscribe('dronChanged', (data) => {
         this.ionViewDidEnter();
       });
   }

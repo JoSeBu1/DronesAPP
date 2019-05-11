@@ -133,7 +133,7 @@ export class MyApp {
 
   cambioSelect() {
     this.storage.set('dronActivo', this.commondata.dronActivo);
-    this.events.publish('dronChanged', ());
+    this.events.publish('dronChanged', ("dron"));
   }
 
   logout() {
