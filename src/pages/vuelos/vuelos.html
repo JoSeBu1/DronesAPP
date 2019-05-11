@@ -17,11 +17,11 @@
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditFly(item)">
                     <ion-icon name="create"></ion-icon>
-                    Editar
+                    {{ 'PAGES.VUELOS.EDIT' | translate }}
                 </button>
                 <button color="danger" ion-button (click)="goToDeleteFly(item)">
                     <ion-icon name="trash"></ion-icon>
-                    Eliminar
+                    {{ 'PAGES.VUELOS.DELETE' | translate }}
                 </button>
             </ion-item-options>
         </ion-item-sliding>

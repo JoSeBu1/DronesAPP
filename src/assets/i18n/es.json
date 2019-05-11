@@ -65,7 +65,14 @@
             "REPASS": "Restablecer contraseña"
         },
         "VUELOS": {
-            "HEADER": "Vuelos"
+            "HEADER": "Vuelos",
+            "EDIT": "Editar",
+            "DELETE": "Eliminar"
+        },
+        "MANTENIMIENTOS": {
+            "HEADER": "Mantenimientos",
+            "EDIT": "Editar",
+            "DELETE": "Eliminar"
         }
     }
 }

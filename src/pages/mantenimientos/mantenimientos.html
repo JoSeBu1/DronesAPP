@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Mantenimientos</ion-title>
+        <ion-title>{{ 'PAGES.MANTENIMIENTOS.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -17,11 +17,11 @@
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditMaintenance(item)">
                     <ion-icon name="create"></ion-icon>
-                    Editar
+                    {{ 'PAGES.MANTENIMIENTOS.EDIT' | translate }}
                 </button>
                 <button color="danger" ion-button (click)="goToDeleteMaintenance(item)">
                     <ion-icon name="trash"></ion-icon>
-                    Eliminar
+                    {{ 'PAGES.MANTENIMIENTOS.DELETE' | translate }}
                 </button>
             </ion-item-options>
         </ion-item-sliding>
