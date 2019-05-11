@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, ToastController, Platform } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ToastController, Platform, Events } from 'ionic-angular';
 import { VertrabajoPage } from '../vertrabajo/vertrabajo';
 import { EditartrabajoPage } from '../editartrabajo/editartrabajo';
 import { AnyadirtrabajoPage } from '../anyadirtrabajo/anyadirtrabajo';
@@ -28,7 +28,10 @@ export class TrabajosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider, public alertController: AlertController,
-    public toastCtrl: ToastController, private platform: Platform) {
+    public toastCtrl: ToastController, private platform: Platform, private events: Events) {
+      this.events.subscribe('dronChanged', () => {
+        this.ionViewDidEnter();
+      });
   }
 
   ionViewDidEnter() {

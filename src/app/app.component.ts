@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, ToastController } from 'ionic-angular';
+import { Nav, Platform, ToastController, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -33,7 +33,7 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, 
     private firebaseProvider: FirebaseProvider, private toastController: ToastController, public commondata: CommondataProvider,
     private angularFirestore: AngularFirestore, private storage: Storage, private appVersion: AppVersion,
-    private _translate: TranslateService) {
+    private _translate: TranslateService, private events: Events) {
     this.initializeApp();
     this.appVersion.getVersionNumber().then((version) => {
       this.commondata.app = version;
@@ -133,6 +133,7 @@ export class MyApp {
 
   cambioSelect() {
     this.storage.set('dronActivo', this.commondata.dronActivo);
+    this.events.publish('dronChanged', ());
   }
 
   logout() {
