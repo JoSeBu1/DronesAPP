@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ToastController, Platform } from 'ionic-angular';
 import { VermantenimientoPage } from '../vermantenimiento/vermantenimiento';
 import { EditarmantenimientoPage } from '../editarmantenimiento/editarmantenimiento';
 import { AnyadirmantenimientoPage } from '../anyadirmantenimiento/anyadirmantenimiento';
@@ -22,10 +22,11 @@ export class MantenimientosPage {
 
   mantenimientosCollection: AngularFirestoreCollection<Mantenimiento>;
   mantenimiento: Mantenimiento[];
+  public counter = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, 
     public commondata: CommondataProvider,private angularFirestore: AngularFirestore, 
-    public alertController: AlertController) {
+    public alertController: AlertController, public toastCtrl: ToastController, private platform: Platform) {
   }
 
   ionViewDidEnter() {
@@ -43,6 +44,18 @@ export class MantenimientosPage {
         });
       });
     });
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {
+      if (this.counter == 0) {
+        this.counter++;
+        this.presentToast();
+        setTimeout(() => { this.counter = 0 }, 2000)
+      } else {
+        this.platform.exitApp();
+      }
+    }, 0)
   }
 
   goToMaintenance(item) {
@@ -80,6 +93,15 @@ export class MantenimientosPage {
 
   goToAddMaintenance() {
     this.navCtrl.push(AnyadirmantenimientoPage);
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Presiona otra vez para salir de la aplicación",
+      duration: 2000,
+      position: "bottom"
+    });
+    toast.present();
   }
 
 }

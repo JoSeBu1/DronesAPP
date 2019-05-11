@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController, Platform } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
@@ -18,9 +18,10 @@ export class NoticiasPage {
 
   noticiasCollection: AngularFirestoreCollection<Noticia>;
   noticia: Noticia[];
+  public counter = 0;
 
   constructor(public navCtrl: NavController, private angularFirestore: AngularFirestore, private storage: Storage,
-    public commondata: CommondataProvider) {
+    public commondata: CommondataProvider, public toastCtrl: ToastController, private platform: Platform) {
       this.storage.get('dronActivo').then(x => this.commondata.dronActivo = x);
   }
 
@@ -35,6 +36,27 @@ export class NoticiasPage {
         }
       });
     });
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {
+      if (this.counter == 0) {
+        this.counter++;
+        this.presentToast();
+        setTimeout(() => { this.counter = 0 }, 2000)
+      } else {
+        this.platform.exitApp();
+      }
+    }, 0)
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Presiona otra vez para salir de la aplicación",
+      duration: 2000,
+      position: "bottom"
+    });
+    toast.present();
   }
 
 }
