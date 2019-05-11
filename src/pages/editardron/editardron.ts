@@ -16,7 +16,7 @@ export class EditardronPage implements OnInit{
   comentarios: string;
   dron: any;
 
-  public fecha;
+  public date;
   public myFecha;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
@@ -30,7 +30,7 @@ export class EditardronPage implements OnInit{
     this.apodo = this.dron.apodo;
     this.fechaAdquisicion = this.dron.fechaAdquisicion;
     this.comentarios = this.dron.comentarios;
-    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+    this.date = new Date().setFullYear(this.fechaAdquisicion.year, this.fechaAdquisicion.month-1, this.fechaAdquisicion.day);
     this.myFecha = new Date(this.date).toISOString();
   }
 
