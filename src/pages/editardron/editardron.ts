@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 
@@ -20,8 +20,12 @@ export class EditardronPage implements OnInit{
   public myFecha;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
-    private storage: Storage) {
+    private storage: Storage, public platform: Platform) {
     this.dron = this.navParams.get('item');
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   ngOnInit() {

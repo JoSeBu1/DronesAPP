@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 @Component({
@@ -9,7 +9,11 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 export class ContrasenyaolvidadaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider,
-    public alertController: AlertController) {
+    public alertController: AlertController, public platform: Platform) {
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   enviarEmail(email) {

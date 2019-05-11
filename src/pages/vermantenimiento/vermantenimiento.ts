@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 
 @Component({
   selector: 'page-vermantenimiento',
@@ -12,8 +12,12 @@ export class VermantenimientoPage implements OnInit{
   descripcion: string;
   mantenimiento: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
     this.mantenimiento = this.navParams.get('item');
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   ngOnInit() {

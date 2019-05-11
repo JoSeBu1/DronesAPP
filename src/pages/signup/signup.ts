@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, LoadingController, Loading  } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController, Loading, Platform } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { Storage } from '@ionic/storage';
 import { TutorialPage } from '../tutorial/tutorial';
@@ -17,7 +17,8 @@ export class SignupPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseProvider : FirebaseProvider, public alertCtrl : AlertController, private storage: Storage,
-    public fb: FormBuilder, public commondata: CommondataProvider, public loadingController: LoadingController) {
+    public fb: FormBuilder, public commondata: CommondataProvider, public loadingController: LoadingController,
+    public platform: Platform) {
       this.myForm = this.fb.group({
         user: ['', [Validators.required, Validators.minLength(5)]],
         email: ['', [Validators.required, Validators.email]],
@@ -26,6 +27,10 @@ export class SignupPage {
       },{
         validator: this.matchingPasswords('password1', 'password2')
       });
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   goTo(email: string, password: string, usuario: string){

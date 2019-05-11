@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
@@ -11,7 +11,11 @@ import { CommondataProvider } from '../../providers/commondata/commondata';
 export class AnyadirmantenimientoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
-    private storage: Storage, public commondata: CommondataProvider) {
+    private storage: Storage, public commondata: CommondataProvider, public platform: Platform) {
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   addMantenimiento(precio: string, fecha: string, descripcion: string) {

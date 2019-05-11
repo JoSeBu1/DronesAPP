@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 
@@ -10,7 +10,11 @@ import { Storage } from '@ionic/storage';
 export class AnyadirdronPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
-    private storage: Storage) {
+    private storage: Storage, private platform: Platform) {
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   addDron(apodo: string, marca: string, modelo: string, fechaAdquisicion: number, comentarios: string) {

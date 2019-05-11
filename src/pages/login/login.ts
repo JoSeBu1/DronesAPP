@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, LoadingController, Loading } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController, Loading, Platform } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { CommondataProvider } from '../../providers/commondata/commondata';
@@ -32,7 +32,11 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseProvider: FirebaseProvider, public alertCtrl: AlertController, public commondata: CommondataProvider,
     private storage: Storage, public loadingController: LoadingController, private googlePlus: GooglePlus,
-    private facebook: Facebook, private angularFirestore: AngularFirestore) { 
+    private facebook: Facebook, private angularFirestore: AngularFirestore, public platform: Platform) { 
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   goTo(email: string, password: string) {

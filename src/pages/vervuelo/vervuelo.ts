@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -19,8 +19,13 @@ export class VervueloPage implements OnInit{
   hayVideo: boolean;
   vuelo: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sanitizer: DomSanitizer,
+    public platform: Platform) {
     this.vuelo = this.navParams.get('item');
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   ngOnInit() {

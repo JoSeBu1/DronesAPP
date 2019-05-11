@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
@@ -20,8 +20,12 @@ export class EditarmantenimientoPage implements OnInit{
   public myFecha;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
-    private storage: Storage, public commondata: CommondataProvider) {
+    private storage: Storage, public commondata: CommondataProvider, public platform: Platform) {
     this.mantenimiento = this.navParams.get('item');
+  }
+
+  ionViewWillEnter() {
+    this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
   ngOnInit() {
