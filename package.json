@@ -20,7 +20,7 @@
         "@angular/http": "5.2.11",
         "@angular/platform-browser": "5.2.11",
         "@angular/platform-browser-dynamic": "5.2.11",
-        "@ionic-native/app-version": "5.5.1",
+        "@ionic-native/app-version": "^5.5.1",
         "@ionic-native/core": "5.5.1",
         "@ionic-native/facebook": "5.5.1",
         "@ionic-native/google-plus": "5.5.1",
@@ -73,7 +73,8 @@
                 "APP_NAME": "DronesAPP",
                 "FACEBOOK_HYBRID_APP_EVENTS": "false",
                 "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
-            }
+            },
+            "cordova-plugin-app-version": {}
         },
         "platforms": [
             "android"

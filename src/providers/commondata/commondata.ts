@@ -23,6 +23,7 @@ export class CommondataProvider {
   public sesionIniciadaConGoogle: boolean;
   public sesionIniciadaConFacebook: boolean;
   public sesionIniciadaConCorreo: boolean;
+  public app: any;
 
   constructor() {}
 

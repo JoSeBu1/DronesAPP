@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 import { NoticiasPage } from '../pages/noticias/noticias';
 import { MapavueloPage } from '../pages/mapavuelo/mapavuelo';
@@ -30,8 +31,11 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, 
     private firebaseProvider: FirebaseProvider, private toastController: ToastController, public commondata: CommondataProvider,
-    private angularFirestore: AngularFirestore, private storage: Storage) {
+    private angularFirestore: AngularFirestore, private storage: Storage, private appVersion: AppVersion) {
     this.initializeApp();
+    this.appVersion.getVersionNumber().then((version) => {
+      this.commondata.app = version;
+    }).catch(e => alert(e));
 
     // used for an example of ngFor and navigation
     this.pages = [
