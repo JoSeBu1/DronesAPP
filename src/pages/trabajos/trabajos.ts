@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
 interface Trabajo {
   descripcion: string;
   precio: string;
-  fecha: string;
+  fecha: any;
   id?: string;
 }
 

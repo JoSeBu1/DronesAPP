@@ -11,9 +11,13 @@ import { CommondataProvider } from '../../providers/commondata/commondata';
 export class EditartrabajoPage {
 
   precio: number;
-  fecha: string;
+  fecha: any;
   descripcion: string;
   trabajo: any;
+
+  public date; 
+  public myFecha;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider) {
@@ -24,11 +28,12 @@ export class EditartrabajoPage {
     this.precio = this.trabajo.precio;
     this.fecha = this.trabajo.fecha;
     this.descripcion = this.trabajo.descripcion;
+    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+    this.myFecha = new Date(this.date).toISOString();
   }
 
-  editTrabajo() {
+  editTrabajo(fecha) {
     let precio = this.precio;
-    let fecha = this.fecha;
     let descripcion = this.descripcion;
     this.storage.get('UID').then( x =>  {  
       this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/trabajos/${this.trabajo.id}`).update({precio, fecha, descripcion});

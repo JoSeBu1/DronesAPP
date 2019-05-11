@@ -11,7 +11,7 @@
     <ion-list no-lines>
         <ion-item-sliding *ngFor="let item of trabajo">
             <ion-item (click)="goToWork(item)">
-                <h2>{{item.fecha || 'No se ha introducido fecha'}}</h2>
+                <h2>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'No se ha introducido fecha'}}</h2>
                 <p>{{item.precio || 'No se ha introducido precio'}}€</p>
             </ion-item>
             <ion-item-options side="right">

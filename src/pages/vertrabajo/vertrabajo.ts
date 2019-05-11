@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class VertrabajoPage implements OnInit{
 
   precio: number;
-  fecha: string;
+  fecha: any;
   descripcion: string;
   trabajo: any;
 
