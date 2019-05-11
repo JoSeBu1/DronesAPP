@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { IonicStorageModule } from '@ionic/storage';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCqkOgOFcf1Vx_EKoIAZLmsmhn83WLhnKY",
@@ -122,6 +123,7 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     SplashScreen,
     GooglePlus,
     Facebook,
+    AppVersion,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
