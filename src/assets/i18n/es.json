@@ -1,18 +1,71 @@
 {
     "SIDEMENU": {
-        "LOGIN": "Iniciar sesión"
+        "LOGIN": "Iniciar sesión",
+        "NOTICIAS": "Noticias",
+        "DRONES": "Drones",
+        "VUELOS": "Vuelos",
+        "MANTENIMIENTOS": "Mantenimientos",
+        "TRABAJOS": "Trabajos",
+        "FAQ": "Preguntas Frecuentes",
+        "MAPA": "Mapa Vuelo",
+        "ACERCA": "Acerca de",
+        "CERRAR": "Cerrar sesión"
     },
     "PAGES": {
         "LOGIN": {
-            "GOOGLELOGIN": "Iniciar sesión con Google",
-            "FACEBOOKLOGIN": "Iniciar sesión con Facebook",
-            "EMAILLOGIN": "O usa tu email para registro o login"
-        },
-        "LOGINWITHEMAIL": {
-            "EMAIL": "Email",
+            "HEADER": "Iniciar sesión",
+            "CORREO": "Correo electrónico",
             "PASS": "Contraseña",
-            "PASSWORDFORGET": "No recuerdo mi contraseña",
-            "LOGINBUTTON": "Iniciar sesión"
+            "PASSFORGOT": "¿Contraseña olvidada?",
+            "EMAILLOGIN": "Iniciar sesión",
+            "EMAILSIGNUP1": "Si aún no estás registrado.",
+            "EMAILSIGNUP2": "Regístrate",
+            "GOOGLELOGIN": "Iniciar sesión con Google",
+            "FACEBOOKLOGIN": "Iniciar sesión con Facebook"
+
+        },
+        "SIGNUP": {
+            "HEADER": "Registrarse",
+            "USUARIO": "Nombre de usuario",
+            "CAMPOREQUERIDO": "El campo es requerido",
+            "USUARIOCARACTERESMINIMOS": "El usuario debe contener 5 caracteres al menos",
+            "CORREO": "Correo electrónico",
+            "EMAILINVALIDO": "Debe ser un email válido",
+            "PASS": "Contraseña",
+            "PASSCARACTERESMINIMOS": "La contraseña debe contener 6 caracteres al menos",
+            "CONFIRMPASS": "Confirmar contraseña",
+            "PASSARENOTTHESAME": "Las contraseñas no coinciden",
+            "SIGNUPBUTTON": "Registrarse"
+        },
+        "NOTICIAS": {
+            "HEADER": "Noticias"
+        },
+        "DRONES": {
+            "HEADER": "Drones",
+            "EDIT": "Editar",
+            "DELETE": "Eliminar"
+        },
+        "MAP": {
+            "HEADER": "Mapa Vuelo"
+        },
+        "FAQ": {
+            "HEADER": "Preguntas Frecuentes"
+        },
+        "ACERCA": {
+            "HEADER": "Acerca de"
+        },
+        "TRABAJOS": {
+            "HEADER": "Trabajos",
+            "EDIT": "Editar",
+            "DELETE": "Eliminar"
+        },
+        "PASSFORGOT": {
+            "HEADER": "Contraseña Olvidada",
+            "CORREO": "Correo electrónico",
+            "REPASS": "Restablecer contraseña"
+        },
+        "VUELOS": {
+            "HEADER": "Vuelos"
         }
     }
 }

@@ -62,6 +62,7 @@ export class LoginPage {
       })
     })
     .catch(err=>{
+      this.loader();
       let alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: err.message,

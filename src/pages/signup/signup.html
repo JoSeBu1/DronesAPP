@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
               <ion-icon name="menu"></ion-icon>
           </button>
-        <ion-title>Registrarse</ion-title>
+        <ion-title>{{ 'PAGES.SIGNUP.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -11,42 +11,42 @@
     <img src="assets/imgs/dron.png" class="logo" />
     <form [formGroup]="myForm" novalidate>
         <ion-item class="bajarItem">
-            <ion-label floating>Nombre de usuario</ion-label>
+            <ion-label floating>{{ 'PAGES.SIGNUP.USUARIO' | translate }}</ion-label>
             <ion-input #usuario type="text" autocapitalize="off" formControlName="user"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('user').hasError('required') && myForm.get('user').touched" no-lines>
-            <p color="danger" ion-text>El campo es requerido</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.CAMPOREQUERIDO' | translate }}</p>
         </ion-item>
         <ion-item *ngIf="myForm.get('user').hasError('minlength') && myForm.get('user').touched" no-lines>
-            <p color="danger" ion-text>El usuario debe contener 5 caracteres al menos</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.USUARIOCARACTERESMINIMOS' | translate }}</p>
         </ion-item>
         <ion-item>
-            <ion-label floating>Correo electrónico</ion-label>
+            <ion-label floating>{{ 'PAGES.LOGIN.CORREO' | translate }}</ion-label>
             <ion-input #email type="text" autocapitalize="off" formControlName="email"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched" no-lines>
-            <p color="danger" ion-text>El campo es requerido</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.CAMPOREQUERIDO' | translate }}</p>
         </ion-item>
         <ion-item *ngIf="myForm.get('email').hasError('email') && myForm.get('email').touched" no-lines>
-            <p color="danger" ion-text>Debe ser un email válido</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.EMAILINVALIDO' | translate }}</p>
         </ion-item>
         <ion-item>
-            <ion-label floating>Contraseña</ion-label>
+            <ion-label floating>{{ 'PAGES.SIGNUP.PASS' | translate }}</ion-label>
             <ion-input #password1 type="password" autocapitalize="off" formControlName="password1"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('password1').hasError('required') && myForm.get('password1').touched" no-lines>
-            <p color="danger" ion-text>El campo es requerido</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.CAMPOREQUERIDO' | translate }}</p>
         </ion-item>
         <ion-item *ngIf="myForm.get('password1').hasError('minlength') && myForm.get('password1').touched" no-lines>
-            <p color="danger" ion-text>La contraseña debe contener 6 caracteres al menos</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.PASSCARACTERESMINIMOS' | translate }}</p>
         </ion-item>
         <ion-item>
-            <ion-label floating>Confirmar contraseña</ion-label>
+            <ion-label floating>{{ 'PAGES.SIGNUP.CONFIRMPASS' | translate }}</ion-label>
             <ion-input #password2 type="password" autocapitalize="off" formControlName="password2"></ion-input>
         </ion-item>
         <ion-item *ngIf="myForm.get('password2').touched && myForm.hasError('mismatchedPasswords') && myForm.get('password1').valid" no-lines>
-            <p color="danger" ion-text>Las contraseñas no coinciden</p>
+            <p color="danger" ion-text>{{ 'PAGES.SIGNUP.PASSARENOTTHESAME' | translate }}</p>
         </ion-item>
-        <button class="entrar" (click)="goTo(email.value, password1.value, usuario.value)" [disabled]="myForm.invalid" ion-button block>Registrarse</button>
+        <button class="entrar" (click)="goTo(email.value, password1.value, usuario.value)" [disabled]="myForm.invalid" ion-button block>{{ 'PAGES.SIGNUP.SIGNUPBUTTON' | translate }}</button>
     </form>
 </ion-content>

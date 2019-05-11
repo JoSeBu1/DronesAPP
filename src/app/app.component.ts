@@ -41,14 +41,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Noticias', component: NoticiasPage, icon: "custom-news" },
-      { title: 'Drones', component: DronesPage, icon: "custom-drone" },
-      { title: 'Vuelos', component: VuelosPage, icon: "custom-flight" },
-      { title: 'Mantenimientos', component: MantenimientosPage, icon: "custom-maintenance" },
-      { title: 'Trabajos', component: TrabajosPage, icon: "custom-work" },
-      { title: 'Preguntas Frecuentes', component: PreguntasfrecuentesPage, icon: "custom-faq" },
-      { title: 'Mapa Vuelo', component: MapavueloPage, icon: "custom-map" },
-      { title: 'Acerca de', component: AcercadePage, icon: "custom-info" }
+      { title: 'SIDEMENU.NOTICIAS', component: NoticiasPage, icon: "custom-news" },
+      { title: 'SIDEMENU.DRONES', component: DronesPage, icon: "custom-drone" },
+      { title: 'SIDEMENU.VUELOS', component: VuelosPage, icon: "custom-flight" },
+      { title: 'SIDEMENU.MANTENIMIENTOS', component: MantenimientosPage, icon: "custom-maintenance" },
+      { title: 'SIDEMENU.TRABAJOS', component: TrabajosPage, icon: "custom-work" },
+      { title: 'SIDEMENU.FAQ', component: PreguntasfrecuentesPage, icon: "custom-faq" },
+      { title: 'SIDEMENU.MAPA', component: MapavueloPage, icon: "custom-map" },
+      { title: 'SIDEMENU.ACERCA', component: AcercadePage, icon: "custom-info" }
     ];
     this.activePage = this.pages[0];
   }
@@ -61,7 +61,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.overlaysWebView(false);
-      this.splashScreen.hide();
+      this.hideSplashScreen();
       this.storage.get('UID').then(x =>  {
         if(x == '' || x == null || x == undefined) {
           //No hay X
@@ -89,6 +89,14 @@ export class MyApp {
         }
       });
     });
+  }
+
+  hideSplashScreen() {
+    if (this.splashScreen) {
+      setTimeout(() => {
+        this.splashScreen.hide();
+      }, 100);
+    }
   }
 
   openPage(page) {

@@ -1,22 +1,22 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Iniciar Sesión</ion-title>
+        <ion-title>{{ 'PAGES.LOGIN.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <img src="assets/imgs/dron.png" class="logo" />
     <ion-item class="bajarItem">
-        <ion-label floating>Correo electrónico</ion-label>
+        <ion-label floating>{{ 'PAGES.LOGIN.CORREO' | translate }}</ion-label>
         <ion-input #email type="text" autocapitalize="off" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Contraseña</ion-label>
+        <ion-label floating>{{ 'PAGES.LOGIN.PASS' | translate }}</ion-label>
         <ion-input #password type="password" autocapitalize="off" required></ion-input>
     </ion-item>
-    <p style="text-align:right" class="bajarItem"><a (click)="goToForgotPassword()">¿Contraseña olvidada?</a></p>
-    <button class="entrar" (click)="goTo(email.value, password.value)" ion-button block>Iniciar Sesión</button>
-    <p style="text-align:center">Si aún no estás registrado <a (click)="goToSignUp()">Regístrate</a></p>
-    <button ion-button block icon-left class="entrar google-color" (click)="loginGoogle()"><ion-icon name="logo-google"></ion-icon>Iniciar sesión con Google</button>
-    <button ion-button block icon-left class="entrar facebook-color" (click)="loginFacebook()"><ion-icon name="logo-facebook"></ion-icon>Iniciar sesión con Facebook</button>
+    <p style="text-align:right" class="bajarItem"><a (click)="goToForgotPassword()">{{ 'PAGES.LOGIN.PASSFORGOT' | translate }}</a></p>
+    <button class="entrar" (click)="goTo(email.value, password.value)" ion-button block>{{ 'PAGES.LOGIN.EMAILLOGIN' | translate }}</button>
+    <p style="text-align:center">{{ 'PAGES.LOGIN.EMAILSIGNUP1' | translate }}<a (click)="goToSignUp()">{{ 'PAGES.LOGIN.EMAILSIGNUP2' | translate }}</a></p>
+    <button ion-button block icon-left class="entrar google-color" (click)="loginGoogle()"><ion-icon name="logo-google"></ion-icon>{{ 'PAGES.LOGIN.GOOGLELOGIN' | translate }}</button>
+    <button ion-button block icon-left class="entrar facebook-color" (click)="loginFacebook()"><ion-icon name="logo-facebook"></ion-icon>{{ 'PAGES.LOGIN.FACEBOOKLOGIN' | translate }}</button>
 </ion-content>

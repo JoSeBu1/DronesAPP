@@ -1,13 +1,13 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Contraseña Olvidada</ion-title>
+        <ion-title>{{ 'PAGES.PASSFORGOT.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Correo electrónico</ion-label>
+        <ion-label floating>{{ 'PAGES.PASSFORGOT.CORREO' | translate }}</ion-label>
         <ion-input #email type="text" required></ion-input>
     </ion-item>
-    <button class="entrar" (click)="enviarEmail(email.value)" ion-button block>Restablecer Contraseña</button>
+    <button class="entrar" (click)="enviarEmail(email.value)" ion-button block>{{ 'PAGES.PASSFORGOT.REPASS' | translate }}</button>
 </ion-content>
