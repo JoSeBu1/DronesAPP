@@ -11,7 +11,7 @@ interface Vuelo {
   baterias: string;
   distancia: string;
   lugar: string;
-  fecha: string;
+  fecha: any;
   condicionesAtmosfericas: string;
   id?: string;
 }

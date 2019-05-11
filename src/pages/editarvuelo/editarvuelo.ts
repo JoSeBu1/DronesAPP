@@ -14,9 +14,12 @@ export class EditarvueloPage {
   distancia: string;
   dron: string;
   lugar: string;
-  fecha: string;
+  fecha: any;
   condicionesAtmosfericas: string;
   vuelo: any;
+
+  public date; 
+  public myFecha;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider) {
@@ -30,13 +33,14 @@ export class EditarvueloPage {
     this.lugar = this.vuelo.lugar;
     this.fecha = this.vuelo.fecha;
     this.condicionesAtmosfericas = this.vuelo.condicionesAtmosfericas;
+    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+    this.myFecha = new Date(this.date).toISOString();
   }
 
-  editVuelo() {
+  editVuelo(fecha) {
     let baterias = this.baterias;
     let distancia = this.distancia;
     let lugar = this.lugar;
-    let fecha = this.fecha;
     let condicionesAtmosfericas = this.condicionesAtmosfericas;
     this.storage.get('UID').then( x =>  {  
       this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/vuelos/${this.vuelo.id}`).update({baterias, distancia, lugar, fecha, condicionesAtmosfericas});

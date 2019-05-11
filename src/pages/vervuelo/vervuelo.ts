@@ -11,7 +11,7 @@ export class VervueloPage implements OnInit{
   distancia: string;
   dron: string;
   lugar: string;
-  fecha: string;
+  fecha: any;
   condicionesAtmosfericas: string;
   vuelo: any;
 

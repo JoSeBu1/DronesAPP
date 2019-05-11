@@ -12,7 +12,7 @@
         <ion-item-sliding *ngFor="let item of vuelo">
             <ion-item (click)="goToFly(item)">
                 <h2>{{item.lugar || 'No se han introducido datos'}}</h2>
-                <p>{{item.fecha || 'No se han introducido datos'}}</p>
+                <h2>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'No se ha introducido fecha'}}</h2>
             </ion-item>
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditFly(item)">
