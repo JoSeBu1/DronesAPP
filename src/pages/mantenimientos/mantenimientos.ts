@@ -10,7 +10,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 interface Mantenimiento {
   precio: number;
   descripcion: string;
-  fecha: string;
+  fecha: any;
   id?: string;
 }
 

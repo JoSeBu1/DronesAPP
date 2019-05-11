@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
 
+
 @Component({
   selector: 'page-editarmantenimiento',
   templateUrl: 'editarmantenimiento.html',
@@ -11,9 +12,12 @@ import { CommondataProvider } from '../../providers/commondata/commondata';
 export class EditarmantenimientoPage implements OnInit{
 
   precio: number;
-  fecha: string;
+  fecha: any;
   descripcion: string;
   mantenimiento: any;
+
+  public date; 
+  public myFecha;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider) {
@@ -24,11 +28,12 @@ export class EditarmantenimientoPage implements OnInit{
     this.precio = this.mantenimiento.precio;
     this.fecha = this.mantenimiento.fecha;
     this.descripcion = this.mantenimiento.descripcion;
+    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+    this.myFecha = new Date(this.date).toISOString();
   }
 
-  editMantenimiento() {
+  editMantenimiento(fecha) {
     let precio = this.precio;
-    let fecha = this.fecha;
     let descripcion = this.descripcion;
     this.storage.get('UID').then( x =>  {  
       this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/mantenimientos/${this.mantenimiento.id}`).update({precio, fecha, descripcion});

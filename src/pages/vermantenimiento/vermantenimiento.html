@@ -11,7 +11,7 @@
     </ion-item>
     <ion-item no-lines>
         <h2>Fecha</h2>
-        <p>{{fecha || 'No se han introducido datos'}}</p>
+        <p>{{fecha.day + '/' + fecha.month + '/' + fecha.year || 'No se han introducido datos'}}</p>
     </ion-item>
     <ion-item no-lines>
         <h2>Descripción</h2>

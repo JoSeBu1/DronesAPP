@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class VermantenimientoPage implements OnInit{
 
   precio: number;
-  fecha: string;
+  fecha: any;
   descripcion: string;
   mantenimiento: any;
 
