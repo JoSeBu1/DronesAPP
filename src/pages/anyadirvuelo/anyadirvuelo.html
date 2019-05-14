@@ -1,32 +1,32 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Añadir Vuelo</ion-title>
+        <ion-title>{{ 'PAGES.ADDVUELOS.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Numero de baterias</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.NBATERIES' | translate }}</ion-label>
         <ion-input #baterias type="number" required></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Lugar</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.SITE' | translate }}</ion-label>
         <ion-input #lugar type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Fecha</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.DATE' | translate }}</ion-label>
         <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label floating>Distancia recorrida(km)</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.DISTANCE' | translate }}</ion-label>
         <ion-input #distancia type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Acerca de las condiciones atmosféricas</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.TEMP' | translate }}</ion-label>
         <ion-textarea #condicionesAtmosfericas></ion-textarea>
     </ion-item>
     <ion-item>
-        <ion-label floating>Enlace de YT al video del vuelo</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDVUELOS.YTLINK' | translate }}</ion-label>
         <ion-input #video></ion-input>
     </ion-item>
     <ion-fab right bottom>

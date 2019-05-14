@@ -11,8 +11,8 @@
     <ion-list no-lines>
         <ion-item-sliding *ngFor="let item of trabajo">
             <ion-item (click)="goToWork(item)">
-                <h2>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'No se ha introducido fecha'}}</h2>
-                <p>{{item.precio || 'No se ha introducido precio'}}€</p>
+                <h2>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'PAGES.TRABAJOS.NOTDATE' | translate}}</h2>
+                <p>{{item.precio || 'PAGES.TRABAJOS.NOTPRICE' | translate}}€</p>
             </ion-item>
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditWork(item)">

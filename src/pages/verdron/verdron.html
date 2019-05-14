@@ -1,28 +1,28 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Ver Dron</ion-title>
+        <ion-title>{{ 'PAGES.VIEWDRONES.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item no-lines>
-        <h2>Marca</h2>
-        <p>{{marca || 'No se han introducido datos'}}</p>
+        <h2>{{ 'PAGES.VIEWDRONES.BRAND' | translate }}</h2>
+        <p>{{marca || 'PAGES.VIEWDRONES.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
-        <h2>Modelo</h2>
-        <p>{{modelo || 'No se han introducido datos'}}</p>
+        <h2>{{ 'PAGES.VIEWDRONES.MODEL' | translate }}</h2>
+        <p>{{modelo || 'PAGES.VIEWDRONES.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
-        <h2>Año Adquisición</h2>
-        <p>{{fechaAdquisicion.day + '/' + fechaAdquisicion.month + '/' + fechaAdquisicion.year || 'No se han introducido datos'}}</p>
+        <h2>{{ 'PAGES.VIEWDRONES.ADQUISITIONDATE' | translate }}</h2>
+        <p>{{fechaAdquisicion.day + '/' + fechaAdquisicion.month + '/' + fechaAdquisicion.year || 'PAGES.VIEWDRONES.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
-        <h2>Apodo</h2>
-        <p>{{apodo || 'No se han introducido datos'}}</p>
+        <h2>{{ 'PAGES.VIEWDRONES.NICK' | translate }}</h2>
+        <p>{{apodo || 'PAGES.VIEWDRONES.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
-        <h2>Comentarios</h2>
-        <p>{{comentarios || 'No se han introducido datos'}}</p>
+        <h2>{{ 'PAGES.VIEWDRONES.COMMENTS' | translate }}</h2>
+        <p>{{comentarios || 'PAGES.VIEWDRONES.EMPTY' | translate}}</p>
     </ion-item>
 </ion-content>

@@ -1,28 +1,28 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Editar Dron</ion-title>
+        <ion-title>{{ 'PAGES.EDITDRON.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Marca</ion-label>
+        <ion-label floating>{{ 'PAGES.EDITDRON.BRAND' | translate }}</ion-label>
         <ion-input [(ngModel)]="marca" type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Modelo</ion-label>
+        <ion-label floating>{{ 'PAGES.EDITDRON.MODEL' | translate }}</ion-label>
         <ion-input [(ngModel)]="modelo" type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Fecha de adquisición</ion-label>
+        <ion-label floating>{{ 'PAGES.EDITDRON.DATE' | translate }}</ion-label>
         <ion-datetime displayFormat="DD/MM/YYYY" #fecha [(ngModel)]="myFecha" pickerFormat="DD MM YYYY" doneText="OK" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label floating>Apodo</ion-label>
+        <ion-label floating>{{ 'PAGES.EDITDRON.NICK' | translate }}</ion-label>
         <ion-input [(ngModel)]="apodo" type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Comentarios</ion-label>
+        <ion-label floating>{{ 'PAGES.EDITDRON.COMMENTS' | translate }}</ion-label>
         <ion-textarea [(ngModel)]="comentarios" type="text"></ion-textarea>
     </ion-item>
     <ion-fab right bottom>

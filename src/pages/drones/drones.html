@@ -11,8 +11,8 @@
     <ion-list no-lines>
         <ion-item-sliding *ngFor="let item of commondata.dron">
             <ion-item (click)="goToDron(item)">
-                <h2>{{item.marca || 'No se ha introducido marca'}}</h2>
-                <p>{{item.modelo || 'No se ha introducido modelo'}}</p>
+                <h2>{{item.marca || 'PAGES.DRONES.NOTBRAND' | translate }}</h2>
+                <p>{{item.modelo || 'PAGES.DRONES.NOTMODEL' | translate}}</p>
             </ion-item>
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditDron(item)">

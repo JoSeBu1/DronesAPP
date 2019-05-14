@@ -1,28 +1,28 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Añadir Dron</ion-title>
+        <ion-title>{{ 'PAGES.ADDDRON.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Marca</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDDRON.BRAND' | translate }}</ion-label>
         <ion-input #marca type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Modelo</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDDRON.MODEL' | translate }}</ion-label>
         <ion-input #modelo type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Fecha de adquisición</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDDRON.ADQUISITIONDATE' | translate }}</ion-label>
         <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label floating>Apodo</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDDRON.NICK' | translate }}</ion-label>
         <ion-input #apodo type="text"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Comentarios</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDDRON.COMMENTS' | translate }}</ion-label>
         <ion-textarea #comentarios></ion-textarea>
     </ion-item>
     <ion-fab right bottom>

@@ -1,16 +1,16 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Añadir Trabajo</ion-title>
+        <ion-title>{{ 'PAGES.ADDTRABAJOS.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Precio</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDTRABAJOS.PRICE' | translate }}</ion-label>
         <ion-input #precio type="number"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Fecha</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDTRABAJOS.DATE' | translate }}</ion-label>
         <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
@@ -18,11 +18,11 @@
         <ion-textarea #descripcion></ion-textarea>
     </ion-item>
     <ion-item>
-        <ion-label floating>Enlace de YT al video del vuelo</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDTRABAJOS.YTLINK' | translate }}</ion-label>
         <ion-input #video></ion-input>
     </ion-item>
     <ion-item no-lines>
-        <ion-label>Pagado</ion-label>
+        <ion-label>{{ 'PAGES.ADDTRABAJOS.PAID' | translate }}</ion-label>
         <ion-checkbox item-end #pago></ion-checkbox>
     </ion-item>
     <ion-fab right bottom>

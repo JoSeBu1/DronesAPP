@@ -1,20 +1,20 @@
 <ion-header no-border>
     <ion-navbar transparent>
-        <ion-title>Añadir Mantenimiento</ion-title>
+        <ion-title>{{ 'PAGES.ADDMANTENIMIENTOS.HEADER' | translate }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding-horizontal>
     <ion-item>
-        <ion-label floating>Precio</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDMANTENIMIENTOS.PRICE' | translate }}</ion-label>
         <ion-input #precio type="number"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label floating>Fecha</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDMANTENIMIENTOS.DATE' | translate }}</ion-label>
         <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label floating>Descripción</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDMANTENIMIENTOS.DESCRIPTION' | translate }}</ion-label>
         <ion-textarea #descripcion></ion-textarea>
     </ion-item>
     <ion-fab right bottom>

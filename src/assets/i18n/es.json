@@ -11,6 +11,18 @@
         "ACERCA": "Acerca de",
         "CERRAR": "Cerrar sesión"
     },
+    "TUTORIAL": {
+        "TUTORIAL10": "Hola Bienvenido a DronesAPP, la aplicación para llevar el control de tus drones.",
+        "TUTORIAL20": "Para añadir",
+        "TUTORIAL21": "Dirigirte a la pagina drones, pulsa el botón +, y rellena el formulario.",
+        "TUTORIAL30": "Para editar",
+        "TUTORIAL31": "Desplaza hacia la izquierda lo que quieras editar, pulsa editar y rellena el formulario.",
+        "TUTORIAL40": "Para eliminar",
+        "TUTORIAL41": "Desplaza hacia la izquierda lo que quieras eliminar y pulsa elimiar.",
+        "TUTORIAL50": "Para consultar vuelos, mantenimientos o trabajos de un dron.",
+        "TUTORIAL51": "En el menú lateral, donde pone: Dron que desea consultar, seleccione el dron que desea consultar, para ver los Vuelos, Mantenimientos y Trabajos de ese dron.",
+        "TUTORIALEXIT": "Finalizar Tutorial"
+    },
     "PAGES": {
         "LOGIN": {
             "HEADER": "Iniciar sesión",
@@ -43,7 +55,34 @@
         "DRONES": {
             "HEADER": "Drones",
             "EDIT": "Editar",
-            "DELETE": "Eliminar"
+            "DELETE": "Eliminar",
+            "NOTBRAND": "No se ha introducido Marca",
+            "NOTMODEL": "No se ha introducido Modelo"
+        },
+        "ADDDRON": {
+            "HEADER": "Añadir Dron",
+            "BRAND": "Marca",
+            "MODEL": "Modelo",
+            "ADQUISITIONDATE": "Fecha de adquisición",
+            "NICK": "Apodo",
+            "COMMENTS": "Comentarios"
+        },
+        "EDITDRON": {
+            "HEADER": "Editar Dron",
+            "BRAND": "Marca",
+            "MODEL": "Modelo",
+            "ADQUISITIONDATE": "Fecha de adquisición",
+            "NICK": "Apodo",
+            "COMMENTS": "Comentarios"
+        },
+        "VIEWDRONES": {
+            "HEADER": "Ver Drones",
+            "BRAND": "Marca",
+            "MODEL": "Modelo",
+            "ADQUISITIONDATE": "Fecha de adquisición",
+            "NICK": "Apodo",
+            "COMMENTS": "Comentarios",
+            "EMPTY": "No se han introducido datos"
         },
         "MAP": {
             "HEADER": "Mapa Vuelo"
@@ -52,12 +91,38 @@
             "HEADER": "Preguntas Frecuentes"
         },
         "ACERCA": {
-            "HEADER": "Acerca de"
+            "HEADER": "Acerca de",
+            "AGRADECIMIENTO": "Gracias al Ministerio de Agricultura y Pesca, Alimentación y Medio Ambiente (MAPAMA) como autores de la web https://drones.enaire.es/ por facilitar su uso, para mostrar las zonas en las que hay posibilidad de volar"
         },
         "TRABAJOS": {
             "HEADER": "Trabajos",
             "EDIT": "Editar",
-            "DELETE": "Eliminar"
+            "DELETE": "Eliminar",
+            "NOTDATE": "No se ha introducido Fecha",
+            "NOTPRICE": "No se ha introducido Precio"
+        },
+        "ADDTRABAJOS": {
+            "HEADER": "Añadir Trabajo",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción",
+            "YTLINK": "Enlace de YT al video del vuelo",
+            "PAID": "Pagado"
+        },
+        "EDITTRABAJOS": {
+            "HEADER": "Añadir Trabajo",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción",
+            "YTLINK": "Enlace de YT al video del vuelo",
+            "PAID": "Pagado"
+        },
+        "VIEWTRABAJOS": {
+            "HEADER": "Ver Trabajo",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción",
+            "PAID": "Pagado"
         },
         "PASSFORGOT": {
             "HEADER": "Contraseña Olvidada",
@@ -67,12 +132,61 @@
         "VUELOS": {
             "HEADER": "Vuelos",
             "EDIT": "Editar",
-            "DELETE": "Eliminar"
+            "DELETE": "Eliminar",
+            "EMPTY": "No se han introducido datos"
+        },
+        "ADDVUELOS": {
+            "HEADER": "Añadir Vuelo",
+            "NBATERIES": "Número de baterías",
+            "SITE": "Lugar",
+            "DATE": "Fecha",
+            "DISTANCE": "Distancia recorrida(km)",
+            "TEMP": "Acerca de las condiciones atmosféricas",
+            "YTLINK": "Enlace de YT al vídeo del vuelo"
+        },
+        "EDITVUELOS": {
+            "HEADER": "Editar Vuelo",
+            "NBATERIES": "Número de baterías",
+            "SITE": "Lugar",
+            "DATE": "Fecha",
+            "DISTANCE": "Distancia recorrida(km)",
+            "TEMP": "Acerca de las condiciones atmosféricas",
+            "YTLINK": "Enlace de YT al vídeo del vuelo"
+        },
+        "VIEWVUELOS": {
+            "HEADER": "Ver Vuelo",
+            "NBATERIES": "Número de baterías",
+            "SITE": "Lugar",
+            "DATE": "Fecha",
+            "DISTANCE": "Distancia recorrida(km)",
+            "TEMP": "Acerca de las condiciones atmosféricas",
+            "EMPTY": "No se han introducido datos"
         },
         "MANTENIMIENTOS": {
             "HEADER": "Mantenimientos",
             "EDIT": "Editar",
-            "DELETE": "Eliminar"
+            "DELETE": "Eliminar",
+            "NOTDATE": "No se ha introducido Fecha",
+            "NOTPRICE": "No se ha introducido Precio"
+        },
+        "ADDMENTENIMIENTOS": {
+            "HEADER": "Añadir Mantenimiento",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción"
+        },
+        "EDITMENTENIMIENTOS": {
+            "HEADER": "Editar Mantenimiento",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción"
+        },
+        "VIEWADDMENTENIMIENTOS": {
+            "HEADER": "Ver Mantenimiento",
+            "PRICE": "Precio",
+            "DATE": "Fecha",
+            "DESCRIPTION": "Descripción",
+            "EMPTY": "No se han introducido datos"
         }
     }
 }
