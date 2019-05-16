@@ -149,7 +149,7 @@ export class MyApp {
     }
     this.nav.setRoot(NoticiasPage);
     this.activePage = NoticiasPage;
-    this.storage.set('dronActivo', '');
+    this.storage.remove('dronActivo');
     this.commondata.dronActivo = undefined;
     this.commondata.sesionIniciada = false;
     
