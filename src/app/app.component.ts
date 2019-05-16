@@ -66,7 +66,24 @@ export class MyApp {
         if(x == '' || x == null || x == undefined) {
           //No hay X
         } else {
-          this.firebaseProvider.Session.subscribe(session => this.commondata.sesionIniciada = session);
+          this.storage.get('tipoSesion').then((sesion) => {
+            if(sesion === 'google') {
+              this.storage.get('urlPhoto').then((photo) => {
+                this.commondata.photoUrl = photo;
+                this.commondata.sesionIniciada = true;
+                this.commondata.sesionIniciadaConGoogle = true;
+              })
+            } else if (sesion === 'facebook') {
+              this.storage.get('urlPhoto').then((photo) => {
+                this.commondata.photoUrl = photo;
+                this.commondata.sesionIniciada = true;
+                this.commondata.sesionIniciadaConFacebook = true;
+              })
+            } else if (sesion === 'firebase') {
+              this.commondata.sesionIniciada = true;
+              this.commondata.sesionIniciadaConCorreo = true;
+            }
+          })
           this.commondata.dronesCollection = this.angularFirestore.collection('usuarios/' + x + '/drones');
           this.commondata.dronesCollection.snapshotChanges().subscribe(dronList => {
             this.commondata.dron = dronList.map(item => {

@@ -20,6 +20,7 @@ export class FirebaseProvider {
     .then((res) => {
       this.angularFirestore.doc('usuarios/' + res.user.uid).set({email, usuario});
       this.storage.set('UID', res.user.uid);
+      this.storage.set('tipoSesion', 'firebase');
       this.commondata.usuario = usuario;
       this.commondata.email = email;
       this.commondata.dronesCollection = this.angularFirestore.collection('usuarios/' + res.user.uid + '/drones');
@@ -43,6 +44,7 @@ export class FirebaseProvider {
       .then(user => {
         Promise.resolve(user); 
         this.storage.set('UID', user.user.uid);
+        this.storage.set('tipoSesion', 'firebase');
         this.commondata.email = email;
         this.angularFirestore.doc('usuarios/' + user.user.uid).ref.get().then(doc =>
             this.commondata.usuario = doc.data().usuario

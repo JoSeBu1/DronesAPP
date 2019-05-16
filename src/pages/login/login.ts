@@ -96,6 +96,8 @@ export class LoginPage {
         }
         if(existe == true) {
           this.storage.set('UID', user.userId);
+          this.storage.set('urlPhoto', user.imageUrl);
+          this.storage.set('tipoSesion', 'google');
           this.commondata.usuario = user.displayName;
           this.commondata.email = user.email;
           this.commondata.photoUrl = user.imageUrl;
@@ -118,6 +120,8 @@ export class LoginPage {
           let photoUrl = user.imageUrl;
           this.angularFirestore.doc('usuarios/' + user.userId).set({email, usuario, photoUrl});
           this.storage.set('UID', user.userId);
+          this.storage.set('urlPhoto', user.imageUrl);
+          this.storage.set('tipoSesion', 'google');
           this.commondata.usuario = user.displayName;
           this.commondata.email = user.email;
           this.commondata.photoUrl = user.imageUrl;
@@ -162,8 +166,9 @@ export class LoginPage {
                 }
               }
               if(existe == true) {
-                alert("Existe");
                 this.storage.set('UID', user.id);
+                this.storage.set('urlPhoto', user.picture.data.url);
+                this.storage.set('tipoSesion', 'facebook');
                 this.commondata.usuario = user.name;
                 this.commondata.email = user.email;
                 this.commondata.photoUrl = user.picture.data.url;
@@ -181,12 +186,13 @@ export class LoginPage {
                   });
                 });
               } else {
-                alert("No existe");
                 let email = user.email;
                 let usuario = user.name;
                 let photoUrl = user.picture.data.url;
                 this.angularFirestore.doc('usuarios/' + user.id).set({email, usuario, photoUrl});
                 this.storage.set('UID', user.id);
+                this.storage.set('urlPhoto', user.picture.data.url);
+                this.storage.set('tipoSesion', 'facebook');
                 this.commondata.usuario = user.name;
                 this.commondata.email = user.email;
                 this.commondata.photoUrl = user.picture.data.url;
