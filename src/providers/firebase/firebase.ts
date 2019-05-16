@@ -18,7 +18,8 @@ export class FirebaseProvider {
   registerUser(email: string, password: string, usuario: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     .then((res) => {
-      this.angularFirestore.doc('usuarios/' + res.user.uid).set({email, usuario});
+      let locale = this.commondata.locale;
+      this.angularFirestore.doc('usuarios/' + res.user.uid).set({email, usuario, locale});
       this.storage.set('UID', res.user.uid);
       this.storage.set('tipoSesion', 'firebase');
       this.commondata.usuario = usuario;

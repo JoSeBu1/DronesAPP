@@ -118,7 +118,8 @@ export class LoginPage {
           let email = user.email;
           let usuario = user.displayName;
           let photoUrl = user.imageUrl;
-          this.angularFirestore.doc('usuarios/' + user.userId).set({email, usuario, photoUrl});
+          let locale = this.commondata.locale;
+          this.angularFirestore.doc('usuarios/' + user.userId).set({email, usuario, photoUrl, locale});
           this.storage.set('UID', user.userId);
           this.storage.set('urlPhoto', user.imageUrl);
           this.storage.set('tipoSesion', 'google');
@@ -189,7 +190,8 @@ export class LoginPage {
                 let email = user.email;
                 let usuario = user.name;
                 let photoUrl = user.picture.data.url;
-                this.angularFirestore.doc('usuarios/' + user.id).set({email, usuario, photoUrl});
+                let locale = this.commondata.locale;
+                this.angularFirestore.doc('usuarios/' + user.id).set({email, usuario, photoUrl, locale});
                 this.storage.set('UID', user.id);
                 this.storage.set('urlPhoto', user.picture.data.url);
                 this.storage.set('tipoSesion', 'facebook');
