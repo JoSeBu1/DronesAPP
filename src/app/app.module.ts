@@ -14,6 +14,7 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCqkOgOFcf1Vx_EKoIAZLmsmhn83WLhnKY",
@@ -136,6 +137,7 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     Facebook,
     AppVersion,
     TranslateModule,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
