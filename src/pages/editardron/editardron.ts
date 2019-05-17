@@ -34,8 +34,10 @@ export class EditardronPage implements OnInit{
     this.apodo = this.dron.apodo;
     this.fechaAdquisicion = this.dron.fechaAdquisicion;
     this.comentarios = this.dron.comentarios;
-    this.date = new Date().setFullYear(this.fechaAdquisicion.year, this.fechaAdquisicion.month-1, this.fechaAdquisicion.day);
-    this.myFecha = new Date(this.date).toISOString();
+    if(this.fechaAdquisicion.day != undefined && this.fechaAdquisicion.month != undefined && this.fechaAdquisicion.year != undefined) {
+      this.date = new Date().setFullYear(this.fechaAdquisicion.year, this.fechaAdquisicion.month-1, this.fechaAdquisicion.day);
+      this.myFecha = new Date(this.date).toISOString();
+    }
   }
 
   editDron(fechaAdquisicion) {

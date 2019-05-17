@@ -32,8 +32,10 @@ export class EditarmantenimientoPage implements OnInit{
     this.precio = this.mantenimiento.precio;
     this.fecha = this.mantenimiento.fecha;
     this.descripcion = this.mantenimiento.descripcion;
-    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
-    this.myFecha = new Date(this.date).toISOString();
+    if(this.fecha.day != undefined && this.fecha.month != undefined && this.fecha.year != undefined) {
+      this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+      this.myFecha = new Date(this.date).toISOString();
+    }
   }
 
   editMantenimiento(fecha) {

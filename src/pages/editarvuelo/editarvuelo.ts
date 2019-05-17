@@ -39,8 +39,10 @@ export class EditarvueloPage {
     this.fecha = this.vuelo.fecha;
     this.condicionesAtmosfericas = this.vuelo.condicionesAtmosfericas;
     this.video = this.vuelo.video;
-    this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
-    this.myFecha = new Date(this.date).toISOString();
+    if(this.fecha.day != undefined && this.fecha.month != undefined && this.fecha.year != undefined) {
+      this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
+      this.myFecha = new Date(this.date).toISOString();
+    }
   }
 
   editVuelo(fecha) {
