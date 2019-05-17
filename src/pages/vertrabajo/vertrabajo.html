@@ -15,7 +15,8 @@
     </ion-item>
     <ion-item no-lines>
         <ion-label>{{ 'PAGES.VIEWTRABAJOS.PAID' | translate }}</ion-label>
-        <ion-checkbox class="checkbox" [checked]="pagado" disabled item-end></ion-checkbox>
+        <ion-icon *ngIf="!pagado" name="close" item-end></ion-icon>
+        <ion-icon *ngIf="pagado" name="checkmark" item-end></ion-icon>
     </ion-item>
     <ion-item no-lines>
         <h2>{{ 'PAGES.VIEWTRABAJOS.DESCRIPTION' | translate }}</h2>
