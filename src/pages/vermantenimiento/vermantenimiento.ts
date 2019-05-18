@@ -10,6 +10,7 @@ export class VermantenimientoPage implements OnInit{
   precio: number;
   fecha: any;
   descripcion: string;
+  titulo: string;
   mantenimiento: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
@@ -24,6 +25,7 @@ export class VermantenimientoPage implements OnInit{
     this.precio = this.mantenimiento.precio;
     this.fecha = this.mantenimiento.fecha;
     this.descripcion = this.mantenimiento.descripcion;
+    this.titulo = this.mantenimiento.titulo;
   }
 
 }

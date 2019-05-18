@@ -18,9 +18,9 @@ export class AnyadirmantenimientoPage {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
-  addMantenimiento(precio: string, fecha: string, descripcion: string) {
+  addMantenimiento(titulo: string, precio: string, fecha: string, descripcion: string) {
     this.storage.get('UID').then( x =>  {
-      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/mantenimientos' ).add({precio, fecha, descripcion});
+      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/mantenimientos' ).add({titulo, precio, fecha, descripcion});
     });
     this.navCtrl.popToRoot();
   }

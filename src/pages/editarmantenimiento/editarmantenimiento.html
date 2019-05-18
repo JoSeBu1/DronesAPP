@@ -6,6 +6,10 @@
 
 <ion-content padding-horizontal>
     <ion-item>
+        <ion-label floating>{{ 'PAGES.EDITMANTENIMIENTOS.TITLE' | translate }}</ion-label>
+        <ion-input [(ngModel)]="titulo"></ion-input>
+    </ion-item>
+    <ion-item>
         <ion-label floating>{{ 'PAGES.EDITMANTENIMIENTOS.PRICE' | translate }}</ion-label>
         <ion-input [(ngModel)]="precio" type="number"></ion-input>
     </ion-item>

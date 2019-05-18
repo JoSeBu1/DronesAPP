@@ -14,6 +14,7 @@ export class EditarmantenimientoPage implements OnInit{
   precio: number;
   fecha: any;
   descripcion: string;
+  titulo: string;
   mantenimiento: any;
 
   public date; 
@@ -32,6 +33,7 @@ export class EditarmantenimientoPage implements OnInit{
     this.precio = this.mantenimiento.precio;
     this.fecha = this.mantenimiento.fecha;
     this.descripcion = this.mantenimiento.descripcion;
+    this.titulo = this.mantenimiento.titulo;
     if(this.fecha.day != undefined && this.fecha.month != undefined && this.fecha.year != undefined) {
       this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
       this.myFecha = new Date(this.date).toISOString();
@@ -41,8 +43,9 @@ export class EditarmantenimientoPage implements OnInit{
   editMantenimiento(fecha) {
     let precio = this.precio;
     let descripcion = this.descripcion;
+    let titulo = this.titulo;
     this.storage.get('UID').then( x =>  {  
-      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/mantenimientos/${this.mantenimiento.id}`).update({precio, fecha, descripcion});
+      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/mantenimientos/${this.mantenimiento.id}`).update({titulo, precio, fecha, descripcion});
     });
     this.navCtrl.popToRoot();
   }

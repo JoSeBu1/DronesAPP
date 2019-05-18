@@ -6,6 +6,10 @@
 
 <ion-content padding-horizontal>
     <ion-item>
+        <ion-label floating>{{ 'PAGES.ADDMANTENIMIENTOS.TITLE' | translate }}</ion-label>
+        <ion-input #titulo></ion-input>
+    </ion-item>
+    <ion-item>
         <ion-label floating>{{ 'PAGES.ADDMANTENIMIENTOS.PRICE' | translate }}</ion-label>
         <ion-input #precio type="number"></ion-input>
     </ion-item>
@@ -18,7 +22,7 @@
         <ion-textarea #descripcion></ion-textarea>
     </ion-item>
     <ion-fab right bottom>
-        <button ion-fab color="primary" (click)="addMantenimiento(precio.value, fecha.value, descripcion.value)">
+        <button ion-fab color="primary" (click)="addMantenimiento(titulo.value, precio.value, fecha.value, descripcion.value)">
             <ion-icon name="custom-save"></ion-icon>
         </button>
     </ion-fab>
