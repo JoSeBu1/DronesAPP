@@ -98,8 +98,7 @@
             "HEADER": "Trabajos",
             "EDIT": "Editar",
             "DELETE": "Eliminar",
-            "NOTSITE": "No se ha introducido Lugar",
-            "NOTPAID": "No se ha introducido Pago"
+            "NOTSITE": "No se ha introducido Lugar"
         },
         "ADDTRABAJOS": {
             "HEADER": "Añadir Trabajo",
@@ -170,22 +169,25 @@
             "EDIT": "Editar",
             "DELETE": "Eliminar",
             "NOTDATE": "No se ha introducido Fecha",
-            "NOTPRICE": "No se ha introducido Precio"
+            "NOTTITLE": "No se ha introducido Titulo"
         },
-        "ADDMENTENIMIENTOS": {
+        "ADDMANTENIMIENTOS": {
             "HEADER": "Añadir Mantenimiento",
+            "TITLE": "Titulo",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción"
         },
-        "EDITMENTENIMIENTOS": {
+        "EDITMANTENIMIENTOS": {
             "HEADER": "Editar Mantenimiento",
+            "TITLE": "Titulo",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción"
         },
-        "VIEWADDMENTENIMIENTOS": {
+        "VIEWMANTENIMIENTOS": {
             "HEADER": "Ver Mantenimiento",
+            "TITLE": "Titulo",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción",

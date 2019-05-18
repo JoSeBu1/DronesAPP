@@ -11,6 +11,7 @@ interface Mantenimiento {
   precio: number;
   descripcion: string;
   fecha: any;
+  titulo: string;
   id?: string;
 }
 
@@ -43,6 +44,7 @@ export class MantenimientosPage {
             precio: item.payload.doc.data().precio,
             descripcion: item.payload.doc.data().descripcion,
             fecha: item.payload.doc.data().fecha,
+            titulo: item.payload.doc.data().titulo,
             id: item.payload.doc.id
           }
         });

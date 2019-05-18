@@ -12,7 +12,8 @@
         <ion-item-sliding *ngFor="let item of trabajo">
             <ion-item (click)="goToWork(item)">
                 <h2>{{item.lugar || 'PAGES.TRABAJOS.NOTSITE' | translate}}</h2>
-                <p>{{item.pagado || 'PAGES.TRABAJOS.NOTPAID' | translate}}€</p>
+                <p *ngIf="item.pagado">Pagado</p>
+                <p *ngIf="!item.pagado">No pagado</p>
             </ion-item>
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditWork(item)">

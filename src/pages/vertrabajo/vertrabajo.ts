@@ -34,7 +34,7 @@ export class VertrabajoPage implements OnInit{
     this.pagado = this.trabajo.pagado;
     this.video = this.trabajo.video;
     this.lugar = this.trabajo.lugar;
-    if(this.video != "") {
+    if(this.video != "" && this.video != undefined && this.video != null) {
       this.hayVideo = true;
       var urlVideo: string = this.video;
       var urlTroceada = urlVideo.split("/");

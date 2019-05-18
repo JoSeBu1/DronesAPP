@@ -27,7 +27,7 @@
     </ion-item>
     <ion-item>
         <ion-label floating>{{ 'PAGES.EDITVUELOS.YTLINK' | translate }}</ion-label>
-        <ion-input #video></ion-input>
+        <ion-input [(ngModel)]="video"></ion-input>
     </ion-item>
     <ion-fab right bottom>
         <button ion-fab color="primary" (click)="editVuelo(fecha.value)">

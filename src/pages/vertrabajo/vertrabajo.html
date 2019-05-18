@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content padding-horizontal>
-    <ion-item>
+    <ion-item no-lines>
         <h2 floating>{{ 'PAGES.VIEWTRABAJOS.SITE' | translate }}</h2>
-        <p>{{lugar || 'PAGES.VIEWTRABAJOS.SITE' | translate}}</p>
+        <p>{{lugar || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
         <h2>{{ 'PAGES.VIEWTRABAJOS.PRICE' | translate }}</h2>
@@ -15,7 +15,7 @@
     </ion-item>
     <ion-item no-lines>
         <h2>{{ 'PAGES.VIEWTRABAJOS.DATE' | translate }}</h2>
-        <h2>{{fecha.day + '/' + fecha.month + '/' + fecha.year || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}</h2>
+        <p>{{fecha.day + '/' + fecha.month + '/' + fecha.year || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}</p>
     </ion-item>
     <ion-item no-lines>
         <ion-label>{{ 'PAGES.VIEWTRABAJOS.PAID' | translate }}</ion-label>
