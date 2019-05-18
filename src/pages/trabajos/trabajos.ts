@@ -13,6 +13,7 @@ interface Trabajo {
   fecha: any;
   pagado: boolean;
   video: string;
+  lugar: string;
   id?: string;
 }
 
@@ -46,6 +47,7 @@ export class TrabajosPage {
             fecha: item.payload.doc.data().fecha,
             pagado: item.payload.doc.data().pagado,
             video: item.payload.doc.data().video,
+            lugar: item.payload.doc.data().lugar,
             id: item.payload.doc.id
           }
         });

@@ -13,6 +13,7 @@ export class VertrabajoPage implements OnInit{
   descripcion: string;
   pagado: boolean;
   video: string;
+  lugar: string;
   myVideo: SafeResourceUrl;
   hayVideo: boolean;
   trabajo: any;
@@ -32,10 +33,10 @@ export class VertrabajoPage implements OnInit{
     this.descripcion = this.trabajo.descripcion;
     this.pagado = this.trabajo.pagado;
     this.video = this.trabajo.video;
+    this.lugar = this.trabajo.lugar;
     if(this.video != "") {
       this.hayVideo = true;
       var urlVideo: string = this.video;
-      console.log(this.video)
       var urlTroceada = urlVideo.split("/");
       var urlReconstruida = urlTroceada[0] + "//" + urlTroceada[2] + "/embed/" + urlTroceada[3].replace("watch?v=", "");
       this.myVideo = this.sanitizer.bypassSecurityTrustResourceUrl(urlReconstruida);

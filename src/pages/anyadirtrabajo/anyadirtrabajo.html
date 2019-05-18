@@ -6,6 +6,10 @@
 
 <ion-content padding-horizontal>
     <ion-item>
+        <ion-label floating>{{ 'PAGES.ADDTRABAJOS.SITE' | translate }}</ion-label>
+        <ion-input #site></ion-input>
+    </ion-item>
+    <ion-item>
         <ion-label floating>{{ 'PAGES.ADDTRABAJOS.PRICE' | translate }}</ion-label>
         <ion-input #precio type="number"></ion-input>
     </ion-item>
@@ -14,7 +18,7 @@
         <ion-datetime #fecha displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" doneText="Ok" cancelText="Cancelar"></ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-label floating>Descripción</ion-label>
+        <ion-label floating>{{ 'PAGES.ADDTRABAJOS.DESCRIPTION' | translate }}</ion-label>
         <ion-textarea #descripcion></ion-textarea>
     </ion-item>
     <ion-item>
@@ -26,7 +30,7 @@
         <ion-checkbox item-end #pago></ion-checkbox>
     </ion-item>
     <ion-fab right bottom>
-        <button ion-fab color="primary" (click)="addTrabajo(precio.value, fecha.value, descripcion.value, pago.value, video.value)">
+        <button ion-fab color="primary" (click)="addTrabajo(site.value, precio.value, fecha.value, descripcion.value, pago.value, video.value)">
             <ion-icon name="custom-save"></ion-icon>
         </button>
     </ion-fab>

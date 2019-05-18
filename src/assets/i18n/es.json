@@ -98,11 +98,12 @@
             "HEADER": "Trabajos",
             "EDIT": "Editar",
             "DELETE": "Eliminar",
-            "NOTDATE": "No se ha introducido Fecha",
-            "NOTPRICE": "No se ha introducido Precio"
+            "NOTSITE": "No se ha introducido Lugar",
+            "NOTPAID": "No se ha introducido Pago"
         },
         "ADDTRABAJOS": {
             "HEADER": "Añadir Trabajo",
+            "SITE": "Lugar",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción",
@@ -111,6 +112,7 @@
         },
         "EDITTRABAJOS": {
             "HEADER": "Añadir Trabajo",
+            "SITE": "Lugar",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción",
@@ -119,6 +121,7 @@
         },
         "VIEWTRABAJOS": {
             "HEADER": "Ver Trabajo",
+            "SITE": "Lugar",
             "PRICE": "Precio",
             "DATE": "Fecha",
             "DESCRIPTION": "Descripción",

@@ -5,6 +5,10 @@
 </ion-header>
 
 <ion-content padding-horizontal>
+    <ion-item>
+        <h2 floating>{{ 'PAGES.VIEWTRABAJOS.SITE' | translate }}</h2>
+        <p>{{lugar || 'PAGES.VIEWTRABAJOS.SITE' | translate}}</p>
+    </ion-item>
     <ion-item no-lines>
         <h2>{{ 'PAGES.VIEWTRABAJOS.PRICE' | translate }}</h2>
         <p>{{precio || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}€</p>

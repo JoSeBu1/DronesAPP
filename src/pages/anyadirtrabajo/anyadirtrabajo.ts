@@ -18,9 +18,9 @@ export class AnyadirtrabajoPage {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
-  addTrabajo(precio: string, fecha: string, descripcion: string, pagado: boolean, video: string) {
+  addTrabajo(lugar: string, precio: string, fecha: string, descripcion: string, pagado: boolean, video: string) {
     this.storage.get('UID').then( x =>  {
-      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/trabajos' ).add({precio, fecha, descripcion, pagado, video});
+      this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/trabajos' ).add({lugar, precio, fecha, descripcion, pagado, video});
     });
     this.navCtrl.popToRoot();
   }

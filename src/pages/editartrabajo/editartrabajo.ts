@@ -15,6 +15,7 @@ export class EditartrabajoPage {
   descripcion: string;
   pagado: boolean;
   video: string;
+  lugar: string;
   trabajo: any;
 
   public date; 
@@ -35,6 +36,7 @@ export class EditartrabajoPage {
     this.fecha = this.trabajo.fecha;
     this.descripcion = this.trabajo.descripcion;
     this.pagado = this.trabajo.pagado;
+    this.lugar = this.trabajo.lugar;
     this.video = this.trabajo.video;
     if(this.fecha.day != undefined && this.fecha.month != undefined && this.fecha.year != undefined) {
       this.date = new Date().setFullYear(this.fecha.year, this.fecha.month-1, this.fecha.day);
@@ -47,8 +49,9 @@ export class EditartrabajoPage {
     let descripcion = this.descripcion;
     let pagado = this.pagado;
     let video = this.video;
+    let lugar = this.lugar;
     this.storage.get('UID').then( x =>  {  
-      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/trabajos/${this.trabajo.id}`).update({precio, fecha, descripcion, pagado, video});
+      this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/trabajos/${this.trabajo.id}`).update({lugar, precio, fecha, descripcion, pagado, video});
     });
     this.navCtrl.popToRoot();
   }
