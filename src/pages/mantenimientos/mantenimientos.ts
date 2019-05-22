@@ -98,12 +98,25 @@ export class MantenimientosPage {
   }
 
   goToAddMaintenance() {
-    this.navCtrl.push(AnyadirmantenimientoPage);
+    if(this.commondata.dronActivo == undefined) {
+      this.presentNotPossibleAdd()
+    } else {
+      this.navCtrl.push(AnyadirmantenimientoPage);
+    }
   }
 
   presentToast() {
     let toast = this.toastCtrl.create({
       message: "Presiona otra vez para salir de la aplicación",
+      duration: 2000,
+      position: "bottom"
+    });
+    toast.present();
+  }
+
+  presentNotPossibleAdd() {
+    let toast = this.toastCtrl.create({
+      message: "Tienes que seleccionar un dron para poder añadir vuelos",
       duration: 2000,
       position: "bottom"
     });

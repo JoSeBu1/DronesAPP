@@ -100,13 +100,26 @@ export class TrabajosPage {
     alert.present();
   }
 
-  goToAddWork(){
-    this.navCtrl.push(AnyadirtrabajoPage);
+  goToAddWork() {
+    if(this.commondata.dronActivo == undefined) {
+      this.presentNotPossibleAdd()
+    } else {
+      this.navCtrl.push(AnyadirtrabajoPage);
+    }
   }
 
   presentToast() {
     let toast = this.toastCtrl.create({
       message: "Presiona otra vez para salir de la aplicación",
+      duration: 2000,
+      position: "bottom"
+    });
+    toast.present();
+  }
+
+  presentNotPossibleAdd() {
+    let toast = this.toastCtrl.create({
+      message: "Tienes que seleccionar un dron para poder añadir trabajos",
       duration: 2000,
       position: "bottom"
     });
