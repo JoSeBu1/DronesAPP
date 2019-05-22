@@ -23,6 +23,31 @@
         "TUTORIAL51": "En el menú lateral, donde pone: Dron que desea consultar, seleccione el dron que desea consultar, para ver los Vuelos, Mantenimientos y Trabajos de ese dron.",
         "TUTORIALEXIT": "Finalizar Tutorial"
     },
+    "TOASTS": {
+        "EXITMESSAGE": "Presiona otra vez para salir de la aplicación",
+        "SELECTDRONVUELOS": "Selecciona un dron para poder añadir vuelos",
+        "SELECTDRONTRABAJOS": "Selecciona un dron para poder añadir trabajos",
+        "SELECTDRONMANTENIMIENTOS": "Selecciona un dron para poder añadir mantenimientos"
+    },
+    "NOTIFICATION": {
+        "TITLE": "Se acaba la garantía de su dron ",
+        "MESSAGE": "En una semana se acabará la garantía de su dron./nRevise que todo funciona correctamente."
+    },
+    "ALERTCONTROLLER": {
+        "EMAILSENDTITLE": "Correo enviado",
+        "EMAILSENDMESSAGE": "Se le ha enviado un correo electrónico para restablecer su contraseña.",
+        "ERRORTITLE": "Error",
+        "ERRORMESSAGE": "Ha ocurrido un error.",
+        "OKBUTTON": "OK",
+        "CANCEL": "Cancelar",
+        "CONFIRMTITLE": "Se necesita confirmación!",
+        "CONFIRMDELETEDRONMESSAGE": "¿Estás seguro que quieres eliminar el dron? También se eliminarán los datos que le hagan referencia.",
+        "ACCEPT": "Aceptar",
+        "WAIT": "Cargando, espere porfavor...",
+        "DELETEMAINTENANCEMESSAGE": "¿Estás seguro que quieres eliminar el mantenimiento?",
+        "DELETEWORKMESSAGE": "¿Estás seguro que quieres eliminar el trabajo?",
+        "DELETEFLYMESSAGE": "¿Estás seguro que quieres eliminar el vuelo?"
+    },
     "PAGES": {
         "LOGIN": {
             "HEADER": "Iniciar sesión",

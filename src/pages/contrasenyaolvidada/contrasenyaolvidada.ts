@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-contrasenyaolvidada',
@@ -9,7 +10,7 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 export class ContrasenyaolvidadaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider,
-    public alertController: AlertController, public platform: Platform) {
+    public alertController: AlertController, public platform: Platform, private _translate: TranslateService) {
   }
 
   ionViewWillEnter() {
@@ -17,25 +18,27 @@ export class ContrasenyaolvidadaPage {
   }
 
   enviarEmail(email) {
-    this.firebaseProvider.forgotPassword(email)
-      .then( x => { 
-        const alert = this.alertController.create({
-          title: 'Correo enviado',
-          message: 'Se le ha enviado un correo electrónico para restablecer su contraseña.',
-          buttons: ['OK']
-        });
-        alert.present();
-        this.navCtrl.pop()
-      })
-      .catch( err => 
-        {
+    this._translate.get(['ALERTCONTROLLER.EMAILSENDTITLE', 'ALERTCONTROLLER.EMAILSENDMESSAGE', 'ALERTCONTROLLER.ERRORTITLE', 'ALERTCONTROLLER.ERRORMESSAGE', 'ALERTCONTROLLER.OKBUTTON']).subscribe(translate => {
+      this.firebaseProvider.forgotPassword(email)
+        .then( x => { 
           const alert = this.alertController.create({
-            title: 'Error',
-            message: 'Ha ocurrido un error.',
-            buttons: ['OK']
+            title: translate['ALERTCONTROLLER.EMAILSENDTITLE'],
+            message: translate['ALERTCONTROLLER.EMAILSENDMESSAGE'],
+            buttons: translate['ALERTCONTROLLER.OKBUTTON']
           });
           alert.present();
-        });
+          this.navCtrl.pop()
+        })
+        .catch( err => 
+          {
+            const alert = this.alertController.create({
+              title: translate['ALERTCONTROLLER.ERRORTITLE'],
+              message: translate['ALERTCONTROLLER.ERRORMESSAGE'],
+              buttons: translate['ALERTCONTROLLER.OKBUTTON']
+            });
+            alert.present();
+          });
+    });
   }
 
 }

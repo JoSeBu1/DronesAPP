@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { TutorialPage } from '../tutorial/tutorial';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommondataProvider } from '../../providers/commondata/commondata';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-signup',
@@ -18,7 +19,7 @@ export class SignupPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseProvider : FirebaseProvider, public alertCtrl : AlertController, private storage: Storage,
     public fb: FormBuilder, public commondata: CommondataProvider, public loadingController: LoadingController,
-    public platform: Platform) {
+    public platform: Platform, private _translate: TranslateService) {
       this.myForm = this.fb.group({
         user: ['', [Validators.required, Validators.minLength(5)]],
         email: ['', [Validators.required, Validators.email]],
@@ -49,13 +50,15 @@ export class SignupPage {
         }
       })
     })
-    .catch(err=>{
-      let alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: err.message,
-        buttons: ['Aceptar']
-      });
-      alert.present();
+    .catch(err => {
+      this._translate.get(['ALERTCONTROLLER.ERRORTITLE', 'ALERTCONTROLLER.OKBUTTON']).subscribe(translate => {
+        let alert = this.alertCtrl.create({
+          title: translate['ALERTCONTROLLER.ERRORTITLE'],
+          subTitle: err.message,
+          buttons: translate['ALERTCONTROLLER.OKBUTTON']
+        });
+        alert.present();
+      })
     })
   }
 
@@ -85,8 +88,10 @@ export class SignupPage {
     if (this.loading && this.loading.instance){
         this.stopLoader();
     }
-    this.loading = this.loadingController.create({
-        content: 'Cargando, espere por favor'
+    this._translate.get(['ALERTCONTROLLER.WAIT']).subscribe(translate => {
+      this.loading = this.loadingController.create({
+        content: translate['ALERTCONTROLLER.WAIT']
+      })
     })
   }
 

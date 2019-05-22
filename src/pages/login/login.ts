@@ -10,6 +10,7 @@ import { NoticiasPage } from '../noticias/noticias';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { TranslateService } from '@ngx-translate/core';
 
 
 export interface GoogleUserId { id: string; }
@@ -32,7 +33,8 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseProvider: FirebaseProvider, public alertCtrl: AlertController, public commondata: CommondataProvider,
     private storage: Storage, public loadingController: LoadingController, private googlePlus: GooglePlus,
-    private facebook: Facebook, private angularFirestore: AngularFirestore, public platform: Platform) { 
+    private facebook: Facebook, private angularFirestore: AngularFirestore, public platform: Platform,
+    private _translate: TranslateService) { 
   }
 
   ionViewWillEnter() {
@@ -241,8 +243,10 @@ export class LoginPage {
     if (this.loading && this.loading.instance){
       this.stopLoader();
     }
-    this.loading = this.loadingController.create({
-      content: 'Cargando, espere por favor'
+    this._translate.get(['ALERTCONTROLLER.WAIT']).subscribe(translate => {
+      this.loading = this.loadingController.create({
+        content: translate['ALERTCONTROLLER.WAIT']
+      })
     })
   }
 

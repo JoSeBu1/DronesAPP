@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController, Platform } from 'ionic-angular';
 import { CommondataProvider } from '../../providers/commondata/commondata';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class AcercadePage {
   public counter = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public commondata: CommondataProvider,
-    public toastCtrl: ToastController, private platform: Platform) {
+    public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
   }
 
   ionViewWillEnter() {
@@ -28,12 +29,14 @@ export class AcercadePage {
   }
 
   presentToast() {
-    let toast = this.toastCtrl.create({
-      message: "Presiona otra vez para salir de la aplicación",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.EXITMESSAGE'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
 }

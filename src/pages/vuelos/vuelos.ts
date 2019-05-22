@@ -6,6 +6,7 @@ import { EditarvueloPage } from '../editarvuelo/editarvuelo';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Vuelo {
   baterias: string;
@@ -29,7 +30,7 @@ export class VuelosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider, public alertController: AlertController,
-    public toastCtrl: ToastController, private platform: Platform, private events: Events) {
+    public toastCtrl: ToastController, private platform: Platform, private events: Events, private _translate: TranslateService) {
       this.events.subscribe('dronChanged', (data) => {
         this.ionViewDidEnter();
       });
@@ -76,28 +77,30 @@ export class VuelosPage {
   }
 
   goToDeleteFly(item: Vuelo) {
-    const alert = this.alertController.create({
-      title: 'Se necesita confirmación!',
-      message: '¿Estás seguro que quieres eliminar el vuelo?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            //Cancela
+    this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEFLYMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
+      const alert = this.alertController.create({
+        title: translate['ALERTCONTROLLER.CONFIRMTITLE'],
+        message: translate['ALERTCONTROLLER.DELETEFLYMESSAGE'],
+        buttons: [
+          {
+            text: translate['ALERTCONTROLLER.CANCEL'],
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              //Cancela
+            }
+          }, {
+            text: translate['ALERTCONTROLLER.ACCEPT'],
+            handler: () => {
+              this.storage.get('UID').then( x =>  {
+                this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/vuelos/${item.id}`).delete();
+              })
+            }
           }
-        }, {
-          text: 'Aceptar',
-          handler: () => {
-            this.storage.get('UID').then( x =>  {
-              this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/vuelos/${item.id}`).delete();
-            })
-          }
-        }
-      ]
-    });
-    alert.present();
+        ]
+      });
+      alert.present();
+    })
   }
 
   goToAddFly() {
@@ -110,21 +113,25 @@ export class VuelosPage {
   }
 
   presentToast() {
-    let toast = this.toastCtrl.create({
-      message: "Presiona otra vez para salir de la aplicación",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.EXITMESSAGE'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
   presentNotPossibleAdd() {
-    let toast = this.toastCtrl.create({
-      message: "Tienes que seleccionar un dron para poder añadir vuelos",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.SELECTDRONVUELOS']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.SELECTDRONVUELOS'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
 }

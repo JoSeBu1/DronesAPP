@@ -6,6 +6,7 @@ import { AnyadirmantenimientoPage } from '../anyadirmantenimiento/anyadirmanteni
 import { CommondataProvider } from '../../providers/commondata/commondata';
 import { Storage } from '@ionic/storage';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Mantenimiento {
   precio: number;
@@ -28,7 +29,7 @@ export class MantenimientosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, 
     public commondata: CommondataProvider,private angularFirestore: AngularFirestore, 
     public alertController: AlertController, public toastCtrl: ToastController, private platform: Platform, 
-    private events: Events) {
+    private events: Events, private _translate: TranslateService) {
       this.events.subscribe('dronChanged', (data) => {
         this.ionViewDidEnter();
       });
@@ -73,28 +74,30 @@ export class MantenimientosPage {
   }
 
   goToDeleteMaintenance(item: Mantenimiento) {
-    const alert = this.alertController.create({
-      title: 'Se necesita confirmación!',
-      message: '¿Estás seguro que quieres eliminar el mantenimiento?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            //Cancela
+    this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
+      const alert = this.alertController.create({
+        title: translate['ALERTCONTROLLER.CONFIRMTITLE'],
+        message: 'ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE',
+        buttons: [
+          {
+            text: translate['ALERTCONTROLLER.CANCEL'],
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              //Cancela
+            }
+          }, {
+            text: translate['ALERTCONTROLLER.ACCEPT'],
+            handler: () => {
+              this.storage.get('UID').then( x =>  {
+                this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/mantenimientos/${item.id}`).delete();
+              })
+            }
           }
-        }, {
-          text: 'Aceptar',
-          handler: () => {
-            this.storage.get('UID').then( x =>  {
-              this.angularFirestore.doc(`usuarios/${x}/drones/${this.commondata.dronActivo.id}/mantenimientos/${item.id}`).delete();
-            })
-          }
-        }
-      ]
-    });
-    alert.present();
+        ]
+      });
+      alert.present();
+    })
   }
 
   goToAddMaintenance() {
@@ -106,21 +109,25 @@ export class MantenimientosPage {
   }
 
   presentToast() {
-    let toast = this.toastCtrl.create({
-      message: "Presiona otra vez para salir de la aplicación",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.EXITMESSAGE'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
   presentNotPossibleAdd() {
-    let toast = this.toastCtrl.create({
-      message: "Tienes que seleccionar un dron para poder añadir vuelos",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.SELECTDRONMANTENIMIENTOS']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.SELECTDRONMANTENIMIENTOS'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
 }

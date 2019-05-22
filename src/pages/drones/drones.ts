@@ -6,6 +6,7 @@ import { EditardronPage } from '../editardron/editardron';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Storage } from '@ionic/storage';
 import { CommondataProvider } from '../../providers/commondata/commondata';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-drones',
@@ -17,7 +18,7 @@ export class DronesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFirestore: AngularFirestore,
     private storage: Storage, public commondata: CommondataProvider, public alertController: AlertController,
-    public toastCtrl: ToastController, private platform: Platform) {
+    public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
   }
 
   ionViewDidEnter() {
@@ -59,28 +60,30 @@ export class DronesPage {
   }
 
   goToDeleteDron(item: any) {
-    const alert = this.alertController.create({
-      title: 'Se necesita confirmación!',
-      message: '¿Estás seguro que quieres eliminar el dron? También se eliminarán los datos que le hagan referencia.',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            //Cancela
+    this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.CONFIRMDELETEDRONMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
+      const alert = this.alertController.create({
+        title: translate['ALERTCONTROLLER.CONFIRMTITLE'],
+        message: translate['ALERTCONTROLLER.CONFIRMDELETEDRONMESSAGE'],
+        buttons: [
+          {
+            text: translate['ALERTCONTROLLER.CANCEL'],
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              //Cancela
+            }
+          }, {
+            text: translate['ALERTCONTROLLER.ACCEPT'],
+            handler: () => {
+              this.storage.get('UID').then( x =>  {
+                this.angularFirestore.doc(`usuarios/${x}/drones/${item.id}`).delete();
+              })
+            }
           }
-        }, {
-          text: 'Aceptar',
-          handler: () => {
-            this.storage.get('UID').then( x =>  {
-              this.angularFirestore.doc(`usuarios/${x}/drones/${item.id}`).delete();
-            })
-          }
-        }
-      ]
-    });
-    alert.present();
+        ]
+      });
+      alert.present();
+    })
   }
 
   goToAddDron() {
@@ -88,12 +91,14 @@ export class DronesPage {
   }
 
   presentToast() {
-    let toast = this.toastCtrl.create({
-      message: "Presiona otra vez para salir de la aplicación",
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
+    this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.EXITMESSAGE'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
   }
 
 }
