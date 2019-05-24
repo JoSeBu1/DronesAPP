@@ -55,7 +55,7 @@ export class SignupPage {
         let alert = this.alertCtrl.create({
           title: translate['ALERTCONTROLLER.ERRORTITLE'],
           subTitle: err.message,
-          buttons: translate['ALERTCONTROLLER.OKBUTTON']
+          buttons: [translate['ALERTCONTROLLER.OKBUTTON']]
         });
         alert.present();
       })

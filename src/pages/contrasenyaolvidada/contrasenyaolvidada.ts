@@ -24,7 +24,7 @@ export class ContrasenyaolvidadaPage {
           const alert = this.alertController.create({
             title: translate['ALERTCONTROLLER.EMAILSENDTITLE'],
             message: translate['ALERTCONTROLLER.EMAILSENDMESSAGE'],
-            buttons: translate['ALERTCONTROLLER.OKBUTTON']
+            buttons: [translate['ALERTCONTROLLER.OKBUTTON']]
           });
           alert.present();
           this.navCtrl.pop()
@@ -34,7 +34,7 @@ export class ContrasenyaolvidadaPage {
             const alert = this.alertController.create({
               title: translate['ALERTCONTROLLER.ERRORTITLE'],
               message: translate['ALERTCONTROLLER.ERRORMESSAGE'],
-              buttons: translate['ALERTCONTROLLER.OKBUTTON']
+              buttons: [translate['ALERTCONTROLLER.OKBUTTON']]
             });
             alert.present();
           });
