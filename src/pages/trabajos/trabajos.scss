@@ -1,3 +1,11 @@
 page-trabajos {
-
+    ion-list ion-item .icon {
+        margin-right: 10px;
+    }
+    ion-list {
+        background: transparent
+    }
+    ion-list ion-item h2 {
+        margin-bottom: 5px !important;
+    }
 }

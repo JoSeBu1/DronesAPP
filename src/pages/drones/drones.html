@@ -11,6 +11,7 @@
     <ion-list no-lines>
         <ion-item-sliding *ngFor="let item of commondata.dron">
             <ion-item (click)="goToDron(item)">
+                <ion-icon item-left name="custom-drone" class="icono"></ion-icon>
                 <h2>{{item.marca || 'PAGES.DRONES.NOTBRAND' | translate }}</h2>
                 <p>{{item.modelo || 'PAGES.DRONES.NOTMODEL' | translate}}</p>
             </ion-item>

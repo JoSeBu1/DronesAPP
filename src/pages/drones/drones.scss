@@ -1,3 +1,8 @@
 page-drones {
-
+    ion-list {
+        background: transparent
+    }
+    ion-list ion-item h2 {
+        margin-bottom: 5px !important;
+    }
 }

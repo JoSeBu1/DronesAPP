@@ -12,10 +12,10 @@
         <ion-item-sliding *ngFor="let item of vuelo">
             <ion-item (click)="goToFly(item)">
                 <h2>
-                    <ion-icon name="locate" class="icono"></ion-icon>{{item.lugar || 'PAGES.VUELOS.EMPTY' | translate}}
+                    <ion-icon name="locate" class="icon"></ion-icon>{{item.lugar || 'PAGES.VUELOS.EMPTY' | translate}}
                 </h2>
                 <p>
-                    <ion-icon name="calendar" class="icono"></ion-icon>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'PAGES.VUELOS.EMPTY' | translate}}
+                    <ion-icon name="calendar" class="icon"></ion-icon>{{item.fecha.day + '/' + item.fecha.month + '/' + item.fecha.year || 'PAGES.VUELOS.EMPTY' | translate}}
                 </p>
             </ion-item>
             <ion-item-options side="right">

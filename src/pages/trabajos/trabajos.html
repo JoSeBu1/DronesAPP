@@ -11,9 +11,15 @@
     <ion-list no-lines>
         <ion-item-sliding *ngFor="let item of trabajo">
             <ion-item (click)="goToWork(item)">
-                <h2>{{item.lugar || 'PAGES.TRABAJOS.NOTSITE' | translate}}</h2>
-                <p *ngIf="item.pagado">Pagado</p>
-                <p *ngIf="!item.pagado">No pagado</p>
+                <h2>
+                    <ion-icon name="locate" class="icon"></ion-icon>{{item.lugar || 'PAGES.TRABAJOS.NOTSITE' | translate}}
+                </h2>
+                <p *ngIf="item.pagado">
+                    <ion-icon name="cash" class="icon"></ion-icon>Pagado
+                </p>
+                <p *ngIf="!item.pagado">
+                    <ion-icon name="cash" class="icon"></ion-icon>No pagado
+                </p>
             </ion-item>
             <ion-item-options side="right">
                 <button color="primary" ion-button (click)="goToEditWork(item)">
