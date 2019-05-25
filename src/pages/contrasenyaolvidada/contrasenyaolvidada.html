@@ -5,9 +5,10 @@
 </ion-header>
 
 <ion-content padding-horizontal>
-    <ion-item>
+    <img src="assets/imgs/dron.png" class="logo" />
+    <ion-item class="bajarItem">
         <ion-label floating>{{ 'PAGES.PASSFORGOT.CORREO' | translate }}</ion-label>
-        <ion-input #email type="text" required></ion-input>
+        <ion-input #email type="text"></ion-input>
     </ion-item>
     <button class="entrar" (click)="enviarEmail(email.value)" ion-button block>{{ 'PAGES.PASSFORGOT.REPASS' | translate }}</button>
 </ion-content>
