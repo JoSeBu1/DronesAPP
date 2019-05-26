@@ -18,7 +18,7 @@
         "TUTORIAL30": "Para editar",
         "TUTORIAL31": "Desplaza hacia la izquierda lo que quieras editar, pulsa editar y rellena el formulario.",
         "TUTORIAL40": "Para eliminar",
-        "TUTORIAL41": "Desplaza hacia la izquierda lo que quieras eliminar y pulsa elimiar.",
+        "TUTORIAL41": "Desplaza hacia la izquierda lo que quieras eliminar y pulsa eliminar.",
         "TUTORIAL50": "Para consultar vuelos, mantenimientos o trabajos de un dron.",
         "TUTORIAL51": "En el menú lateral, donde pone: Dron que desea consultar, seleccione el dron que desea consultar, para ver los Vuelos, Mantenimientos y Trabajos de ese dron.",
         "TUTORIALEXIT": "Finalizar Tutorial"
@@ -43,7 +43,7 @@
         "CONFIRMTITLE": "Se necesita confirmación!",
         "CONFIRMDELETEDRONMESSAGE": "¿Estás seguro que quieres eliminar el dron? También se eliminarán los datos que le hagan referencia.",
         "ACCEPT": "Aceptar",
-        "WAIT": "Cargando, espere porfavor...",
+        "WAIT": "Cargando, espere por favor...",
         "DELETEMAINTENANCEMESSAGE": "¿Estás seguro que quieres eliminar el mantenimiento?",
         "DELETEWORKMESSAGE": "¿Estás seguro que quieres eliminar el trabajo?",
         "DELETEFLYMESSAGE": "¿Estás seguro que quieres eliminar el vuelo?"

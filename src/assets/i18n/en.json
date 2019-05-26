@@ -1,0 +1,222 @@
+{
+    "SIDEMENU": {
+        "LOGIN": "Login",
+        "NOTICIAS": "News",
+        "DRONES": "Drones",
+        "VUELOS": "Flights",
+        "MANTENIMIENTOS": "Maintenance",
+        "TRABAJOS": "Works",
+        "FAQ": "FAQ",
+        "MAPA": "Flight Map",
+        "ACERCA": "About us",
+        "CERRAR": "Log out"
+    },
+    "TUTORIAL": {
+        "TUTORIAL10": "Hello Welcome to DronesAPP, the application to keep track of your drones.",
+        "TUTORIAL20": "To add",
+        "TUTORIAL21": "Go to the drones page, press the + button, and fill in the form.",
+        "TUTORIAL30": "To edit",
+        "TUTORIAL31": "Move to the left what you want to edit, press edit and fill out the form.",
+        "TUTORIAL40": "To delete",
+        "TUTORIAL41": "Move to the left what you want to delete and press delete.",
+        "TUTORIAL50": "To consult flights, maintenance or works of a drone.",
+        "TUTORIAL51": "On the side menu, where it says: Dron you want to consult, select the dron you want to consult, to see the Flights, Maintenance and Works of that dron.",
+        "TUTORIALEXIT": "Finish Tutorial"
+    },
+    "TOASTS": {
+        "EXITMESSAGE": "Press again to exit the application",
+        "SELECTDRONVUELOS": "Select a drone to add flights",
+        "SELECTDRONTRABAJOS": "Select a drone to add works",
+        "SELECTDRONMANTENIMIENTOS": "Select a drone to add maintenance"
+    },
+    "NOTIFICATION": {
+        "TITLE": "Your drone's warranty is up.",
+        "MESSAGE": "Your drone's warranty will run out in a week./nCheck that everything is working properly. "
+    },
+    "ALERTCONTROLLER": {
+        "EMAILSENDTITLE": "Mail sent",
+        "EMAILSENDMESSAGE": "You have been sent an email to reset your password.",
+        "ERRORTITLE": "Error",
+        "ERRORMESSAGE": "An error has occurred.",
+        "OKBUTTON": "OK",
+        "CANCEL": "Cancel",
+        "CONFIRMTITLE": "Confirmation required!",
+        "CONFIRMDELETEDRONMESSAGE": "Are you sure you want to eliminate the drone? The data referring to it will also be deleted.",
+        "ACCEPT": "Accept",
+        "WAIT": "Charging, please wait...",
+        "DELETEMAINTENANCEMESSAGE": "Are you sure you want to delete the maintenance?",
+        "DELETEWORKMESSAGE": "Are you sure you want to delete the work?",
+        "DELETEFLYMESSAGE": "Are you sure you want to delete the flight?"
+    },
+    "PAGES": {
+        "LOGIN": {
+            "HEADER": "Login",
+            "CORREO": "E-Mail",
+            "PASS": "Password",
+            "PASSFORGOT": "Forgot password?",
+            "EMAILLOGIN": "Login",
+            "EMAILSIGNUP1": "If you are not registered yet.",
+            "EMAILSIGNUP2": "Sign up",
+            "GOOGLELOGIN": "Login with Google",
+            "FACEBOOKLOGIN": "Login with Facebook"
+
+        },
+        "SIGNUP": {
+            "HEADER": "Sign Up",
+            "USUARIO": "User name",
+            "CAMPOREQUERIDO": "Field is required",
+            "USUARIOCARACTERESMINIMOS": "User must contain at least 5 characters",
+            "CORREO": "E-mail",
+            "EMAILINVALIDO": "Must be a valid email address",
+            "PASS": "Password",
+            "PASSCARACTERESMINIMOS": "Password must contain at least 6 characters",
+            "CONFIRMPASS": "Confirm Password",
+            "PASSARENOTTHESAME": "Passwords do not match",
+            "SIGNUPBUTTON": "Sign up"
+        },
+        "NOTICIAS": {
+            "HEADER": "News"
+        },
+        "DRONES": {
+            "HEADER": "Drones",
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "NOTBRAND": "No brand has been entered",
+            "NOTMODEL": "No model has been entered"
+        },
+		   "ADDDRON": {
+            "HEADER": "Add Dron",
+            "BRAND": "Brand",
+            "MODEL": "Model",
+            "ADQUISITIONDATE": "Acquisition date",
+            "NICK": "Nick",
+            "COMMENTS": "Comments"
+        },
+        "EDITDRON": {
+            "HEADER": "Edit Dron",
+            "BRAND": "Brand",
+            "MODEL": "Model",
+            "ADQUISITIONDATE": "Acquisition date",
+            "NICK": "Nick",
+            "COMMENTS": "Comments"
+        },
+        "VIEWDRONES": {
+            "HEADER": "My drones",
+            "BRAND": "Brand",
+            "MODEL": "Model",
+            "ADQUISITIONDATE": "Acquisition date",
+            "NICK": "Nick",
+            "COMMENTS": "Comments",
+            "EMPTY": "No data entered"
+        },
+        "MAP": {
+            "HEADER": "Flight map"
+        },
+        "FAQ": {
+            "HEADER": "Frequently Asked Questions"
+        },
+        "ACERCA": {
+            "HEADER": "About",
+            "AGRADECIMIENTO": "Thanks to the Ministry of Agriculture and Fisheries, Food and Environment (MAPAMA) as authors of the website https://drones.enaire.es/ for facilitating its use, to show the areas in which there is the possibility of flying."
+        },
+        "TRABAJOS": {
+            "HEADER": "Works",
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "NOTSITE": "Not entered Place"
+        },
+        "ADDTRABAJOS": {
+            "HEADER": "Add Work",
+            "SITE": "Place",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "YTLINK": "YT link to the flight video",
+            "PAID": "Paid"
+        },
+        "EDITTRABAJOS": {
+            "HEADER": "Add Work",
+            "SITE": "Place",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "YTLINK": "YT link to the flight video",
+            "PAID": "Paid"
+        },
+        "VIEWTRABAJOS": {
+            "HEADER": "My Work",
+            "SITE": "Place",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "PAID": "Paid"
+        },
+        "PASSFORGOT": {
+            "HEADER": "Password Forgotten",
+            "CORREO": "E-mail",
+            "REPASS": "Reset Password"
+        },
+        "VUELOS": {
+            "HEADER": "Flights",
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "EMPTY": "No data entered"
+        },
+        "ADDVUELOS": {
+            "HEADER": "Add Flight",
+            "NBATERIES": "Number of batteries",
+            "SITE": "Place",
+            "DATE": "Date",
+            "DISTANCE": "Distance travelled(km)",
+            "TEMP": "About atmospheric conditions",
+            "YTLINK": "YT link to the flight video"
+        },
+        "EDITVUELOS": {
+            "HEADER": "Edit flight",
+            "NBATERIES": "Number of batteries",
+            "SITE": "Place",
+            "DATE": "Date",
+            "DISTANCE": "Distance travelled(km)",
+            "TEMP": "About atmospheric conditions",
+            "YTLINK": "YT link to the flight video"
+        },
+        "VIEWVUELOS": {
+            "HEADER": "My Flight",
+            "NBATERIES": "Number of batteries",
+            "SITE": "Place",
+            "DATE": "Date",
+            "DISTANCE": "Distance travelled(km)",
+            "TEMP": "About atmospheric conditions",
+            "EMPTY": "No data entered"
+        },
+        "MANTENIMIENTOS": {
+            "HEADER": "Maintenance",
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "NOTDATE": "No date entered",
+            "NOTTITLE": "Not entered Title"
+        },
+        "ADDMANTENIMIENTOS": {
+            "HEADER": "Add Maintenance",
+            "TITLE": "Title",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        },
+        "EDITMANTENIMIENTOS": {
+            "HEADER": "Edit Maintenance",
+            "TITLE": "Title",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        },
+        "VIEWMANTENIMIENTOS": {
+            "HEADER": "My Maintenance",
+            "TITLE": "Title",
+            "PRICE": "Price",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "EMPTY": "No data entered"
+        }
+    }
+}

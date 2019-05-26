@@ -1,0 +1,222 @@
+{
+    "SIDEMENU": {
+        "LOGIN": "Connexion",
+        "NOTICIAS": "Nouvelles",
+        "DRONES": "Drones",
+        "VUELOS": "Vols",
+        "MANTENIMIENTOS": "Entretien",
+        "TRABAJOS": "Travaux",
+        "FAQ": "Foire aux questions",
+        "MAPA": "Carte de vol",
+        "ACERCA": "A propos de nous",
+        "CERRAR": "Se déconnecter"
+    },
+    "TUTORIAL": {
+        "TUTORIAL10": "Bienvenue sur DronesAPP, l'application pour suivre vos drones."
+        "TUTORIAL20": "Pour ajouter",
+        "TUTORIAL21": "Allez à la page des drones, appuyez sur le bouton +, et remplissez le formulaire."
+        "TUTORIAL30": "Pour éditer",
+        "TUTORIAL31": "Déplacez vers la gauche ce que vous voulez éditer, appuyez sur edit et remplissez le formulaire."
+        "TUTORIAL40": "Effacer",
+        "TUTORIAL41": "Déplacez vers la gauche ce que vous voulez effacer et appuyez sur effacer."
+        "TUTORIAL50": "Pour consulter les vols, la maintenance ou les travaux d'un drone."
+        "TUTORIAL51": "Sur le menu latéral, où il est écrit : Dron que vous voulez consulter, sélectionnez le dron que vous voulez consulter, pour voir les Vols, Maintenance et Travaux de ce dron.",
+        "TUTORIALEXIT": "Terminer le tutoriel"
+    },
+    "TOASTS": {
+        "EXITMESSAGE": "Appuyez à nouveau sur pour quitter l'application",
+        "SELECTDRONVUELOS": "Choisir un drone pour ajouter des vols",
+        "SELECTDRONTRABAJOS": "Choisir un bourdon pour ajouter des oeuvres",
+        "SELECTDRONMANTENIMIENTOS": "Choisir un bourdon pour ajouter de l'entretien"
+    },
+    "NOTIFICATION": {
+        "TITLE": "La garantie de votre drone est annulée."
+        "MESSAGE": "La garantie de votre drone expirera dans une semaine. /nVérifiez que tout fonctionne correctement. "
+    },
+    "ALERTCONTROLLER": {
+        "EMAILSENDTITLE": "Courrier envoyé",
+        "EMAILSENDMESSAGE": "Vous avez reçu un e-mail pour réinitialiser votre mot de passe."
+        "ERRORTITLE": "Erreur",
+        "ERRORMESSAGE": "Une erreur s'est produite."
+        "OKBUTTON": "OK",
+        "CANCEL": "Annuler",
+        "CONFIRMTITLE": "Confirmation requise !",
+        "CONFIRMDELETEDRONMESSAGE": "Êtes-vous sûr de vouloir éliminer le drone ? Les données qui s'y rapportent seront également effacées.",
+        "ACCEPT": "Accepter",
+        "WAIT": "Chargement, attendez, s'il vous plaît...",
+        "DELETEMAINTENANCEMESSAGE": "Êtes-vous sûr de vouloir effacer l'entretien ?",
+        "DELETEWORKMESSAGE": "Êtes-vous sûr de vouloir effacer l'œuvre ?",
+        "DELETEFLYMESSAGE": "Vous êtes sûr de vouloir effacer le vol ?"
+    },
+    "PAGES": {
+        "LOGIN": {
+            "HEADER": "Connexion",
+            "CORREO": "E-Mail",
+            "PASS": "Mot de passe",
+            "PASSFORGOT": "Mot de passe oublié ?",
+            "EMAILLOGIN": "Connexion",
+            "EMAILSIGNUP1": "Si vous n'êtes pas encore inscrit."
+            "EMAILSIGNUP2": "S'inscrire",
+            "GOOGLELOGIN": "Connectez-vous avec Google",
+            "FACEBOOKLOGIN": "Connectez-vous avec Facebook"
+
+        },
+        "SIGNUP": {
+            "HEADER": "S'inscrire",
+            "USUARIO": "Nom d'utilisateur",
+            "CAMPOREQUERIDO": "Champ obligatoire",
+            "USUARIOCARACTERESMINIMOS": "L'utilisateur doit contenir au moins 5 caractères",
+            "CORREO": "E-mail",
+            "EMAILINVALIDO": "Doit être une adresse e-mail valide",
+            "PASS": "Mot de passe",
+            "PASSCARACTERESMINIMOS": "Le mot de passe doit contenir au moins 6 caractères",
+            "CONFIRMPASS": "Confirmer le mot de passe",
+            "PASSARENOTTHESAME": "Les mots de passe ne correspondent pas",
+            "SIGNUPBUTTON": "S'inscrire"
+        },
+        "NOTICIAS": {
+            "HEADER": "Nouvelles"
+        },
+        "DRONES": {
+            "HEADER": "Drones",
+            "EDIT": "Modifier",
+            "DELETE": "Supprimer",
+            "NOTBRAND": "Aucune marque n'a été inscrite",
+            "NOTMODEL": "Aucun modèle n'a été inscrit"
+        },
+		"ADDDRON": {
+            "HEADER": "Ajouter Dron",
+            "BRAND": "Marque",
+            "MODEL": "Modèle",
+            "ADQUISITIONDATE": "Date d'acquisition",
+            "NICK": "Nick",
+            "COMMENTS": "Commentaires"
+        },
+        "EDITDRON": {
+            "HEADER": "Edit Dron",
+            "BRAND": "Marque",
+            "MODEL": "Modèle",
+            "ADQUISITIONDATE": "Date d'acquisition",
+            "NICK": "Nick",
+            "COMMENTS": "Commentaires"
+        },
+        "VIEWDRONES": {
+            "HEADER": "Mes drones",
+            "BRAND": "Marque",
+            "MODEL": "Modèle",
+            "ADQUISITIONDATE : "Date d'acquisition",
+            "NICK": "Nick",
+            "COMMENTS": "Commentaires",
+            "EMPTY": "Aucune donnée saisie"
+        },
+        "MAP": {
+            "HEADER": "Carte de vol"
+        },
+        "FAQ": {
+            "HEADER": "Foire aux questions"
+        },
+        "ACERCA": {
+            "HEADER": "A propos",
+            "AGRADECIMIENTO": "Merci au Ministère de l'Agriculture et de la Pêche, de l'Alimentation et de l'Environnement (MAPAMA) en tant qu'auteur du site https://drones.enaire.es/ pour avoir facilité son utilisation, pour montrer les zones où il y a la possibilité de voler."
+        },
+       "TRABAJOS": {
+            "HEADER": "Travaux",
+            "EDIT": "Modifier",
+            "DELETE": "Supprimer",
+            "NOTSITE": "Non entré Lieu"
+        },
+        "ADDTRABAJOS": {
+            "HEADER": "Ajouter du travail",
+            "SITE": "Lieu",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "YTLINK": "lien youtube à la vidéo de vol",
+            "PAID": "Payé"
+        },
+        "EDITTRABAJOS": {
+            "HEADER": "Ajouter du travail",
+            "SITE": "Lieu",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "YTLINK": "lien youtube à la vidéo de vol",
+            "PAID": "Payé"
+        },
+        "VIEWTRABAJOS": {
+            "HEADER": "Mon travail",
+            "SITE": "Lieu",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "PAID": "Payé"
+        },
+        "PASSFORGOT": {
+            "HEADER": "Mot de passe oublié",
+            "CORREO": "E-mail",
+            "REPASS": "Réinitialiser le mot de passe"
+        },
+        "VUELOS": {
+            "HEADER": "Vols",
+            "EDIT": "Modifier",
+            "DELETE": "Supprimer",
+            "EMPTY": "Aucune donnée saisie"
+        },
+        "ADDVUELOS": {
+            "HEADER": "Ajouter un vol",
+            "NBATERIES": "Nombre de batteries",
+            "SITE": "Lieu",
+            "DATE": "Date",
+            "DISTANCE": "Distance parcourue (km)",
+            "TEMP": "A propos des conditions atmosphériques",
+            "YTLINK": "lien youtube à la vidéo de vol"
+        },
+        "EDITVUELOS": {
+            "HEADER": "Modifier vol",
+            "NBATERIES": "Nombre de batteries",
+            "SITE": "Lieu",
+            "DATE": "Date",
+            "DISTANCE": "Distance parcourue (km)",
+            "TEMP": "A propos des conditions atmosphériques",
+            "YTLINK": "lien youtube à la vidéo de vol"
+        },
+        "VIEWVVUELOS": {
+            "HEADER": "Mon vol",
+            "NBATERIES": "Nombre de batteries",
+            "SITE": "Lieu",
+            "DATE": "Date",
+            "DISTANCE": "Distance parcourue (km)",
+            "TEMP": "A propos des conditions atmosphériques",
+            "EMPTY": "Aucune donnée saisie"
+        },
+        "MANTENIMIENTOS": {
+            "HEADER": "Entretien",
+            "EDIT": "Modifier",
+            "DELETE": "Supprimer",
+            "NOTDATE": "Aucune date saisie",
+            "NOTTITLE": "Non inscrit Titre"
+        },
+        "ADDMANTENIMIENTOS": {
+            "HEADER": "Ajouter l'entretien",
+            "TITLE": "Titre",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        },
+        "EDITMANTENIMIENTOS": {
+            "HEADER": "Modifier la maintenance",
+            "TITLE": "Titre",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description"
+        },
+        "VIEWMANTENIMIENTOS": {
+            "HEADER": "Mon entretien",
+            "TITLE": "Titre",
+            "PRICE": "Prix",
+            "DATE": "Date",
+            "DESCRIPTION": "Description",
+            "EMPTY": "Aucune donnée saisie"
+        }
+    }
+}

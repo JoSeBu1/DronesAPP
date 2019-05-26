@@ -1,11 +1,11 @@
 <!--type="overlay || push || reveal"-->
 <ion-menu [content]="content" type="overlay">
     <ion-content>
-        <ion-card text-center class="hide-card" *ngIf="commondata.sesionIniciada">
+        <ion-card text-center class="hide-card side-menu-top-color" *ngIf="commondata.sesionIniciada">
             <img *ngIf="commondata.sesionIniciadaConFacebook || commondata.sesionIniciadaConGoogle" [src]="commondata.photoUrl" class="custom-avatar" />
             <h1>{{commondata.usuario}}</h1>
             <h3>{{commondata.email}}</h3>
-            <ion-item class="item-leave-height">
+            <ion-item class="item-leave-height transparent">
                 <ion-label floating>Dron que desea consultar</ion-label>
                 <!-- interface="action-sheet || popover || alert" -->
                 <ion-select interface="action-sheet" okText="Seleccionar" cancelText="Cancelar" (ionChange)="cambioSelect()" [(ngModel)]="commondata.dronActivo" [compareWith]="commondata.compareFn">
