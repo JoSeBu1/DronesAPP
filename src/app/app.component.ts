@@ -56,7 +56,7 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
       var lang = this._translate.getBrowserLang();
-      lang = /(pt|de|en|es)/gi.test(lang) ? lang : 'en';
+      lang = /(fr|en|es)/gi.test(lang) ? lang : 'en';
       this._translate.setDefaultLang('en');
       this._translate.use(lang);
       let locale = navigator.language;
