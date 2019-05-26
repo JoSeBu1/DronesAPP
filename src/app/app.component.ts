@@ -55,9 +55,12 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      let userLang = navigator.language.split('-')[0];
-      this.commondata.locale = navigator.language;
-      this._translate.use(userLang);
+      var lang = this._translate.getBrowserLang();
+      lang = /(pt|de|en|es)/gi.test(lang) ? lang : 'en';
+      this._translate.setDefaultLang('en');
+      this._translate.use(lang);
+      let locale = navigator.language;
+      this.commondata.locale = locale;
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.overlaysWebView(false);
