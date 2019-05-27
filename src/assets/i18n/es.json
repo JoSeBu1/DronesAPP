@@ -27,7 +27,9 @@
         "EXITMESSAGE": "Presiona otra vez para salir de la aplicación",
         "SELECTDRONVUELOS": "Selecciona un dron para poder añadir vuelos",
         "SELECTDRONTRABAJOS": "Selecciona un dron para poder añadir trabajos",
-        "SELECTDRONMANTENIMIENTOS": "Selecciona un dron para poder añadir mantenimientos"
+        "SELECTDRONMANTENIMIENTOS": "Selecciona un dron para poder añadir mantenimientos",
+        "NEEDLOGIN": "Si no estas logeado no puedes acceder a Drones, Vuelos, Mantenimientos y trabajos, logeate para tener acceso total",
+        "CLOSE": "Cerrar"
     },
     "NOTIFICATION": {
         "TITLE": "Se acaba la garantía de su dron ",

@@ -27,7 +27,9 @@
         "EXITMESSAGE": "Press again to exit the application",
         "SELECTDRONVUELOS": "Select a drone to add flights",
         "SELECTDRONTRABAJOS": "Select a drone to add works",
-        "SELECTDRONMANTENIMIENTOS": "Select a drone to add maintenance"
+        "SELECTDRONMANTENIMIENTOS": "Select a drone to add maintenance",
+        "NEEDLOGIN": "If you are not logged in you cannot access Drones, Flights, Maintenance and jobs, log in to have full access",
+        "CLOSE": "Close"
     },
     "NOTIFICATION": {
         "TITLE": "Your drone's warranty is up.",
@@ -63,7 +65,7 @@
         },
         "SIGNUP": {
             "HEADER": "Sign Up",
-            "USUARIO": "User name",
+            "USUARIO": "Username",
             "CAMPOREQUERIDO": "Field is required",
             "USUARIOCARACTERESMINIMOS": "User must contain at least 5 characters",
             "CORREO": "E-mail",
@@ -84,7 +86,7 @@
             "NOTBRAND": "No brand has been entered",
             "NOTMODEL": "No model has been entered"
         },
-		   "ADDDRON": {
+        "ADDDRON": {
             "HEADER": "Add Dron",
             "BRAND": "Brand",
             "MODEL": "Model",
@@ -113,7 +115,7 @@
             "HEADER": "Flight map"
         },
         "FAQ": {
-            "HEADER": "Frequently Asked Questions"
+            "HEADER": "FAQ"
         },
         "ACERCA": {
             "HEADER": "About",

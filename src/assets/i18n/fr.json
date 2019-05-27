@@ -12,14 +12,14 @@
         "CERRAR": "Se déconnecter"
     },
     "TUTORIAL": {
-        "TUTORIAL10": "Bienvenue sur DronesAPP, l'application pour suivre vos drones."
+        "TUTORIAL10": "Bienvenue sur DronesAPP, l'application pour suivre vos drones.",
         "TUTORIAL20": "Pour ajouter",
-        "TUTORIAL21": "Allez à la page des drones, appuyez sur le bouton +, et remplissez le formulaire."
+        "TUTORIAL21": "Allez à la page des drones, appuyez sur le bouton +, et remplissez le formulaire.",
         "TUTORIAL30": "Pour éditer",
-        "TUTORIAL31": "Déplacez vers la gauche ce que vous voulez éditer, appuyez sur edit et remplissez le formulaire."
+        "TUTORIAL31": "Déplacez vers la gauche ce que vous voulez éditer, appuyez sur edit et remplissez le formulaire.",
         "TUTORIAL40": "Effacer",
-        "TUTORIAL41": "Déplacez vers la gauche ce que vous voulez effacer et appuyez sur effacer."
-        "TUTORIAL50": "Pour consulter les vols, la maintenance ou les travaux d'un drone."
+        "TUTORIAL41": "Déplacez vers la gauche ce que vous voulez effacer et appuyez sur effacer.",
+        "TUTORIAL50": "Pour consulter les vols, la maintenance ou les travaux d'un drone.",
         "TUTORIAL51": "Sur le menu latéral, où il est écrit : Dron que vous voulez consulter, sélectionnez le dron que vous voulez consulter, pour voir les Vols, Maintenance et Travaux de ce dron.",
         "TUTORIALEXIT": "Terminer le tutoriel"
     },
@@ -27,17 +27,19 @@
         "EXITMESSAGE": "Appuyez à nouveau sur pour quitter l'application",
         "SELECTDRONVUELOS": "Choisir un drone pour ajouter des vols",
         "SELECTDRONTRABAJOS": "Choisir un bourdon pour ajouter des oeuvres",
-        "SELECTDRONMANTENIMIENTOS": "Choisir un bourdon pour ajouter de l'entretien"
+        "SELECTDRONMANTENIMIENTOS": "Choisir un bourdon pour ajouter de l'entretien",
+        "NEEDLOGIN": "Si vous n'êtes pas connecté, vous ne pouvez pas accéder aux drones, vols, maintenance et travaux, connectez-vous pour avoir un accès complet",
+        "CLOSE": "Fermer"
     },
     "NOTIFICATION": {
-        "TITLE": "La garantie de votre drone est annulée."
+        "TITLE": "La garantie de votre drone est annulée.",
         "MESSAGE": "La garantie de votre drone expirera dans une semaine. /nVérifiez que tout fonctionne correctement. "
     },
     "ALERTCONTROLLER": {
         "EMAILSENDTITLE": "Courrier envoyé",
-        "EMAILSENDMESSAGE": "Vous avez reçu un e-mail pour réinitialiser votre mot de passe."
+        "EMAILSENDMESSAGE": "Vous avez reçu un e-mail pour réinitialiser votre mot de passe.",
         "ERRORTITLE": "Erreur",
-        "ERRORMESSAGE": "Une erreur s'est produite."
+        "ERRORMESSAGE": "Une erreur s'est produite.",
         "OKBUTTON": "OK",
         "CANCEL": "Annuler",
         "CONFIRMTITLE": "Confirmation requise !",
@@ -55,7 +57,7 @@
             "PASS": "Mot de passe",
             "PASSFORGOT": "Mot de passe oublié ?",
             "EMAILLOGIN": "Connexion",
-            "EMAILSIGNUP1": "Si vous n'êtes pas encore inscrit."
+            "EMAILSIGNUP1": "Si vous n'êtes pas encore inscrit.",
             "EMAILSIGNUP2": "S'inscrire",
             "GOOGLELOGIN": "Connectez-vous avec Google",
             "FACEBOOKLOGIN": "Connectez-vous avec Facebook"
@@ -84,7 +86,7 @@
             "NOTBRAND": "Aucune marque n'a été inscrite",
             "NOTMODEL": "Aucun modèle n'a été inscrit"
         },
-		"ADDDRON": {
+        "ADDDRON": {
             "HEADER": "Ajouter Dron",
             "BRAND": "Marque",
             "MODEL": "Modèle",
@@ -104,7 +106,7 @@
             "HEADER": "Mes drones",
             "BRAND": "Marque",
             "MODEL": "Modèle",
-            "ADQUISITIONDATE : "Date d'acquisition",
+            "ADQUISITIONDATE": "Date d'acquisition",
             "NICK": "Nick",
             "COMMENTS": "Commentaires",
             "EMPTY": "Aucune donnée saisie"
@@ -119,7 +121,7 @@
             "HEADER": "A propos",
             "AGRADECIMIENTO": "Merci au Ministère de l'Agriculture et de la Pêche, de l'Alimentation et de l'Environnement (MAPAMA) en tant qu'auteur du site https://drones.enaire.es/ pour avoir facilité son utilisation, pour montrer les zones où il y a la possibilité de voler."
         },
-       "TRABAJOS": {
+        "TRABAJOS": {
             "HEADER": "Travaux",
             "EDIT": "Modifier",
             "DELETE": "Supprimer",

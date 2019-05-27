@@ -135,14 +135,16 @@ export class MyApp {
         this.nav.setRoot(page.component);
       } else {
         this.nav.push(LoginPage, {pagina});
-        const toast = this.toastController.create({
-          message: 'Si no estas logeado no puedes acceder a Drones, Vuelos, Mantenimientos y trabajos, logeate para tener acceso total',
-          showCloseButton: true,
-          position: 'bottom',
-          closeButtonText: 'Cerrar',
-          duration: 4500
-        });
-        toast.present();
+        this._translate.get(['TOASTS.NEEDLOGIN', 'TOASTS.CLOSE']).subscribe(translate => {
+          const toast = this.toastController.create({
+            message: translate['TOASTS.NEEDLOGIN'],
+            showCloseButton: true,
+            position: 'bottom',
+            closeButtonText: translate['TOASTS.CLOSE'],
+            duration: 4500
+          });
+          toast.present();
+        })
       }
     });
   }
