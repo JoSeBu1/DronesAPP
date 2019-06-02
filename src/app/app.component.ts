@@ -64,6 +64,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.overlaysWebView(false);
+      this.statusBar.backgroundColorByHexString('#002984')
       this.hideSplashScreen();
       this.storage.get('UID').then(x =>  {
         if(x == '' || x == null || x == undefined) {
