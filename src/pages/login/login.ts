@@ -34,7 +34,7 @@ export class LoginPage {
     public firebaseProvider: FirebaseProvider, public alertCtrl: AlertController, public commondata: CommondataProvider,
     private storage: Storage, public loadingController: LoadingController, private googlePlus: GooglePlus,
     private facebook: Facebook, private angularFirestore: AngularFirestore, public platform: Platform,
-    private _translate: TranslateService) { 
+    private _translate: TranslateService, private alertController: AlertController) { 
   }
 
   ionViewWillEnter() {
@@ -63,14 +63,8 @@ export class LoginPage {
         }
       })
     })
-    .catch(err=>{
-      this.loader();
-      let alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: err.message,
-        buttons: ['Aceptar']
-      });
-      alert.present();
+    .catch(() => {
+      this.presentError();
     })
   }
 
@@ -253,6 +247,22 @@ export class LoginPage {
   stopLoader() {
     this.loading.dismissAll();
     this.loading = null;
+  }
+
+  presentError() {
+    this._translate.get(['ALERTCONTROLLER.ERRORTITLE', 'ALERTCONTROLLER.LOGININCORRECT', 'ALERTCONTROLLER.OKBUTTON']).subscribe(translate => {
+      const alert = this.alertController.create({
+        title: translate['ALERTCONTROLLER.ERRORTITLE'],
+        message: translate['ALERTCONTROLLER.LOGININCORRECT'],
+        buttons: [{
+          text: translate['ALERTCONTROLLER.OKBUTTON'],
+            handler: (blah) => {
+              this.loader();
+            }
+        }]
+      });
+      alert.present();
+    })
   }
 
 }
