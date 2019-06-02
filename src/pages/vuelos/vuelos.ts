@@ -37,23 +37,27 @@ export class VuelosPage {
   }
 
   ionViewDidEnter() {
-    this.storage.get('UID').then( x =>  {
-      this.vuelosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
-      console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
-      this.vuelosCollection.snapshotChanges().subscribe(vueloList => {
-        this.vuelo = vueloList.map(item => {
-          return {
-            baterias: item.payload.doc.data().baterias,
-            distancia: item.payload.doc.data().distancia,
-            lugar: item.payload.doc.data().lugar,
-            fecha: item.payload.doc.data().fecha,
-            condicionesAtmosfericas: item.payload.doc.data().condicionesAtmosfericas,
-            video: item.payload.doc.data().video,
-            id: item.payload.doc.id
-          }
+    if(this.commondata.dronActivo == undefined) {
+      this.presentNotPosibleView()
+    } else {
+      this.storage.get('UID').then( x =>  {
+        this.vuelosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
+        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
+        this.vuelosCollection.snapshotChanges().subscribe(vueloList => {
+          this.vuelo = vueloList.map(item => {
+            return {
+              baterias: item.payload.doc.data().baterias,
+              distancia: item.payload.doc.data().distancia,
+              lugar: item.payload.doc.data().lugar,
+              fecha: item.payload.doc.data().fecha,
+              condicionesAtmosfericas: item.payload.doc.data().condicionesAtmosfericas,
+              video: item.payload.doc.data().video,
+              id: item.payload.doc.id
+            }
+          });
         });
       });
-    });
+    }
   }
 
   ionViewWillEnter() {
@@ -109,7 +113,6 @@ export class VuelosPage {
     } else {
       this.navCtrl.push(AnyadirvueloPage);
     }
-    alert(this.commondata.dronActivo);
   }
 
   presentToast() {
@@ -127,6 +130,17 @@ export class VuelosPage {
     this._translate.get(['TOASTS.SELECTDRONVUELOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
         message: translate['TOASTS.SELECTDRONVUELOS'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
+  }
+
+  presentNotPosibleView() {
+    this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.SELECTDRON'],
         duration: 2000,
         position: "bottom"
       });

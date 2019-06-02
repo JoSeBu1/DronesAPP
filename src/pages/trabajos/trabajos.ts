@@ -37,23 +37,27 @@ export class TrabajosPage {
   }
 
   ionViewDidEnter() {
-    this.storage.get('UID').then( x =>  {
-      this.trabajosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
-      console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
-      this.trabajosCollection.snapshotChanges().subscribe(trabajoList => {
-        this.trabajo = trabajoList.map(item => {
-          return {
-            descripcion: item.payload.doc.data().descripcion,
-            precio: item.payload.doc.data().precio,
-            fecha: item.payload.doc.data().fecha,
-            pagado: item.payload.doc.data().pagado,
-            video: item.payload.doc.data().video,
-            lugar: item.payload.doc.data().lugar,
-            id: item.payload.doc.id
-          }
+    if(this.commondata.dronActivo == undefined) {
+      this.presentNotPosibleView()
+    } else {
+      this.storage.get('UID').then( x =>  {
+        this.trabajosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
+        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
+        this.trabajosCollection.snapshotChanges().subscribe(trabajoList => {
+          this.trabajo = trabajoList.map(item => {
+            return {
+              descripcion: item.payload.doc.data().descripcion,
+              precio: item.payload.doc.data().precio,
+              fecha: item.payload.doc.data().fecha,
+              pagado: item.payload.doc.data().pagado,
+              video: item.payload.doc.data().video,
+              lugar: item.payload.doc.data().lugar,
+              id: item.payload.doc.id
+            }
+          });
         });
       });
-    });
+    }
   }
 
   ionViewWillEnter() {
@@ -126,6 +130,17 @@ export class TrabajosPage {
     this._translate.get(['TOASTS.SELECTDRONTRABAJOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
         message: translate['TOASTS.SELECTDRONTRABAJOS'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
+  }
+
+  presentNotPosibleView() {
+    this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.SELECTDRON'],
         duration: 2000,
         position: "bottom"
       });

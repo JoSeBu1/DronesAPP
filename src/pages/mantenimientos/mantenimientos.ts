@@ -36,21 +36,25 @@ export class MantenimientosPage {
   }
 
   ionViewDidEnter() {
-    this.storage.get('UID').then( x =>  {
-      this.mantenimientosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
-      console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
-      this.mantenimientosCollection.snapshotChanges().subscribe(dronList => {
-        this.mantenimiento = dronList.map(item => {
-          return {
-            precio: item.payload.doc.data().precio,
-            descripcion: item.payload.doc.data().descripcion,
-            fecha: item.payload.doc.data().fecha,
-            titulo: item.payload.doc.data().titulo,
-            id: item.payload.doc.id
-          }
+    if(this.commondata.dronActivo == undefined) {
+      this.presentNotPosibleView()
+    } else {
+      this.storage.get('UID').then( x =>  {
+        this.mantenimientosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
+        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
+        this.mantenimientosCollection.snapshotChanges().subscribe(dronList => {
+          this.mantenimiento = dronList.map(item => {
+            return {
+              precio: item.payload.doc.data().precio,
+              descripcion: item.payload.doc.data().descripcion,
+              fecha: item.payload.doc.data().fecha,
+              titulo: item.payload.doc.data().titulo,
+              id: item.payload.doc.id
+            }
+          });
         });
       });
-    });
+    } 
   }
 
   ionViewWillEnter() {
@@ -123,6 +127,17 @@ export class MantenimientosPage {
     this._translate.get(['TOASTS.SELECTDRONMANTENIMIENTOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
         message: translate['TOASTS.SELECTDRONMANTENIMIENTOS'],
+        duration: 2000,
+        position: "bottom"
+      });
+      toast.present();
+    })
+  }
+
+  presentNotPosibleView() {
+    this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
+      let toast = this.toastCtrl.create({
+        message: translate['TOASTS.SELECTDRON'],
         duration: 2000,
         position: "bottom"
       });
