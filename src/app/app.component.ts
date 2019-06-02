@@ -123,31 +123,29 @@ export class MyApp {
   openPage(page) {
     this.activePage = page;
     let pagina = page.component;
-    this.firebaseProvider.Session.subscribe((session) => {
-      if (page.component == MapavueloPage) {
-        this.nav.setRoot(MapavueloPage);
-      } else if (page.component == NoticiasPage) {
-        this.nav.setRoot(NoticiasPage);
-      } else if (page.component == PreguntasfrecuentesPage) {
-        this.nav.setRoot(PreguntasfrecuentesPage);
-      } else if (page.component == AcercadePage) {
-        this.nav.setRoot(AcercadePage);
-      } else if (session) {
-        this.nav.setRoot(page.component);
-      } else {
-        this.nav.push(LoginPage, {pagina});
-        this._translate.get(['TOASTS.NEEDLOGIN', 'TOASTS.CLOSE']).subscribe(translate => {
-          const toast = this.toastController.create({
-            message: translate['TOASTS.NEEDLOGIN'],
-            showCloseButton: true,
-            position: 'bottom',
-            closeButtonText: translate['TOASTS.CLOSE'],
-            duration: 4500
-          });
-          toast.present();
-        })
-      }
-    });
+    if (page.component == MapavueloPage) {
+      this.nav.setRoot(MapavueloPage);
+    } else if (page.component == NoticiasPage) {
+      this.nav.setRoot(NoticiasPage);
+    } else if (page.component == PreguntasfrecuentesPage) {
+      this.nav.setRoot(PreguntasfrecuentesPage);
+    } else if (page.component == AcercadePage) {
+      this.nav.setRoot(AcercadePage);
+    } else if (this.commondata.sesionIniciada) {
+      this.nav.setRoot(page.component);
+    } else {
+      this.nav.push(LoginPage, {pagina});
+      this._translate.get(['TOASTS.NEEDLOGIN', 'TOASTS.CLOSE']).subscribe(translate => {
+        const toast = this.toastController.create({
+          message: translate['TOASTS.NEEDLOGIN'],
+          showCloseButton: true,
+          position: 'bottom',
+          closeButtonText: translate['TOASTS.CLOSE'],
+          duration: 4500
+        });
+        toast.present();
+      })
+    }
   }
 
   checkActive(page) {
@@ -175,7 +173,6 @@ export class MyApp {
     this.storage.remove('dronActivo');
     this.commondata.dronActivo = undefined;
     this.commondata.sesionIniciada = false;
-    
   }
 
   goToLogIn() {
