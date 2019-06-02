@@ -32,7 +32,8 @@ ion-input {
 .custom-avatar {
     height: 20vw;
     width: 20vw;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
+    border-color: white;
     border-radius: 50%;
     display: inline-block;
     margin-left: auto;
@@ -46,7 +47,10 @@ ion-input {
 }
 
 .side-menu-top-color {
-    background-image: linear-gradient(135deg, color($colors, dark), color($colors, primary));
+    background-image: linear-gradient(color($colors, primary));
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 100%;
 }
 
 .transparent {
@@ -55,4 +59,26 @@ ion-input {
 
 ion-navbar {
     background-color: color($colors, primary);
+}
+
+.white-text {
+    color: white !important;
+}
+
+.log-out-icon {
+    color: white;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.ion-list-top {
+    margin-top: -20px;
+}
+
+.ion-select-up {
+    margin-bottom: -10px;
 }
