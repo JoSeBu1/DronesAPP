@@ -25,6 +25,7 @@
     },
     "TOASTS": {
         "EXITMESSAGE": "Presiona otra vez para salir de la aplicación",
+        "SELECTDRON": "Selecciona un dron para poder visualizar el contenido",
         "SELECTDRONVUELOS": "Selecciona un dron para poder añadir vuelos",
         "SELECTDRONTRABAJOS": "Selecciona un dron para poder añadir trabajos",
         "SELECTDRONMANTENIMIENTOS": "Selecciona un dron para poder añadir mantenimientos",
@@ -37,6 +38,7 @@
     },
     "ALERTCONTROLLER": {
         "EMAILSENDTITLE": "Correo enviado",
+        "LOGININCORRECT": "Email o contraseña incorrectos",
         "EMAILSENDMESSAGE": "Se le ha enviado un correo electrónico para restablecer su contraseña.",
         "ERRORTITLE": "Error",
         "ERRORMESSAGE": "Ha ocurrido un error.",

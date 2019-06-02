@@ -25,6 +25,7 @@
     },
     "TOASTS": {
         "EXITMESSAGE": "Appuyez à nouveau sur pour quitter l'application",
+        "SELECTDRON": "Sélectionnez un drone pour voir le contenu",
         "SELECTDRONVUELOS": "Choisir un drone pour ajouter des vols",
         "SELECTDRONTRABAJOS": "Choisir un bourdon pour ajouter des oeuvres",
         "SELECTDRONMANTENIMIENTOS": "Choisir un bourdon pour ajouter de l'entretien",
@@ -37,6 +38,7 @@
     },
     "ALERTCONTROLLER": {
         "EMAILSENDTITLE": "Courrier envoyé",
+        "LOGININCORRECT": "Adresse e-mail ou mot de passe incorrect",
         "EMAILSENDMESSAGE": "Vous avez reçu un e-mail pour réinitialiser votre mot de passe.",
         "ERRORTITLE": "Erreur",
         "ERRORMESSAGE": "Une erreur s'est produite.",

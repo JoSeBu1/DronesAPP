@@ -25,6 +25,7 @@
     },
     "TOASTS": {
         "EXITMESSAGE": "Press again to exit the application",
+        "SELECTDRON": "Select a drone to view the content",
         "SELECTDRONVUELOS": "Select a drone to add flights",
         "SELECTDRONTRABAJOS": "Select a drone to add works",
         "SELECTDRONMANTENIMIENTOS": "Select a drone to add maintenance",
@@ -37,6 +38,7 @@
     },
     "ALERTCONTROLLER": {
         "EMAILSENDTITLE": "Mail sent",
+        "LOGININCORRECT": "Incorrect email or password",
         "EMAILSENDMESSAGE": "You have been sent an email to reset your password.",
         "ERRORTITLE": "Error",
         "ERRORMESSAGE": "An error has occurred.",
