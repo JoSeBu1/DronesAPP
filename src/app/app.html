@@ -1,28 +1,34 @@
 <!--type="overlay || push || reveal"-->
 <ion-menu [content]="content" type="overlay">
     <ion-content>
-        <ion-card text-center class="hide-card side-menu-top-color" *ngIf="commondata.sesionIniciada">
+        <ion-card text-center class="hide-card side-menu-top-color ion-card-bottom" *ngIf="commondata.sesionIniciada">
             <img *ngIf="commondata.sesionIniciadaConFacebook || commondata.sesionIniciadaConGoogle" [src]="commondata.photoUrl" class="custom-avatar" />
-            <h1>{{commondata.usuario}}</h1>
-            <h3>{{commondata.email}}</h3>
-            <ion-item class="item-leave-height transparent">
-                <ion-label floating>Dron que desea consultar</ion-label>
+            <ion-item class="transparent white-text center ion-select-up">
+                <h2 style="font-size: 20px" class="white-text">{{commondata.usuario}}</h2>
+                <ion-icon menuClose name="log-out" item-right class="log-out-icon" (click)="logout()"></ion-icon>
+                <h3 class="white-text">{{commondata.email}}</h3>
+            </ion-item>
+            <ion-item class="transparent white-text">
+                <ion-label class="white-text" floating>Dron que desea consultar</ion-label>
                 <!-- interface="action-sheet || popover || alert" -->
-                <ion-select interface="action-sheet" okText="Seleccionar" cancelText="Cancelar" (ionChange)="cambioSelect()" [(ngModel)]="commondata.dronActivo" [compareWith]="commondata.compareFn">
+                <ion-select style="margin-right: 5px" interface="action-sheet" okText="Seleccionar" cancelText="Cancelar" (ionChange)="cambioSelect()" [(ngModel)]="commondata.dronActivo" [compareWith]="commondata.compareFn">
                     <ion-option *ngFor="let item of commondata.dron" [value]="item">{{item.apodo}}</ion-option>
                 </ion-select>
             </ion-item>
         </ion-card>
-        <ion-list no-lines>
-            <button menuClose ion-item *ngIf="!commondata.sesionIniciada" (click)="goToLogIn()">
-                    <ion-icon name="log-in" item-left></ion-icon> {{'SIDEMENU.LOGIN' | translate}}
-            </button>
+        <ion-list class="ion-list-top" *ngIf="commondata.sesionIniciada" no-lines>
             <button menuClose ion-item *ngFor="let p of pages" [class.activeHighLight]="checkActive(p)" (click)="openPage(p)">
                 <ion-icon [name]="p.icon" item-left></ion-icon>
                 {{p.title | translate}}
             </button>
-            <button menuClose ion-item *ngIf="commondata.sesionIniciada" (click)="logout()">
-                <ion-icon name="log-out" item-left></ion-icon> {{'SIDEMENU.CERRAR' | translate}}
+        </ion-list>
+        <ion-list *ngIf="!commondata.sesionIniciada" no-lines>
+            <button menuClose ion-item *ngIf="!commondata.sesionIniciada" (click)="goToLogIn()">
+                <ion-icon name="log-in" item-left></ion-icon> {{'SIDEMENU.LOGIN' | translate}}
+            </button>
+            <button menuClose ion-item *ngFor="let p of pages" [class.activeHighLight]="checkActive(p)" (click)="openPage(p)">
+                <ion-icon [name]="p.icon" item-left></ion-icon>
+                    {{p.title | translate}}
             </button>
         </ion-list>
     </ion-content>
