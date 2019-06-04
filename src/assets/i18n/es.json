@@ -12,15 +12,14 @@
         "CERRAR": "Cerrar sesión"
     },
     "TUTORIAL": {
-        "TUTORIAL10": "Hola Bienvenido a DronesAPP, la aplicación para llevar el control de tus drones.",
-        "TUTORIAL20": "Para añadir",
-        "TUTORIAL21": "Dirigirte a la pagina drones, pulsa el botón +, y rellena el formulario.",
-        "TUTORIAL30": "Para editar",
-        "TUTORIAL31": "Desplaza hacia la izquierda lo que quieras editar, pulsa editar y rellena el formulario.",
-        "TUTORIAL40": "Para eliminar",
-        "TUTORIAL41": "Desplaza hacia la izquierda lo que quieras eliminar y pulsa eliminar.",
-        "TUTORIAL50": "Para consultar vuelos, mantenimientos o trabajos de un dron.",
-        "TUTORIAL51": "En el menú lateral, donde pone: Dron que desea consultar, seleccione el dron que desea consultar, para ver los Vuelos, Mantenimientos y Trabajos de ese dron.",
+        "TUTORIAL10": "Para añadir",
+        "TUTORIAL11": "Dirigirte a la pagina drones, pulsa el botón +, y rellena el formulario.",
+        "TUTORIAL20": "Para editar",
+        "TUTORIAL21": "Desplaza hacia la izquierda lo que quieras editar, pulsa editar y rellena el formulario.",
+        "TUTORIAL30": "Para eliminar",
+        "TUTORIAL31": "Desplaza hacia la izquierda lo que quieras eliminar y pulsa eliminar.",
+        "TUTORIAL40": "Para consultar vuelos, mantenimientos o trabajos de un dron.",
+        "TUTORIAL41": "En el menú lateral, donde pone: Dron que desea consultar, seleccione el dron que desea consultar, para ver los Vuelos, Mantenimientos y Trabajos de ese dron.",
         "TUTORIALEXIT": "Finalizar Tutorial"
     },
     "TOASTS": {

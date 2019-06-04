@@ -12,15 +12,14 @@
         "CERRAR": "Log out"
     },
     "TUTORIAL": {
-        "TUTORIAL10": "Hello Welcome to DronesAPP, the application to keep track of your drones.",
-        "TUTORIAL20": "To add",
-        "TUTORIAL21": "Go to the drones page, press the + button, and fill in the form.",
-        "TUTORIAL30": "To edit",
-        "TUTORIAL31": "Move to the left what you want to edit, press edit and fill out the form.",
-        "TUTORIAL40": "To delete",
-        "TUTORIAL41": "Move to the left what you want to delete and press delete.",
-        "TUTORIAL50": "To consult flights, maintenance or works of a drone.",
-        "TUTORIAL51": "On the side menu, where it says: Dron you want to consult, select the dron you want to consult, to see the Flights, Maintenance and Works of that dron.",
+        "TUTORIAL10": "To add",
+        "TUTORIAL11": "Go to the drones page, press the + button, and fill in the form.",
+        "TUTORIAL20": "To edit",
+        "TUTORIAL21": "Move to the left what you want to edit, press edit and fill out the form.",
+        "TUTORIAL30": "To delete",
+        "TUTORIAL31": "Move to the left what you want to delete and press delete.",
+        "TUTORIAL40": "To consult flights, maintenance or works of a drone.",
+        "TUTORIAL41": "On the side menu, where it says: Dron you want to consult, select the dron you want to consult, to see the Flights, Maintenance and Works of that dron.",
         "TUTORIALEXIT": "Finish Tutorial"
     },
     "TOASTS": {
