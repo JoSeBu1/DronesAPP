@@ -17,6 +17,16 @@
     <p style="text-align:right" class="bajarItem"><a (click)="goToForgotPassword()">{{ 'PAGES.LOGIN.PASSFORGOT' | translate }}</a></p>
     <button class="entrar" (click)="goTo(email.value, password.value)" ion-button block>{{ 'PAGES.LOGIN.EMAILLOGIN' | translate }}</button>
     <p style="text-align:center">{{ 'PAGES.LOGIN.EMAILSIGNUP1' | translate }}<a (click)="goToSignUp()">{{ 'PAGES.LOGIN.EMAILSIGNUP2' | translate }}</a></p>
-    <button ion-button block icon-left class="entrar google-color" (click)="loginGoogle()"><ion-icon name="logo-google"></ion-icon>{{ 'PAGES.LOGIN.GOOGLELOGIN' | translate }}</button>
-    <button ion-button block icon-left class="entrar facebook-color" (click)="loginFacebook()"><ion-icon name="logo-facebook"></ion-icon>{{ 'PAGES.LOGIN.FACEBOOKLOGIN' | translate }}</button>
+    <button ion-button block icon-left class="googleLogin" (click)="loginGoogle()">
+        <ion-thumbnail>
+            <img src="assets/icons/googleLogin.png" class="googleLogo" />
+        </ion-thumbnail>
+        {{ 'PAGES.LOGIN.GOOGLELOGIN' | translate }}
+    </button>
+    <button ion-button block icon-left class="entrar facebook-color" (click)="loginFacebook()">
+        <ion-thumbnail>
+            <img src="assets/icons/facebookLogin.png" class="facebookLogo" />
+        </ion-thumbnail>
+        {{ 'PAGES.LOGIN.FACEBOOKLOGIN' | translate }}
+    </button>
 </ion-content>
