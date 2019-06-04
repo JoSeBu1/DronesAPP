@@ -12,15 +12,15 @@
         "CERRAR": "Se déconnecter"
     },
     "TUTORIAL": {
-        "TUTORIAL10": "Pour ajouter",
-        "TUTORIAL11": "Allez à la page des drones, appuyez sur le bouton +, et remplissez le formulaire.",
-        "TUTORIAL20": "Pour éditer",
-        "TUTORIAL21": "Déplacez vers la gauche ce que vous voulez éditer, appuyez sur edit et remplissez le formulaire.",
+        "TUTORIAL10": "Ajouter du contenu",
+        "TUTORIAL11": "Allez dans la section à laquelle vous voulez ajouter quelque chose, appuyez sur le bouton +, et remplissez le formulaire",
+        "TUTORIAL20": "Modifier le contenu",
+        "TUTORIAL21": "Déplacez vers la gauche le contenu que vous voulez éditer, appuyez sur éditer et remplissez le formulaire",
         "TUTORIAL30": "Effacer",
-        "TUTORIAL31": "Déplacez vers la gauche ce que vous voulez effacer et appuyez sur effacer.",
-        "TUTORIAL40": "Pour consulter les vols, la maintenance ou les travaux d'un drone.",
-        "TUTORIAL41": "Sur le menu latéral, où il est écrit : Dron que vous voulez consulter, sélectionnez le dron que vous voulez consulter, pour voir les Vols, Maintenance et Travaux de ce dron.",
-        "TUTORIALEXIT": "Terminer le tutoriel"
+        "TUTORIAL31": "Déplacez vers la gauche le contenu que vous voulez supprimer et appuyez sur supprimer.",
+        "TUTORIAL40": "Pour consulter les vols, la maintenance ou les travaux d'un drone",
+        "TUTORIAL41": "Dans le menu latéral, où il est écrit : Dron que vous souhaitez consulter, sélectionnez le dron que vous souhaitez consulter, pour voir les Vols, Maintenance et Travaux de ce dron.",
+        "TUTORIALEXIT": "Finish Tutorial"
     },
     "TOASTS": {
         "EXITMESSAGE": "Appuyez à nouveau sur pour quitter l'application",

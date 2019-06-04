@@ -12,14 +12,14 @@
         "CERRAR": "Log out"
     },
     "TUTORIAL": {
-        "TUTORIAL10": "To add",
-        "TUTORIAL11": "Go to the drones page, press the + button, and fill in the form.",
-        "TUTORIAL20": "To edit",
-        "TUTORIAL21": "Move to the left what you want to edit, press edit and fill out the form.",
+        "TUTORIAL10": "To add content",
+        "TUTORIAL11": "Go to the section to which you want to add something, press the + button, and fill in the form.",
+        "TUTORIAL20": "To edit content",
+        "TUTORIAL21": "Move to the left the content you want to edit, press edit and fill in the form.",
         "TUTORIAL30": "To delete",
-        "TUTORIAL31": "Move to the left what you want to delete and press delete.",
-        "TUTORIAL40": "To consult flights, maintenance or works of a drone.",
-        "TUTORIAL41": "On the side menu, where it says: Dron you want to consult, select the dron you want to consult, to see the Flights, Maintenance and Works of that dron.",
+        "TUTORIAL31": "Move to the left the content you want to delete and press delete.",
+        "TUTORIAL40": "To consult flights, maintenance or works of a drone",
+        "TUTORIAL41": "In the side menu, where it says: Dron you wish to consult, select the dron you wish to consult, to see the Flights, Maintenance and Works of that dron.",
         "TUTORIALEXIT": "Finish Tutorial"
     },
     "TOASTS": {
