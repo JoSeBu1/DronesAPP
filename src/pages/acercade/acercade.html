@@ -8,11 +8,12 @@
 </ion-header>
 <ion-content padding>
     <img src="assets/imgs/dron.png" />
-    <h1>DronesAPP</h1>
+    <h1>Dronie</h1>
     <p class="centrar bajarTexto" text-wrap>{{ 'PAGES.ACERCA.AGRADECIMIENTO' | translate }}</p>
 </ion-content>
 
 <ion-footer no-border>
+    <p class="centrar bajarParrafo" (click)="presentLicense()"><a>{{ 'PAGES.ACERCA.LICENSE' | translate}}</a></p>
     <p class="centrar bajarParrafo">Aplicación desarrollada por JoSeBu</p>
     <p class="centrar bajarParrafo">DronesApp - {{commondata.app}}</p>
 </ion-footer>

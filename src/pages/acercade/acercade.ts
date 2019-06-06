@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, Platform } from 'ionic-angular';
+import { NavController, NavParams, ToastController, Platform, ModalController } from 'ionic-angular';
 import { CommondataProvider } from '../../providers/commondata/commondata';
 import { TranslateService } from '@ngx-translate/core';
+import { LicensemodalPage } from '../licensemodal/licensemodal';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AcercadePage {
   public counter = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public commondata: CommondataProvider,
-    public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
+    public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService,
+    private modalCtrl: ModalController) {
   }
 
   ionViewWillEnter() {
@@ -26,6 +28,12 @@ export class AcercadePage {
         this.platform.exitApp();
       }
     }, 0)
+  }
+
+  //Muestra el codigo QR mas grande
+  async presentLicense() {
+    let profileModal = await this.modalCtrl.create(LicensemodalPage)
+    await profileModal.present();
   }
 
   presentToast() {
