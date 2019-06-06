@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "573084995226",
+    "firebase_url": "https://dbdrones-1bdaf.firebaseio.com",
+    "project_id": "dbdrones-1bdaf",
+    "storage_bucket": "dbdrones-1bdaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573084995226:android:1968de6de64509dc",
+        "android_client_info": {
+          "package_name": "com.josebu.dronesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573084995226-tdar617i89890pf3l69jjf8h2jjqfmbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.josebu.dronesapp",
+            "certificate_hash": "cb3b9a36db14e5e1e6ad5871b9ba4fa09a9887a6"
+          }
+        },
+        {
+          "client_id": "573084995226-vtptdl6v4q4l2g6drha3qekgd7h5hj96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF_2nSp-zDSKz1NSTLlN0MchXGeHFaPK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573084995226-vtptdl6v4q4l2g6drha3qekgd7h5hj96.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "573084995226-rm82ced5f6cna4rkcpqs32h120nu14or.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.josebu.dronesapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

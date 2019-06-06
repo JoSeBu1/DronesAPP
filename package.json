@@ -23,6 +23,7 @@
         "@ionic-native/app-version": "^5.5.1",
         "@ionic-native/core": "5.5.1",
         "@ionic-native/facebook": "5.5.1",
+        "@ionic-native/fcm": "^5.5.1",
         "@ionic-native/google-plus": "5.5.1",
         "@ionic-native/in-app-browser": "5.5.1",
         "@ionic-native/local-notifications": "^5.5.1",
@@ -37,6 +38,7 @@
         "cordova-plugin-badge": "0.8.8",
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-facebook4": "4.2.1",
+        "cordova-plugin-fcm-with-dependecy-updated": "2.4.0",
         "cordova-plugin-firebase-authentication": "^1.1.2",
         "cordova-plugin-googleplus": "7.0.1",
         "cordova-plugin-inappbrowser": "3.0.0",
@@ -80,7 +82,8 @@
                 "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
             },
             "cordova-plugin-app-version": {},
-            "cordova-plugin-local-notification": {}
+            "cordova-plugin-local-notification": {},
+            "cordova-plugin-fcm-with-dependecy-updated": {}
         },
         "platforms": [
             "android"
