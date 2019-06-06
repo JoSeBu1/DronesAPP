@@ -18,8 +18,8 @@
         "TUTORIAL21": "Déplacez vers la gauche le contenu que vous voulez éditer, appuyez sur éditer et remplissez le formulaire",
         "TUTORIAL30": "Effacer",
         "TUTORIAL31": "Déplacez vers la gauche le contenu que vous voulez supprimer et appuyez sur supprimer.",
-        "TUTORIAL40": "Pour consulter les vols, la maintenance ou les travaux d'un drone",
-        "TUTORIAL41": "Dans le menu latéral, où il est écrit : Dron que vous souhaitez consulter, sélectionnez le dron que vous souhaitez consulter, pour voir les Vols, Maintenance et Travaux de ce dron.",
+        "TUTORIAL40": "Pour consulter",
+        "TUTORIAL41": "Dans le menu latéral, où il est indiqué dron que vous voulez consulter, sélectionnez le dron que vous voulez consulter.",
         "TUTORIALEXIT": "Finish Tutorial"
     },
     "TOASTS": {
