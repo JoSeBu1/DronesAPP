@@ -54,6 +54,7 @@ import { NoticiasPage } from '../pages/noticias/noticias';
 
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { CommondataProvider } from '../providers/commondata/commondata';
+import { LicensemodalPage } from '../pages/licensemodal/licensemodal';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     AnyadirtrabajoPage,
     PreguntasfrecuentesPage,
     TutorialPage,
-    ContrasenyaolvidadaPage
+    ContrasenyaolvidadaPage,
+    LicensemodalPage
   ],
   imports: [
     BrowserModule,
@@ -126,7 +128,8 @@ import { CommondataProvider } from '../providers/commondata/commondata';
     AnyadirtrabajoPage,
     PreguntasfrecuentesPage,
     TutorialPage,
-    ContrasenyaolvidadaPage
+    ContrasenyaolvidadaPage,
+    LicensemodalPage
   ],
   providers: [
     FirebaseProvider,

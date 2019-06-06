@@ -82,3 +82,13 @@ ion-navbar {
 .ion-select-up {
     margin-bottom: -10px;
 }
+
+.modal-wrapper {
+    position: absolute;
+    top: 10% !important;
+    left: 10% !important;
+    display: block;
+    width: 80% !important;
+    height: 80% !important;
+    box-shadow: 0 0 15px #ddd;
+}
