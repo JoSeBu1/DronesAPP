@@ -120,7 +120,8 @@
         },
         "ACERCA": {
             "HEADER": "Acerca de",
-            "AGRADECIMIENTO": "Gracias al Ministerio de Agricultura y Pesca, Alimentación y Medio Ambiente (MAPAMA) como autores de la web https://drones.enaire.es/ por facilitar su uso, para mostrar las zonas en las que hay posibilidad de volar"
+            "AGRADECIMIENTO": "Gracias al Ministerio de Agricultura y Pesca, Alimentación y Medio Ambiente (MAPAMA) como autores de la web https://drones.enaire.es/ por facilitar su uso, para mostrar las zonas en las que hay posibilidad de volar",
+            "LICENSE": "Acerca de la licencia"
         },
         "TRABAJOS": {
             "HEADER": "Trabajos",
