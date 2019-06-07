@@ -15,10 +15,10 @@
                     <ion-icon name="locate" class="icon"></ion-icon>{{item.lugar || 'PAGES.TRABAJOS.NOTSITE' | translate}}
                 </h2>
                 <p *ngIf="item.pagado">
-                    <ion-icon name="cash" class="icon"></ion-icon>Pagado
+                    <ion-icon name="cash" class="icon"></ion-icon>{{'PAGES.TRABAJOS.PAID' | translate}}
                 </p>
                 <p *ngIf="!item.pagado">
-                    <ion-icon name="cash" class="icon"></ion-icon>No pagado
+                    <ion-icon name="cash" class="icon"></ion-icon>{{'PAGES.TRABAJOS.NOTPAID' | translate}}
                 </p>
             </ion-item>
             <ion-item-options side="right">

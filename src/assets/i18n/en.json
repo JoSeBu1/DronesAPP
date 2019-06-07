@@ -9,7 +9,8 @@
         "FAQ": "FAQ",
         "MAPA": "Flight Map",
         "ACERCA": "About us",
-        "CERRAR": "Log out"
+        "CERRAR": "Log out",
+        "SELECTDRON": "Dron you wish to consult"
     },
     "TUTORIAL": {
         "TUTORIAL10": "To add content",
@@ -108,6 +109,7 @@
             "BRAND": "Brand",
             "MODEL": "Model",
             "ADQUISITIONDATE": "Acquisition date",
+            "MONTHWARRANTY": "Warranty months",
             "NICK": "Nick",
             "COMMENTS": "Comments",
             "EMPTY": "No data entered"
@@ -128,7 +130,9 @@
             "HEADER": "Works",
             "EDIT": "Edit",
             "DELETE": "Delete",
-            "NOTSITE": "Not entered Place"
+            "NOTSITE": "Not entered Place",
+            "PAID": "Pais",
+            "NOTPAID": "Not paid"
         },
         "ADDTRABAJOS": {
             "HEADER": "Add Work",

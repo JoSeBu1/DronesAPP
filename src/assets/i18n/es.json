@@ -9,7 +9,8 @@
         "FAQ": "Preguntas Frecuentes",
         "MAPA": "Mapa Vuelo",
         "ACERCA": "Acerca de",
-        "CERRAR": "Cerrar sesión"
+        "CERRAR": "Cerrar sesión",
+        "SELECTDRON": "Dron que desea consultar"
     },
     "TUTORIAL": {
         "TUTORIAL10": "Para añadir contenido",
@@ -92,6 +93,7 @@
             "BRAND": "Marca",
             "MODEL": "Modelo",
             "ADQUISITIONDATE": "Fecha de adquisición",
+            "MONTHWARRANTY": "Meses de garantía",
             "NICK": "Apodo",
             "COMMENTS": "Comentarios"
         },
@@ -128,7 +130,9 @@
             "HEADER": "Trabajos",
             "EDIT": "Editar",
             "DELETE": "Eliminar",
-            "NOTSITE": "No se ha introducido Lugar"
+            "NOTSITE": "No se ha introducido Lugar",
+            "PAID": "Pagado",
+            "NOTPAID": "No pagado"
         },
         "ADDTRABAJOS": {
             "HEADER": "Añadir Trabajo",

@@ -9,7 +9,8 @@
         "FAQ": "Foire aux questions",
         "MAPA": "Carte de vol",
         "ACERCA": "A propos de nous",
-        "CERRAR": "Se déconnecter"
+        "CERRAR": "Se déconnecter",
+        "SELECTDRON": "Dron que vous souhaitez consulter"
     },
     "TUTORIAL": {
         "TUTORIAL10": "Ajouter du contenu",
@@ -92,6 +93,7 @@
             "BRAND": "Marque",
             "MODEL": "Modèle",
             "ADQUISITIONDATE": "Date d'acquisition",
+            "MONTHWARRANTY": "Mois de garantie",
             "NICK": "Nick",
             "COMMENTS": "Commentaires"
         },
@@ -128,7 +130,9 @@
             "HEADER": "Travaux",
             "EDIT": "Modifier",
             "DELETE": "Supprimer",
-            "NOTSITE": "Non entré Lieu"
+            "NOTSITE": "Non entré Lieu",
+            "PAID": "Payé",
+            "NOTPAID": "Non payé"
         },
         "ADDTRABAJOS": {
             "HEADER": "Ajouter du travail",

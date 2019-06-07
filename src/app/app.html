@@ -9,7 +9,7 @@
                 <h3 class="white-text">{{commondata.email}}</h3>
             </ion-item>
             <ion-item class="transparent white-text">
-                <ion-label class="white-text" floating>Dron que desea consultar</ion-label>
+                <ion-label class="white-text" floating>{{ 'SIDEMENU.SELECTDRON' | translate}}</ion-label>
                 <!-- interface="action-sheet || popover || alert" -->
                 <ion-select style="margin-right: 5px" interface="action-sheet" okText="Seleccionar" cancelText="Cancelar" (ionChange)="cambioSelect()" [(ngModel)]="commondata.dronActivo" [compareWith]="commondata.compareFn">
                     <ion-option *ngFor="let item of commondata.dron" [value]="item">{{item.apodo}}</ion-option>
