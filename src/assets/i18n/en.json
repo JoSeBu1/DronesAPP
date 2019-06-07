@@ -121,7 +121,8 @@
         "ACERCA": {
             "HEADER": "About",
             "AGRADECIMIENTO": "Thanks to the Ministry of Agriculture and Fisheries, Food and Environment (MAPAMA) as authors of the website https://drones.enaire.es/ for facilitating its use, to show the areas in which there is the possibility of flying.",
-            "LICENSE": "About the license"
+            "LICENSE": "About the license",
+            "DEVELOPED": "Application developed by "
         },
         "TRABAJOS": {
             "HEADER": "Works",

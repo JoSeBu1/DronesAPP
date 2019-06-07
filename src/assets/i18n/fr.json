@@ -121,7 +121,8 @@
         "ACERCA": {
             "HEADER": "A propos",
             "AGRADECIMIENTO": "Merci au Ministère de l'Agriculture et de la Pêche, de l'Alimentation et de l'Environnement (MAPAMA) en tant qu'auteur du site https://drones.enaire.es/ pour avoir facilité son utilisation, pour montrer les zones où il y a la possibilité de voler.",
-            "LICENSE": "A propos de la licence"
+            "LICENSE": "A propos de la licence",
+            "DEVELOPED": "Application développée par "
         },
         "TRABAJOS": {
             "HEADER": "Travaux",
