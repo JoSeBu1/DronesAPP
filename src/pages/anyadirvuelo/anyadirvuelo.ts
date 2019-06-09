@@ -14,6 +14,7 @@ export class AnyadirvueloPage {
     private storage: Storage, public commondata: CommondataProvider, public platform: Platform) {
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }

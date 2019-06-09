@@ -112,6 +112,7 @@ export class MyApp {
     });
   }
 
+  //Oculta la splashscreen
   hideSplashScreen() {
     if (this.splashScreen) {
       setTimeout(() => {
@@ -120,6 +121,7 @@ export class MyApp {
     }
   }
 
+  //Abre la pantalla correspondiente
   openPage(page) {
     this.activePage = page;
     let pagina = page.component;
@@ -148,15 +150,18 @@ export class MyApp {
     }
   }
 
+  //Selecciona la pagina activa en el sidemenu y la sombrea
   checkActive(page) {
     return page == this.activePage;
   }
 
+  //Avisa de que el dron seleccionado ha cambiado
   cambioSelect() {
     this.storage.set('dronActivo', this.commondata.dronActivo);
     this.events.publish('dronChanged', ("dron"));
   }
 
+  //Cierra la sesión del usuario
   logout() {
     if (this.commondata.sesionIniciadaConCorreo == true) {
       this.firebaseProvider.logout();
@@ -175,6 +180,7 @@ export class MyApp {
     this.commondata.sesionIniciada = false;
   }
 
+  //Va a la pagina de Login
   goToLogIn() {
     let pagina = NoticiasPage;
     this.nav.push(LoginPage, {pagina});

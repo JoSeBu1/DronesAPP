@@ -14,10 +14,12 @@ export class AnyadirmantenimientoPage {
     private storage: Storage, public commondata: CommondataProvider, public platform: Platform) {
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Añade un mantenimiento con los parametros introducidos
   addMantenimiento(titulo: string, precio: string, fecha: string, descripcion: string) {
     this.storage.get('UID').then( x =>  {
       this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id + '/mantenimientos' ).add({titulo, precio, fecha, descripcion});

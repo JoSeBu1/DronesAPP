@@ -18,6 +18,7 @@ export class AcercadePage {
     private modalCtrl: ModalController) {
   }
 
+  //Ejecuta alguna acciones al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -30,12 +31,13 @@ export class AcercadePage {
     }, 0)
   }
 
-  //Muestra el codigo QR mas grande
+  //Muestra lla licencia en un modal
   async presentLicense() {
     let profileModal = await this.modalCtrl.create(LicensemodalPage)
     await profileModal.present();
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

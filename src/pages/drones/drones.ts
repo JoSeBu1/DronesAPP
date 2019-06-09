@@ -21,6 +21,7 @@ export class DronesPage {
     public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
   }
 
+  //Ejecuta algunas acciones al abrise la pantalla
   ionViewDidEnter() {
     this.storage.get('UID').then( x =>  {
       this.commondata.dronesCollection = this.angularFirestore.collection('usuarios/' + x + '/drones');
@@ -39,6 +40,7 @@ export class DronesPage {
     });
   }
 
+  //Ejecuta algunas acciones al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -51,14 +53,17 @@ export class DronesPage {
     }, 0)
   }
 
+  //Va al dron en detalle
   goToDron(item) {
     this.navCtrl.push(VerdronPage, {item});
   }
 
+  //Va a editar el dron
   goToEditDron(item) {
     this.navCtrl.push(EditardronPage, {item});
   }
 
+  //Elimina el dron
   goToDeleteDron(item: any) {
     this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.CONFIRMDELETEDRONMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
       const alert = this.alertController.create({
@@ -86,10 +91,12 @@ export class DronesPage {
     })
   }
 
+  //Va a añadir dron
   goToAddDron() {
     this.navCtrl.push(AnyadirdronPage);
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

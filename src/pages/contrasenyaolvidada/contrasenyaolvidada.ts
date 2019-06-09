@@ -13,10 +13,12 @@ export class ContrasenyaolvidadaPage {
     public alertController: AlertController, public platform: Platform, private _translate: TranslateService) {
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Envia el email para restablecer la contraseña
   enviarEmail(email) {
     this._translate.get(['ALERTCONTROLLER.EMAILSENDTITLE', 'ALERTCONTROLLER.EMAILSENDMESSAGE', 'ALERTCONTROLLER.ERRORTITLE', 'ALERTCONTROLLER.ERRORMESSAGE', 'ALERTCONTROLLER.OKBUTTON']).subscribe(translate => {
       this.firebaseProvider.forgotPassword(email)
@@ -29,8 +31,7 @@ export class ContrasenyaolvidadaPage {
           alert.present();
           this.navCtrl.pop()
         })
-        .catch( err => 
-          {
+        .catch( err => {
             const alert = this.alertController.create({
               title: translate['ALERTCONTROLLER.ERRORTITLE'],
               message: translate['ALERTCONTROLLER.ERRORMESSAGE'],
