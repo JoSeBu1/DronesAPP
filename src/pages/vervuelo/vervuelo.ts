@@ -24,10 +24,12 @@ export class VervueloPage implements OnInit{
     this.vuelo = this.navParams.get('item');
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en pantalla
   ngOnInit() {
     this.baterias = this.vuelo.baterias;
     this.distancia = this.vuelo.distancia;

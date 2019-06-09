@@ -36,6 +36,7 @@ export class TrabajosPage {
       });
   }
 
+  //Carga los datos en pantalla
   ionViewDidEnter() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPosibleView()
@@ -60,6 +61,7 @@ export class TrabajosPage {
     }
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -72,14 +74,17 @@ export class TrabajosPage {
     }, 0)
   }
 
+  //Va al trabajo
   goToWork(item) {
     this.navCtrl.push(VertrabajoPage, {item});
   }
 
+  //Va a editar trabajo
   goToEditWork(item) {
     this.navCtrl.push(EditartrabajoPage, {item});
   }
 
+  //Elimina el trabajo
   goToDeleteWork(item: Trabajo) {
     this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEWORKMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
       const alert = this.alertController.create({
@@ -107,6 +112,7 @@ export class TrabajosPage {
     })
   }
 
+  //Va a añadir trabajo
   goToAddWork() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPossibleAdd()
@@ -115,6 +121,7 @@ export class TrabajosPage {
     }
   }
 
+  //Presenta el toast de salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -126,6 +133,7 @@ export class TrabajosPage {
     })
   }
 
+  //Presenta el toast de que hay que seleccionar un dron
   presentNotPossibleAdd() {
     this._translate.get(['TOASTS.SELECTDRONTRABAJOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -137,6 +145,7 @@ export class TrabajosPage {
     })
   }
 
+  //Presenta el toast de que hay que seleccionar un dron
   presentNotPosibleView() {
     this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
       let toast = this.toastCtrl.create({

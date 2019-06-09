@@ -23,6 +23,7 @@ export class PreguntasfrecuentesPage {
     public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
   }
 
+  //Carga las preguntas en la pantalla
   ionViewDidEnter() {
     this.preguntasfrecuentesCollection = this.angularFirestore.collection('preguntasfrecuentes');
     this.preguntasfrecuentesCollection.snapshotChanges().subscribe(preguntafrecuenteList => {
@@ -36,6 +37,7 @@ export class PreguntasfrecuentesPage {
     });
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -48,6 +50,7 @@ export class PreguntasfrecuentesPage {
     }, 0)
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

@@ -18,6 +18,7 @@ export class TutorialPage {
     this.nextPage = this.navParams.get('destinationPage');
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -30,11 +31,13 @@ export class TutorialPage {
     }, 0)
   }
 
+  //Termina el tutorial
   exitTutorial() {
     this.navCtrl.setRoot(this.nextPage);
     this.storage.set('tutorialViewed', true);
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

@@ -36,6 +36,7 @@ export class VuelosPage {
       });
   }
 
+  //Carga los datos en pantalla
   ionViewDidEnter() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPosibleView()
@@ -60,6 +61,7 @@ export class VuelosPage {
     }
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -72,14 +74,17 @@ export class VuelosPage {
     }, 0)
   }
 
+  //Va al vuelo
   goToFly(item) {
     this.navCtrl.push(VervueloPage, {item});
   }
 
+  //Va a editar el vuelo
   goToEditFly(item) {
     this.navCtrl.push(EditarvueloPage, {item});
   }
 
+  //Va a eliminar el vuelo
   goToDeleteFly(item: Vuelo) {
     this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEFLYMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
       const alert = this.alertController.create({
@@ -107,6 +112,7 @@ export class VuelosPage {
     })
   }
 
+  //Va a añadir un vuelo
   goToAddFly() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPossibleAdd()
@@ -115,6 +121,7 @@ export class VuelosPage {
     }
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -126,6 +133,7 @@ export class VuelosPage {
     })
   }
 
+  //Presenta el toast de que hay que seleccionar un dron
   presentNotPossibleAdd() {
     this._translate.get(['TOASTS.SELECTDRONVUELOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -137,6 +145,7 @@ export class VuelosPage {
     })
   }
 
+  //Presenta un toast de que hay que seleccionar un dron
   presentNotPosibleView() {
     this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
       let toast = this.toastCtrl.create({

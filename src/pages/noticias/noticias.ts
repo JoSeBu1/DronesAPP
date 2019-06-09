@@ -27,6 +27,7 @@ export class NoticiasPage {
       this.storage.get('dronActivo').then(x => this.commondata.dronActivo = x);
   }
 
+  //Carga las noticias en la pantalla
   ionViewDidEnter() {
     this.noticiasCollection = this.angularFirestore.collection('noticias');
     this.noticiasCollection.snapshotChanges().subscribe(noticiaList => {
@@ -40,6 +41,7 @@ export class NoticiasPage {
     });
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -52,6 +54,7 @@ export class NoticiasPage {
     }, 0)
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

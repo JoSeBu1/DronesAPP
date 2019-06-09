@@ -30,10 +30,12 @@ export class SignupPage {
       });
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Regitra al usuario
   goTo(email: string, password: string, usuario: string){
     this.loader();
     this.presentLoader();
@@ -62,6 +64,7 @@ export class SignupPage {
     })
   }
 
+  //Comprueba que las contraseñas sean iguales
   matchingPasswords(passwordKey: string, confirmPasswordKey: string) {
     return (group: FormGroup): {[key: string]: any} => {
       let password = group.controls[passwordKey];
@@ -74,16 +77,19 @@ export class SignupPage {
     }
   }
 
+  //Presenta el loader
   presentLoader() {
     this.loader();
     return this.loading.present();
   }
 
+  //Para el loader
   stopLoader() {
     this.loading.dismissAll();
     this.loading = null;
   }
 
+  //Presenta el loader o lo para si esta activo
   loader() {
     if (this.loading && this.loading.instance){
         this.stopLoader();

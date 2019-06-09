@@ -18,10 +18,12 @@ export class VerdronPage implements OnInit {
     this.dron = this.navParams.get('item');
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en pantalla
   ngOnInit() {
     this.marca = this.dron.marca;
     this.modelo = this.dron.modelo;

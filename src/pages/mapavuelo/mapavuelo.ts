@@ -15,6 +15,7 @@ export class MapavueloPage {
     public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService) {
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -27,6 +28,7 @@ export class MapavueloPage {
     }, 0)
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({

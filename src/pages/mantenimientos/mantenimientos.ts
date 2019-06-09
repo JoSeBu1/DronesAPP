@@ -35,6 +35,7 @@ export class MantenimientosPage {
       });
   }
 
+  //Carga la informancion en la pantalla al abrirse
   ionViewDidEnter() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPosibleView()
@@ -57,6 +58,7 @@ export class MantenimientosPage {
     } 
   }
 
+  //Ejecuta una accion al abrirse la pagina
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {
       if (this.counter == 0) {
@@ -69,14 +71,17 @@ export class MantenimientosPage {
     }, 0)
   }
 
+  //Va a mantenimiento
   goToMaintenance(item) {
     this.navCtrl.push(VermantenimientoPage, {item});
   }
 
+  //Va a editar mantenimiento
   goToEditMaintenance(item) {
     this.navCtrl.push(EditarmantenimientoPage, {item});
   }
 
+  //Elimina el mantenimiento
   goToDeleteMaintenance(item: Mantenimiento) {
     this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
       const alert = this.alertController.create({
@@ -104,6 +109,7 @@ export class MantenimientosPage {
     })
   }
 
+  //Va a editar mantenimiento
   goToAddMaintenance() {
     if(this.commondata.dronActivo == undefined) {
       this.presentNotPossibleAdd()
@@ -112,6 +118,7 @@ export class MantenimientosPage {
     }
   }
 
+  //Presenta el toast para salir de la aplicacion
   presentToast() {
     this._translate.get(['TOASTS.EXITMESSAGE']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -123,6 +130,7 @@ export class MantenimientosPage {
     })
   }
 
+  //Presenta el toast de que no es posible añadir mantenimientos
   presentNotPossibleAdd() {
     this._translate.get(['TOASTS.SELECTDRONMANTENIMIENTOS']).subscribe(translate => {
       let toast = this.toastCtrl.create({
@@ -134,6 +142,7 @@ export class MantenimientosPage {
     })
   }
 
+  //Presenta el toast de que tiene que seleccionar un dron
   presentNotPosibleView() {
     this._translate.get(['TOASTS.SELECTDRON']).subscribe(translate => {
       let toast = this.toastCtrl.create({
