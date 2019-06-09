@@ -37,10 +37,12 @@ export class LoginPage {
     private _translate: TranslateService, private alertController: AlertController) { 
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Hace el login con usuario y password y va a la pagina que le corresponda
   goTo(email: string, password: string) {
     this.loader();
     this.presentLoader();
@@ -68,6 +70,7 @@ export class LoginPage {
     })
   }
 
+  //Login con google y va a la pantalla correspondiente
   async loginGoogle() {
     this.loader();
   	this.presentLoader();
@@ -143,6 +146,7 @@ export class LoginPage {
   	});
   }
 
+  //Login con facebook y va a la pagina correspondiente
   loginFacebook() {
     this.facebook.login(['public_profile', 'email'])
     .then(rta => {
@@ -219,20 +223,24 @@ export class LoginPage {
     });
   }
 
+  //Va a la pagina de registro
   goToSignUp() {
     let pagina = this.navParams.get("pagina")
     this.navCtrl.push(SignupPage, {pagina});
   }
 
+  //Va a la pagina de restablecer password
   goToForgotPassword(){
     this.navCtrl.push(ContrasenyaolvidadaPage);
   }
 
+  //Presenta el loader de carga
   presentLoader() {
     this.loader();
     return this.loading.present();
   }
 
+  //Presenta el loader de carga o lo para
   loader() {
     if (this.loading && this.loading.instance){
       this.stopLoader();
@@ -244,11 +252,13 @@ export class LoginPage {
     })
   }
 
+  //Para el loader de carga
   stopLoader() {
     this.loading.dismissAll();
     this.loading = null;
   }
 
+  //Presenta el AlertController de Error
   presentError() {
     this._translate.get(['ALERTCONTROLLER.ERRORTITLE', 'ALERTCONTROLLER.LOGININCORRECT', 'ALERTCONTROLLER.OKBUTTON']).subscribe(translate => {
       const alert = this.alertController.create({

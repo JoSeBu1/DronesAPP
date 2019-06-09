@@ -25,10 +25,12 @@ export class EditarmantenimientoPage implements OnInit{
     this.mantenimiento = this.navParams.get('item');
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en la pantalla
   ngOnInit() {
     this.precio = this.mantenimiento.precio;
     this.fecha = this.mantenimiento.fecha;
@@ -40,6 +42,7 @@ export class EditarmantenimientoPage implements OnInit{
     }
   }
 
+  //Edita el mantenimiento
   editMantenimiento(fecha) {
     let precio = this.precio;
     let descripcion = this.descripcion;

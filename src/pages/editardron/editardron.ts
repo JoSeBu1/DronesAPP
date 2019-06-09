@@ -24,10 +24,12 @@ export class EditardronPage implements OnInit{
     this.dron = this.navParams.get('item');
   }
 
+  //Ejecuta una opcion el abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en pantalla
   ngOnInit() {
     this.marca = this.dron.marca;
     this.modelo = this.dron.modelo;
@@ -40,6 +42,7 @@ export class EditardronPage implements OnInit{
     }
   }
 
+  //Edita el dron
   editDron(fechaAdquisicion) {
     let apodo = this.apodo;
     let marca = this.marca;

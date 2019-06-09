@@ -27,10 +27,12 @@ export class EditartrabajoPage {
       this.trabajo = this.navParams.get('item');
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en pantalla
   ngOnInit() {
     this.precio = this.trabajo.precio;
     this.fecha = this.trabajo.fecha;
@@ -44,6 +46,7 @@ export class EditartrabajoPage {
     }
   }
 
+  //Edita los trabajos
   editTrabajo(fecha) {
     let precio = this.precio;
     let descripcion = this.descripcion;

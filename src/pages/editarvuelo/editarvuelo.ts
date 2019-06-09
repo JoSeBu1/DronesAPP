@@ -27,10 +27,12 @@ export class EditarvueloPage {
     this.vuelo = this.navParams.get('item');
   }
 
+  //Ejecuta una accion al abrirse la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
 
+  //Carga los datos en pantalla
   ngOnInit() {
     this.baterias = this.vuelo.baterias;
     this.distancia = this.vuelo.distancia;
@@ -45,6 +47,7 @@ export class EditarvueloPage {
     }
   }
 
+  //Edita un vuelo
   editVuelo(fecha) {
     let baterias = this.baterias;
     let distancia = this.distancia;

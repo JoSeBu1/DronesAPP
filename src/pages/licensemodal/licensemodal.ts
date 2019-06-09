@@ -11,6 +11,7 @@ export class LicensemodalPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private view: ViewController, private platform: Platform) {
   }
 
+  //Ejecuta una accion al abrise la pantalla
   ionViewWillEnter() {
     this.platform.registerBackButtonAction(() => {this.navCtrl.pop()});
   }
