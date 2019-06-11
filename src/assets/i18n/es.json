@@ -144,7 +144,7 @@
             "PAID": "Pagado"
         },
         "EDITTRABAJOS": {
-            "HEADER": "Añadir Trabajo",
+            "HEADER": "Editar Trabajo",
             "SITE": "Lugar",
             "PRICE": "Precio",
             "DATE": "Fecha",
