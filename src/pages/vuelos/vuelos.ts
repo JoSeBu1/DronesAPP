@@ -43,7 +43,7 @@ export class VuelosPage {
     } else {
       this.storage.get('UID').then( x =>  {
         this.vuelosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
-        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
+        //console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/vuelos');
         this.vuelosCollection.snapshotChanges().subscribe(vueloList => {
           this.vuelo = vueloList.map(item => {
             return {

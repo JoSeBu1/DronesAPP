@@ -43,7 +43,7 @@ export class TrabajosPage {
     } else {
       this.storage.get('UID').then( x =>  {
         this.trabajosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
-        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
+        //console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/trabajos');
         this.trabajosCollection.snapshotChanges().subscribe(trabajoList => {
           this.trabajo = trabajoList.map(item => {
             return {

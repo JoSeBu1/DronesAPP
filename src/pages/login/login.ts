@@ -141,7 +141,7 @@ export class LoginPage {
       })
       this.loader();
   	}, err => {
-  		console.log(err)
+  		//console.log(err)
       this.loader();
   	});
   }

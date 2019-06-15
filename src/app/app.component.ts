@@ -37,7 +37,9 @@ export class MyApp {
     this.initializeApp();
     this.appVersion.getVersionNumber().then((version) => {
       this.commondata.app = version;
-    }).catch(e => console.log(e));
+    }).catch(e => {
+      //console.log(e)
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [

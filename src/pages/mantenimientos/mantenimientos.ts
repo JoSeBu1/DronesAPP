@@ -42,7 +42,7 @@ export class MantenimientosPage {
     } else {
       this.storage.get('UID').then( x =>  {
         this.mantenimientosCollection = this.angularFirestore.collection('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
-        console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
+        //console.log('usuarios/' + x + '/drones/' + this.commondata.dronActivo.id +'/mantenimientos');
         this.mantenimientosCollection.snapshotChanges().subscribe(dronList => {
           this.mantenimiento = dronList.map(item => {
             return {

@@ -41,7 +41,7 @@ export class VervueloPage implements OnInit{
     if(this.video != "") {
       this.hayVideo = true;
       var urlVideo: string = this.video;
-      console.log(this.video)
+      //console.log(this.video)
       var urlTroceada = urlVideo.split("/");
       var urlReconstruida = urlTroceada[0] + "//" + urlTroceada[2] + "/embed/" + urlTroceada[3].replace("watch?v=", "");
       this.myVideo = this.sanitizer.bypassSecurityTrustResourceUrl(urlReconstruida);
