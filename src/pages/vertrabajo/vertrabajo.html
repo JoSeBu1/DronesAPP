@@ -24,7 +24,7 @@
     </ion-item>
     <ion-item no-lines>
         <h2>{{ 'PAGES.VIEWTRABAJOS.DESCRIPTION' | translate }}</h2>
-        <p>{{descripcion || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}</p>
+        <p text-wrap>{{descripcion || 'PAGES.VIEWTRABAJOS.EMPTY' | translate}}</p>
     </ion-item>
     <iframe *ngIf="hayVideo" width="100%" height="200px‬" [src]="myVideo"></iframe>
 </ion-content>
