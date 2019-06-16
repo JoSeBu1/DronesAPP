@@ -86,7 +86,7 @@ export class MantenimientosPage {
     this._translate.get(['ALERTCONTROLLER.CONFIRMTITLE', 'ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE', 'ALERTCONTROLLER.CANCEL', 'ALERTCONTROLLER.ACCEPT']).subscribe(translate => {
       const alert = this.alertController.create({
         title: translate['ALERTCONTROLLER.CONFIRMTITLE'],
-        message: 'ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE',
+        message: translate['ALERTCONTROLLER.DELETEMAINTENANCEMESSAGE'],
         buttons: [
           {
             text: translate['ALERTCONTROLLER.CANCEL'],
