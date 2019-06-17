@@ -98,5 +98,10 @@
     <plugin name="cordova-plugin-app-version" spec="0.1.9" />
     <plugin name="cordova-plugin-local-notification" spec="0.9.0-beta.2" />
     <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="2.4.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="5.4.6">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.1+" />
+        <variable name="PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION" value="This app requires photo library access to function properly." />
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="This app requires photo library access to function properly." />
+    </plugin>
     <engine name="android" spec="7.1.4" />
 </widget>

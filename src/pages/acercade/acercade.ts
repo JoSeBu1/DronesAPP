@@ -3,6 +3,7 @@ import { NavController, NavParams, ToastController, Platform, ModalController } 
 import { CommondataProvider } from '../../providers/commondata/commondata';
 import { TranslateService } from '@ngx-translate/core';
 import { LicensemodalPage } from '../licensemodal/licensemodal';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class AcercadePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public commondata: CommondataProvider,
     public toastCtrl: ToastController, private platform: Platform, private _translate: TranslateService,
-    private modalCtrl: ModalController) {
+    private modalCtrl: ModalController, private socialSharing: SocialSharing) {
   }
 
   //Ejecuta alguna acciones al abrirse la pantalla
@@ -35,6 +36,12 @@ export class AcercadePage {
   async presentLicense() {
     let profileModal = await this.modalCtrl.create(LicensemodalPage)
     await profileModal.present();
+  }
+
+  contact() {
+    this.socialSharing.canShareViaEmail().then(() => {
+      this.socialSharing.shareViaEmail('', 'Dronie support', ['josebuleon@gmail.com']);
+    });
   }
 
   //Presenta el toast para salir de la aplicacion

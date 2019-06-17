@@ -55,6 +55,7 @@ import { NoticiasPage } from '../pages/noticias/noticias';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { CommondataProvider } from '../providers/commondata/commondata';
 import { LicensemodalPage } from '../pages/licensemodal/licensemodal';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @NgModule({
   declarations: [
@@ -141,6 +142,7 @@ import { LicensemodalPage } from '../pages/licensemodal/licensemodal';
     AppVersion,
     TranslateModule,
     LocalNotifications,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
