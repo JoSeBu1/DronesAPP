@@ -81,17 +81,13 @@ export class FirebaseProvider {
   }
 
   googleLogout() {
-    this.googlePlus.logout()
-    .then(() => {
-      this.storage.set('UID', '');
-    });
+    this.googlePlus.logout();
+    this.storage.set('UID', '');
   }
 
   facebookLogout() {
-    this.facebook.logout()
-    .then(() => {
-      this.storage.set('UID', '');
-    });
+    this.facebook.logout();
+    this.storage.set('UID', '');
   }
 
 }
