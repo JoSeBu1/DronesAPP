@@ -1,0 +1,6 @@
+Para cambiar la cuenta de acceso de Firebase para las notificaciones sustituir los archivos google-services.json y GoogleService-Info.plist 
+que se encuentran en la raiz del proyecto por los nuevos generados en la nueva cuenta de Firebase. 
+
+Si al compilar da un error de que  se necesita la version 10.+ de com.google.android.gms:play-services-auth y com.google.android.gms:play-services-identity
+en el proyecto Ionic ir a platforms, luego android y entrar al archivo project.properties y cambiar las versiones 
+de com.google.android.gms:play-services-auth y com.google.android.gms:play-services-identity a la version 10.+
